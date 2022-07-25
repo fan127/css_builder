@@ -34,13 +34,13 @@
     margin: auto;
 }
 
-@media  (max-width: 1023px) {
+@media only screen and (max-width: 1023px) {
     .preview {
         left: 0
     }
 }
 
-@media  (min-width: 1024px) and (max-width: 1300px) {
+@media only screen and (min-width: 1024px) and (max-width: 1300px) {
     .preview {
         left: 260px;
     }
@@ -60,7 +60,7 @@
     outline: #42c184 solid 1px;
 }
 
-@media  (min-width: 1400px) {
+@media only screen and (min-width: 1400px) {
     .paper .container {
         max-width: 100%;
     }
@@ -165,7 +165,7 @@
 }
 
 
-@media (min-width: 1400px) {
+@media only screen and (min-width: 1400px) {
     .paper .container {
         max-width: 100%;
     }
