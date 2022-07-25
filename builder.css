@@ -144,3 +144,49 @@
 .button-list div:last-child {
     margin-right: 0px;
 }
+
+.paper {
+    margin: auto;
+    border: 1px solid #eee;
+    box-shadow: 0 14px 24px -6px #474d4730;
+    background-color: white;
+}
+
+.paper .cf-node-selected {}
+
+
+
+
+.paper .block:hover {
+    outline: #42c184 solid 1px;
+}
+
+
+@media only screen and (min-width: 1400px) {
+    .paper .container {
+        max-width: 100%;
+    }
+}
+
+
+.container {
+    position: relative;
+    display: flex;
+    width: 100%;
+    box-sizing: border-box;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.container:hover {
+    outline: 1px solid #0060e5;
+}
+
+.container .container-toolbar {
+    display: none;
+}
+
+.container-toolbar-show {
+    display: block !important;
+}
