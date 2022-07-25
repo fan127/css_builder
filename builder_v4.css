@@ -468,3 +468,13 @@ p {
 .image {
     max-width: 100%;
 }
+
+
+.heading {
+    position: relative;
+}
+
+.paper .editing {
+    outline: 1px solid #fbb144 !important;
+    box-shadow: 0 0 3px #fbb144;
+}
