@@ -165,11 +165,7 @@
 }
 
 
-@media only screen and (min-width: 1400px) {
-    .paper .container {
-        max-width: 100%;
-    }
-}
+
 
 
 .container {
@@ -180,6 +176,12 @@
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+}
+
+@media only screen and (min-width: 1400px) {
+    .paper .container {
+        max-width: 100%;
+    }
 }
 
 .container:hover {
