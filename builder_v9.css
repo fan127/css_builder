@@ -178,7 +178,7 @@
     background-size: cover;
 }
 
-@media only screen and (min-width: 1400px) {
+@media all and (min-width: 1400px) {
     .paper .container {
         max-width: 100%;
     }
