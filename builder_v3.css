@@ -1,0 +1,470 @@
+.preview {
+    background-color: #CCC;
+    overflow: auto;
+
+    transition: 0.2s left, 0.2s right;
+    transition-timing-function: ease-in-out;
+
+}
+
+.preview.disable {
+    left: 0;
+    right: 0;
+}
+
+.preview .desktop {
+    width: 100%;
+}
+
+.preview .laptop {
+    width: 1005px;
+    margin: auto;
+}
+
+.preview .tablet {
+    width: 780px;
+    margin: auto;
+}
+
+.preview .mobile {
+    width: 480px;
+    margin: auto;
+}
+
+@media only screen and (max-width: 1023px) {
+    .preview {
+        left: 0
+    }
+}
+
+@media only screen and (min-width: 1024px) and (max-width: 1300px) {
+    .preview {
+        left: 260px;
+    }
+}
+
+
+.paper {
+    margin: auto;
+    border: 1px solid #eee;
+    box-shadow: 0 14px 24px -6px #474d4730;
+    background-color: white;
+}
+
+.paper .cf-node-selected {}
+
+.paper .block:hover {
+    outline: #42c184 solid 1px;
+}
+
+@media only screen and (min-width: 1400px) {
+    .paper .container {
+        max-width: 100%;
+    }
+}
+
+.header {
+    height: 60px;
+    background: #202124;
+    display: flex;
+    align-items: center;
+    padding: 0px 10px;
+}
+
+.logo-container {
+    width: 285px;
+    display: flex;
+    align-items: center;
+    color: #FFF;
+}
+
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-grow: 1;
+    height: 100%;
+}
+
+.button {
+    padding: 10px 25px;
+    color: #FFF;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    background: #333333;
+    transition: all 0.2s ease;
+}
+
+.button svg {
+    stroke: #FFF
+}
+
+.button .icon {
+    padding: 10px 15px;
+}
+
+.button:hover {
+    background: #555555;
+    transition: all 0.2 ease;
+}
+
+.screen-inner {
+    display: flex;
+    height: 100%;
+}
+
+.screen-inner div {
+    display: flex;
+    align-items: center;
+    padding: 0px 12px;
+    height: 100%;
+    cursor: pointer;
+}
+
+.screen-inner div.selected {
+    border-bottom: 2px solid #FFF;
+    background-color: #333333;
+    cursor: default;
+}
+
+.screen-inner div:hover {
+    background: #333333;
+}
+
+.button-list {
+    display: flex;
+}
+
+.button-list div {
+    margin: 0px 3px;
+}
+
+.button-list div:last-child {
+    margin-right: 0px;
+}
+
+.paper {
+    margin: auto;
+    border: 1px solid #eee;
+    box-shadow: 0 14px 24px -6px #474d4730;
+    background-color: white;
+}
+
+.paper .cf-node-selected {}
+
+
+
+
+.paper .block:hover {
+    outline: #42c184 solid 1px;
+}
+
+
+@media only screen and (min-width: 1400px) {
+    .paper .container {
+        max-width: 100%;
+    }
+}
+
+
+.container {
+    position: relative;
+    display: flex;
+    width: 100%;
+    box-sizing: border-box;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.container:hover {
+    outline: 1px solid #0060e5;
+}
+
+.container .container-toolbar {
+    display: none;
+}
+
+.container-toolbar-show {
+    display: block !important;
+}
+
+.block {
+    width: 100%;
+    box-sizing: border-box;
+    z-index: 2;
+}
+
+.heading {
+    width: 100%;
+    position: relative;
+}
+
+.text-editor {
+    position: relative;
+}
+
+.dragging {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: greenyellow;
+    z-index: 10;
+}
+
+.container .container-toolbar {
+    display: none;
+}
+
+.container-toolbar-show {
+    display: block !important;
+}
+
+ul.gf-tool {
+    margin-bottom: 0;
+    overflow: visible;
+
+}
+
+.gf-tool.gf-tool-show {
+    visibility: visible;
+    opacity: 1;
+
+}
+
+.gf-tool.hidden {
+    visibility: hidden;
+}
+
+.t-handle {
+    cursor: move;
+}
+
+.t-handle .preview {
+    width: 100px;
+    height: 100px;
+    background: red;
+    z-index: 2;
+    position: absolute;
+}
+
+.t-handle .hidden {
+    visibility: hidden;
+}
+
+.gf-tool.gf-e-tool,
+.gf-tool.gf-e-tool li a {
+    background: #42c184;
+}
+
+.gryffeditor ul {
+    margin: 0 !important;
+    padding: 0 !important;
+    list-style: none !important;
+}
+
+.gf-tool {
+    display: none;
+}
+
+.gf-tool,
+.gf-tool li {
+    float: left;
+    display: flex !important;
+    flex-wrap: nowrap;
+    height: 30px;
+}
+
+.gf-tool {
+    background: red;
+    left: 50%;
+    top: 50%;
+    -webkit-user-select: none !important;
+    -moz-user-select: none !important;
+    user-select: none !important;
+    visibility: hidden;
+    opacity: 0;
+    overflow: hidden;
+    border-radius: 3px;
+    transform: translate(-50%, -50%) scale(.8);
+}
+
+.gf-delete,
+.gf-tool {
+    position: absolute;
+    z-index: 11;
+}
+
+.gf-tool.gf-e-tool,
+.gf-tool.gf-e-tool li a {
+    background: #42c184;
+}
+
+.gf-tool li.t-handle a {
+    width: auto;
+    display: flex !important;
+    flex-wrap: nowrap;
+}
+
+.gf-tool li a {
+    display: block;
+    float: left;
+    text-decoration: none;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+    width: 26px;
+    height: 30px;
+    line-height: 30px;
+    color: #fff !important;
+    background: red;
+    position: relative;
+    cursor: pointer;
+}
+
+.gf-tool li {
+    margin: 0 !important;
+    padding: 0 !important;
+    list-style: none !important;
+    white-space: nowrap;
+}
+
+.gf-tool,
+.gf-tool li {
+    float: left;
+    display: flex !important;
+    flex-wrap: nowrap;
+    height: 30px;
+}
+
+.gf-tool li.t-handle span {
+    display: inline-block;
+    float: left;
+    line-height: 30px;
+    width: 26px;
+    height: 30px;
+    position: relative;
+    cursor: move;
+}
+
+.gf-tool li.t-handle span svg {
+    left: 6px;
+    transform: translateY(-50%);
+}
+
+.gf-tool li a svg {
+    fill: #fff !important;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin: 0 !important;
+    padding: 0 !important;
+    width: 14px !important;
+    height: 15px !important;
+    vertical-align: initial !important;
+}
+
+.gf-tool li a svg path {
+    fill: #fff;
+}
+
+.gf-tool li a svg * {
+    stroke: transparent;
+}
+
+.gf-tool li.t-handle span.gf-tool-label {
+    display: flex !important;
+    flex-wrap: nowrap;
+    width: auto;
+    height: 30px;
+    line-height: 30px;
+    padding-left: 5px;
+    padding-right: 5px;
+    font-size: 14px !important;
+    font-family: Inter, Roboto, Helvetica Neue, sans-serif;
+    font-weight: 700;
+    letter-spacing: .3px;
+    cursor: pointer;
+    color: #fff;
+}
+
+.gf-tool li.t-handle span {
+    display: inline-block;
+    float: left;
+    line-height: 30px;
+    width: 26px;
+    height: 30px;
+    position: relative;
+    cursor: move;
+}
+
+.el-card {
+    position: relative;
+    margin-bottom: 1em;
+}
+
+.delete-btn {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    padding: 2px;
+}
+
+.delete-btn .el-icon-close {
+    vertical-align: middle;
+}
+
+
+.add-btn {
+    margin-bottom: 1.5em;
+}
+
+
+.el-carousel {
+    width: 100%;
+}
+
+.el-carousel .el-carousel__item {
+    background-size: cover;
+    background-position: center;
+}
+
+
+.el-carousel .content {
+    position: absolute;
+    bottom: 1.5em;
+    left: 2em;
+    padding: 20px;
+    background: #16191982;
+
+}
+
+
+
+.el-carousel .content .title {
+    margin: 0;
+    font-size: 24px;
+    color: white;
+    text-shadow: 2px 1px 2px rgba(0, 0, 0, 0.65);
+}
+
+.el-carousel .content .subtitle {
+    margin: 12px 0 0 0;
+    color: rgba(255, 255, 255, 0.88);
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.65);
+}
+
+
+p {
+    width: 100%;
+    box-sizing: border-box;
+    white-space: pre-wrap;
+}
+
+.image {
+    max-width: 100%;
+}
