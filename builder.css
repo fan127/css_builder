@@ -1,9 +1,4 @@
 .preview {
-    position: absolute;
-    top: 60px;
-    left: 290px;
-    right: 0;
-    bottom: 0;
     background-color: #CCC;
     overflow: auto;
 
