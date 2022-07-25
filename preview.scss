@@ -1,0 +1,21 @@
+.paper {
+    // max-width: 1300px;
+    margin: auto;
+    border: 1px solid #eee;
+    box-shadow: 0 14px 24px -6px #474d4730;
+    background-color: white;
+  
+    .cf-node-selected {
+      // outline: #1faee5 solid 2px !important;
+    }
+  
+    .block:hover {
+      outline: #42c184 solid 1px;
+    }
+  }
+  
+  @media only screen and (min-width: 1400px) {
+    .paper .container {
+      max-width: 100%;
+    }
+  }
