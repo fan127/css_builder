@@ -651,3 +651,20 @@ p {
 .gf_equal-height {
     visibility: hidden;
 }
+
+
+#prevew_builder ::-moz-selection {
+    /* Code for Firefox */
+    color: #3d4246;
+    background: #d3e0a1;
+  }
+  
+  #prevew_builder ::selection {
+    color: #3d4246;
+    background: #d3e0a1;
+  }
+  
+  #prevew_builder a.editor_link_selection::selection {
+    background: #d3e0a1;
+    color: #fff;
+  }
