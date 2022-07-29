@@ -690,3 +690,39 @@ h6 a,
     text-decoration: none;
     font-weight: inherit;
 }
+
+.sg-wrap {
+    display: block;
+    min-height: 5px;
+}
+
+.sg-wrap {
+    position: relative;
+    z-index: 1;
+}
+
+
+.sg-wrap {
+    position: relative;
+}
+
+
+.sg-wrap .bl.sg-bl-center {
+    display: block !important;
+    text-align: center;
+    width: 100%;
+}
+
+@media (max-width: 767px) {
+    .sg-wrap .bl.sg-bl-center-xs {
+        display: block!important;
+        text-align: center;
+        width: 100%;
+    }
+}
+
+@media (max-width: 991px) and (min-width: 768px) {}
+
+@media (max-width: 1199px) and (min-width: 992px) {}
+
+@media (min-width: 1200px) {}
