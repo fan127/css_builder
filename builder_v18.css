@@ -753,19 +753,38 @@ h6 a,
 
 @media (min-width: 1200px) {}
 
-.sgDesc {
-    color: #d6d6d6;
-    font-weight: 300;
-    font-size: 12px;
+.btn {
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    display: inline-block;
+    width: auto;
+    text-decoration: none;
+    text-align: center;
+    vertical-align: middle;
+    cursor: pointer;
+    border: 1px solid transparent;
+    border-radius: 2px;
+    padding: 8px 15px;
+    background-color: #7796a8;
+    color: #fff;
+    font-family: Work Sans,HelveticaNeue,Helvetica Neue,sans-serif;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: .08em;
+    white-space: normal;
+    font-size: 14px;
 }
-.sgDesc, .sgDescGroup {
-    width: 100%;
-    float: left;
-    font-style: italic;
-    line-height: 16px;
-    letter-spacing: .18px;
-    padding-bottom: 13px;
+
+.sg_button {
+    white-space: normal!important;
 }
+
+
 
 
 
