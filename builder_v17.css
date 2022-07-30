@@ -753,3 +753,19 @@ h6 a,
 
 @media (min-width: 1200px) {}
 
+.sgDesc {
+    color: #d6d6d6;
+    font-weight: 300;
+    font-size: 12px;
+}
+.sgDesc, .sgDescGroup {
+    width: 100%;
+    float: left;
+    font-style: italic;
+    line-height: 16px;
+    letter-spacing: .18px;
+    padding-bottom: 13px;
+}
+
+
+
