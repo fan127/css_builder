@@ -803,3 +803,7 @@ a:focus {
     border-top: 1px solid #333;
     width: 100%;
 }
+
+hr {
+    opacity: 1;
+}
