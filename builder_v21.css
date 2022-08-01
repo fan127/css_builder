@@ -795,17 +795,11 @@ a:focus {
     white-space: normal !important;
 }
 
-.sgSubTitle {
-    font-family: Inter,Roboto,Helvetica Neue,sans-serif;
-    font-weight: 400;
-    font-size: 12px;
-    line-height: 14px;
-    letter-spacing: .18px;
-    color: #aaa;
-    float: left;
+.sg_separator {
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+    background: transparent;
+    border-top: 1px solid #333;
     width: 100%;
-    margin-bottom: 8px;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    user-select: none;
 }
