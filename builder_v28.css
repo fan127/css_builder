@@ -201,6 +201,7 @@
     width: 100%;
     box-sizing: border-box;
     z-index: 2;
+    position: relative;
 }
 
 .heading {
