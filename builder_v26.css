@@ -640,7 +640,7 @@ p {
     opacity: 0;
     overflow: hidden;
     border-radius: 0px 3px 3px 3px;
-    transform: translate(-50%, var(--var-top) * -1) scale(var(--var-scale));
+    transform: translate(-50%, var(--var-tranform-top) ) scale(var(--var-scale));
 }
 
 .gf-delete,
