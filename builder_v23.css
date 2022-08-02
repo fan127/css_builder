@@ -640,7 +640,7 @@ p {
     opacity: 0;
     overflow: hidden;
     border-radius: 0px 3px 3px 3px;
-    transform: translate(-50%, -50%) scale(.8);
+    transform: translate(-50%, -50%) scale(--var-scale);
 }
 
 .gf-delete,
@@ -807,3 +807,5 @@ a:focus {
 hr {
     opacity: 1;
 }
+
+
