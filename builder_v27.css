@@ -57,6 +57,10 @@
     outline: #42c184 solid 1px;
 }
 
+.paper .module:hover {
+    outline: #e82b71 solid 1px;
+}
+
 @media only screen and (min-width: 1400px) {
     .paper .container {
         max-width: 100%;
