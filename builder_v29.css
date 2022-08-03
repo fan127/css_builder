@@ -813,4 +813,8 @@ hr {
     opacity: 1;
 }
 
+.sg-wrap .module .sg-item-content {
+    min-height: 50px;
+}
+
 
