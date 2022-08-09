@@ -954,3 +954,17 @@ option {
     overflow: hidden;
 }
 
+
+.sg_dropdown, .sg_image, .sg_product-desc, .sg_product-image, .sg_product-price, .sg_product-quantity, .sg_product-title, .sg_textarea, .sg_textfield {
+    max-width: 100%!important;
+    margin-left: 0!important;
+    margin-right: 0!important;
+    display: inline-block!important;
+}
+
+.sg_dropdown, .sg_icon, .sg_image, .sg_product-desc, .sg_product-image, .sg_product-price, .sg_product-quantity, .sg_product-quantity-wrapper, .sg_product-title, .sg_textarea, .sg_textfield {
+    transition: all 0s ease-in-out;
+    max-width: 100%;
+    display: inline-block!important;
+}
+
