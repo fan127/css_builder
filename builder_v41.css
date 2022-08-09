@@ -730,6 +730,23 @@ h6 a,
     width: 100%;
 }
 
+.sg-wrap .sg-module.sg-module-center {
+    display: block !important;
+    text-align: center;
+    width: 100%;
+}
+
+.sg-wrap .sg-module.sg-module-left {
+    display: block !important;
+    text-align: left;
+    width: 100%;
+}
+
+.sg-wrap .sg-module.sg-module-right {
+    display: block !important;
+    text-align: right;
+    width: 100%;
+}
 
 
 @media (max-width: 767px) {
