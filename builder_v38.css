@@ -888,6 +888,18 @@ body #prevew_builder .sg_row {
     width: 100%;
 }
 
+.sg_col-xs-6 {
+    width: 50%;
+}
+
+.sg_col-xs-4 {
+    width: 33.33%;
+}
+
+.sg_col-xs-3 {
+    width: 25%;
+}
+
 .sg_row>.sg_column {
     margin: 0;
 }
