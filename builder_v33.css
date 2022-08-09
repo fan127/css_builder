@@ -645,7 +645,7 @@ p {
     opacity: 0;
     overflow: hidden;
     border-radius: 0px 3px 3px 3px;
-    transform: translate(-50%, var(--var-tranform-top) ) scale(var(--var-scale));
+    transform: translate(-50%, var(--var-tranform-top)) scale(var(--var-scale));
 }
 
 .gf-delete,
@@ -767,6 +767,9 @@ h6 a,
         text-align: left;
         width: 100%;
     }
+    .sg_column {
+        display: block;
+    }
 }
 
 @media (max-width: 991px) and (min-width: 768px) {}
@@ -840,4 +843,75 @@ hr {
 a {
     color: #3d4246;
     text-decoration: none;
+}
+
+.sg_module-left {
+    text-align: left;
+}
+
+.sg_row {
+    margin-left: -16px;
+    margin-right: -16px;
+}
+
+.sg_column,
+.sg_row {
+    position: relative;
+    z-index: 1;
+}
+
+.sg_row.sg_row-no-padding {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+body #prevew_builder .sg_row {
+    padding-top: 30px;
+    max-width: 1200px;
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+
+
+.sg_col-lg-1, .sg_col-lg-2, .sg_col-lg-3, .sg_col-lg-4, .sg_col-lg-5, .sg_col-lg-6, .sg_col-lg-7, .sg_col-lg-8, .sg_col-lg-9, .sg_col-lg-10, .sg_col-lg-11, .sg_col-lg-12, .sg_col-md-1, .sg_col-md-2, .sg_col-md-3, .sg_col-md-4, .sg_col-md-5, .sg_col-md-6, .sg_col-md-7, .sg_col-md-8, .sg_col-md-9, .sg_col-md-10, .sg_col-md-11, .sg_col-md-12, .sg_col-sm-1, .sg_col-sm-2, .sg_col-sm-3, .sg_col-sm-4, .sg_col-sm-5, .sg_col-sm-6, .sg_col-sm-7, .sg_col-sm-8, .sg_col-sm-9, .sg_col-sm-10, .sg_col-sm-11, .sg_col-sm-12, .sg_col-xs-1, .sg_col-xs-2, .sg_col-xs-3, .sg_col-xs-4, .sg_col-xs-5, .sg_col-xs-6, .sg_col-xs-7, .sg_col-xs-8, .sg_col-xs-9, .sg_col-xs-10, .sg_col-xs-11, .sg_col-xs-12 {
+    position: relative;
+    min-height: 1px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.sg_col-xs-1, .sg_col-xs-2, .sg_col-xs-3, .sg_col-xs-4, .sg_col-xs-5, .sg_col-xs-6, .sg_col-xs-7, .sg_col-xs-8, .sg_col-xs-9, .sg_col-xs-10, .sg_col-xs-11, .sg_col-xs-12 {
+    float: left;
+}
+
+.sg_col-xs-12 {
+    width: 100%;
+}
+
+.sg_row>.sg_column {
+    margin: 0;
+}
+
+.sg_row-no-padding>.sg_column {
+    padding-left: 0!important;
+    padding-right: 0!important;
+}
+
+select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-position: right center;
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    line-height: 1.2;
+    text-indent: 0.01px;
+    text-overflow: "";
+    cursor: pointer;
+    padding: 8px 28px 8px 15px;
+}
+
+option {
+    color: #3d4246;
+    background-color: #fff;
 }
