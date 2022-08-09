@@ -898,6 +898,15 @@ body #prevew_builder .sg_row {
 }
 
 select {
+    border: 1px solid #e8e9eb;
+    background-color: #fff;
+    color: #000;
+    max-width: 100%;
+    line-height: 1.2;
+    border-radius: 2px;
+}
+
+select {
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
@@ -915,3 +924,5 @@ option {
     color: #3d4246;
     background-color: #fff;
 }
+
+
