@@ -950,6 +950,10 @@ option {
     display: flex!important;
 }
 
+.sg_module-center .sg_align-module {
+    justify-content: center;
+}
+
 .sg_variants-wrapper{
     overflow: hidden;
 }
@@ -967,4 +971,6 @@ option {
     max-width: 100%;
     display: inline-block!important;
 }
+
+
 
