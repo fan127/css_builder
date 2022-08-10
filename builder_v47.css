@@ -1059,39 +1059,36 @@ option {
 }
 
 
-.multi-item-carousel .carousel-inner>.carousel-item {
-    transition: 500ms ease-in-out left;
-}
-
-.multi-item-carousel .carousel-inner .active.left {
-    left: -33%;
-}
-
-.multi-item-carousel .carousel-inner .active.right {
-    left: 33%;
-}
-
-
-.multi-item-carousel .carousel-inner .next {
-    left: 33%;
-}
-
-.multi-item-carousel .carousel-inner .prev {
-    left: -33%;
-}
-
-@media all and (transform-3d),
-(-webkit-transform-3d) {
-    .multi-item-carousel .carousel-inner>.carousel-item {
-        transition: 500ms ease-in-out left;
-        transition: 500ms ease-in-out all;
-        backface-visibility: visible;
-        transform: none !important;
+@media (max-width: 767px) {
+    .carousel-inner .carousel-item > div {
+        display: none;
+    }
+    .carousel-inner .carousel-item > div:first-child {
+        display: block;
     }
 }
 
+.carousel-inner .carousel-item.active,
+.carousel-inner .carousel-item-next,
+.carousel-inner .carousel-item-prev {
+    display: flex;
+}
 
-.multi-item-carousel .carouse-control.left,
-.multi-item-carousel .carouse-control.right {
-    background-image: none;
+/* medium and up screens */
+@media (min-width: 768px) {
+    
+    .carousel-inner .carousel-item-end.active,
+    .carousel-inner .carousel-item-next {
+      transform: translateX(25%);
+    }
+    
+    .carousel-inner .carousel-item-start.active, 
+    .carousel-inner .carousel-item-prev {
+      transform: translateX(-25%);
+    }
+}
+
+.carousel-inner .carousel-item-end,
+.carousel-inner .carousel-item-start { 
+  transform: translateX(0);
 }
