@@ -767,6 +767,7 @@ h6 a,
         text-align: left;
         width: 100%;
     }
+
     .sg_column {
         display: block;
     }
@@ -873,14 +874,72 @@ body #prevew_builder .sg_row {
 }
 
 
-.sg_col-lg-1, .sg_col-lg-2, .sg_col-lg-3, .sg_col-lg-4, .sg_col-lg-5, .sg_col-lg-6, .sg_col-lg-7, .sg_col-lg-8, .sg_col-lg-9, .sg_col-lg-10, .sg_col-lg-11, .sg_col-lg-12, .sg_col-md-1, .sg_col-md-2, .sg_col-md-3, .sg_col-md-4, .sg_col-md-5, .sg_col-md-6, .sg_col-md-7, .sg_col-md-8, .sg_col-md-9, .sg_col-md-10, .sg_col-md-11, .sg_col-md-12, .sg_col-sm-1, .sg_col-sm-2, .sg_col-sm-3, .sg_col-sm-4, .sg_col-sm-5, .sg_col-sm-6, .sg_col-sm-7, .sg_col-sm-8, .sg_col-sm-9, .sg_col-sm-10, .sg_col-sm-11, .sg_col-sm-12, .sg_col-xs-1, .sg_col-xs-2, .sg_col-xs-3, .sg_col-xs-4, .sg_col-xs-5, .sg_col-xs-6, .sg_col-xs-7, .sg_col-xs-8, .sg_col-xs-9, .sg_col-xs-10, .sg_col-xs-11, .sg_col-xs-12 {
+.sg_col-lg-1,
+.sg_col-lg-2,
+.sg_col-lg-3,
+.sg_col-lg-4,
+.sg_col-lg-5,
+.sg_col-lg-6,
+.sg_col-lg-7,
+.sg_col-lg-8,
+.sg_col-lg-9,
+.sg_col-lg-10,
+.sg_col-lg-11,
+.sg_col-lg-12,
+.sg_col-md-1,
+.sg_col-md-2,
+.sg_col-md-3,
+.sg_col-md-4,
+.sg_col-md-5,
+.sg_col-md-6,
+.sg_col-md-7,
+.sg_col-md-8,
+.sg_col-md-9,
+.sg_col-md-10,
+.sg_col-md-11,
+.sg_col-md-12,
+.sg_col-sm-1,
+.sg_col-sm-2,
+.sg_col-sm-3,
+.sg_col-sm-4,
+.sg_col-sm-5,
+.sg_col-sm-6,
+.sg_col-sm-7,
+.sg_col-sm-8,
+.sg_col-sm-9,
+.sg_col-sm-10,
+.sg_col-sm-11,
+.sg_col-sm-12,
+.sg_col-xs-1,
+.sg_col-xs-2,
+.sg_col-xs-3,
+.sg_col-xs-4,
+.sg_col-xs-5,
+.sg_col-xs-6,
+.sg_col-xs-7,
+.sg_col-xs-8,
+.sg_col-xs-9,
+.sg_col-xs-10,
+.sg_col-xs-11,
+.sg_col-xs-12 {
     position: relative;
     min-height: 1px;
     padding-left: 15px;
     padding-right: 15px;
 }
 
-.sg_col-xs-1, .sg_col-xs-2, .sg_col-xs-3, .sg_col-xs-4, .sg_col-xs-5, .sg_col-xs-6, .sg_col-xs-7, .sg_col-xs-8, .sg_col-xs-9, .sg_col-xs-10, .sg_col-xs-11, .sg_col-xs-12 {
+.sg_col-xs-1,
+.sg_col-xs-2,
+.sg_col-xs-3,
+.sg_col-xs-4,
+.sg_col-xs-5,
+.sg_col-xs-6,
+.sg_col-xs-7,
+.sg_col-xs-8,
+.sg_col-xs-9,
+.sg_col-xs-10,
+.sg_col-xs-11,
+.sg_col-xs-12 {
     float: left;
 }
 
@@ -905,8 +964,8 @@ body #prevew_builder .sg_row {
 }
 
 .sg_row-no-padding>.sg_column {
-    padding-left: 0!important;
-    padding-right: 0!important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
 }
 
 select {
@@ -944,10 +1003,11 @@ option {
 }
 
 .sg_align-i-center {
-    align-items: center!important;
+    align-items: center !important;
 }
+
 .sg_align-module {
-    display: flex!important;
+    display: flex !important;
 }
 
 .sg-module-center .sg_align-module {
@@ -962,23 +1022,76 @@ option {
     justify-content: flex-end;
 }
 
-.sg_variants-wrapper{
+.sg_variants-wrapper {
     overflow: hidden;
 }
 
 
-.sg_dropdown, .sg_image, .sg_product-desc, .sg_product-image, .sg_product-price, .sg_product-quantity, .sg_product-title, .sg_textarea, .sg_textfield {
-    max-width: 100%!important;
-    margin-left: 0!important;
-    margin-right: 0!important;
-    display: inline-block!important;
+.sg_dropdown,
+.sg_image,
+.sg_product-desc,
+.sg_product-image,
+.sg_product-price,
+.sg_product-quantity,
+.sg_product-title,
+.sg_textarea,
+.sg_textfield {
+    max-width: 100% !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    display: inline-block !important;
 }
 
-.sg_dropdown, .sg_icon, .sg_image, .sg_product-desc, .sg_product-image, .sg_product-price, .sg_product-quantity, .sg_product-quantity-wrapper, .sg_product-title, .sg_textarea, .sg_textfield {
+.sg_dropdown,
+.sg_icon,
+.sg_image,
+.sg_product-desc,
+.sg_product-image,
+.sg_product-price,
+.sg_product-quantity,
+.sg_product-quantity-wrapper,
+.sg_product-title,
+.sg_textarea,
+.sg_textfield {
     transition: all 0s ease-in-out;
     max-width: 100%;
-    display: inline-block!important;
+    display: inline-block !important;
 }
 
 
+.multi-item-carousel .carousel-inner>.item {
+    transition: 500ms ease-in-out left;
+}
 
+.multi-item-carousel .carousel-inner .active.left {
+    left: -33%;
+}
+
+.multi-item-carousel .carousel-inner .active.right {
+    left: 33%;
+}
+
+
+.multi-item-carousel .carousel-inner .next {
+    left: 33%;
+}
+
+.multi-item-carousel .carousel-inner .prev {
+    left: -33%;
+}
+
+@media all and (transform-3d),
+(-webkit-transform-3d) {
+    .multi-item-carousel .carousel-inner>.item {
+        transition: 500ms ease-in-out left;
+        transition: 500ms ease-in-out all;
+        backface-visibility: visible;
+        transform: none !important;
+    }
+}
+
+
+.multi-item-carousel .carouse-control.left,
+.multi-item-carousel .carouse-control.right {
+    background-image: none;
+}
