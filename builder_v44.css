@@ -950,8 +950,16 @@ option {
     display: flex!important;
 }
 
-.sg_module-center .sg_align-module {
+.sg-module-center .sg_align-module {
     justify-content: center;
+}
+
+.sg-module-left-xs .sg_align-module {
+    justify-content: flex-start;
+}
+
+.sg-module-right-xs .sg_align-module {
+    justify-content: flex-end;
 }
 
 .sg_variants-wrapper{
