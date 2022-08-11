@@ -1092,3 +1092,12 @@ option {
 .carousel-inner .carousel-item-start { 
   transform: translateX(0);
 }
+
+input, textarea, select {
+    border: 1px solid #e8e9eb;
+    background-color: #fff;
+    color: #000;
+    max-width: 100%;
+    line-height: 1.2;
+    border-radius: 2px;
+}
