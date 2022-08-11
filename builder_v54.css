@@ -55,10 +55,12 @@
 
 .paper .block:hover {
     outline: #42c184 solid 1px;
+    z-index: 2;
 }
 
 .paper .module:hover {
     outline: #e82b71 solid 1px;
+    z-index: 2;
 }
 
 @media only screen and (min-width: 1400px) {
@@ -200,7 +202,7 @@
 .block {
     width: 100%;
     box-sizing: border-box;
-    z-index: 2;
+    z-index: 1;
     position: relative;
 }
 
