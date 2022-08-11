@@ -1101,3 +1101,7 @@ input, textarea, select {
     line-height: 1.2;
     border-radius: 2px;
 }
+
+input, textarea {
+    padding: 8px 15px;
+}
