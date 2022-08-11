@@ -1105,3 +1105,7 @@ input, textarea, select {
 input, textarea {
     padding: 8px 15px;
 }
+
+input {
+    outline: none;
+}
