@@ -486,6 +486,7 @@ p {
 .paper .editing {
     outline: 1px solid #fbb144 !important;
     box-shadow: 0 0 3px #fbb144;
+    z-index: 2;
 }
 
 .node-block {
@@ -1062,10 +1063,11 @@ option {
 
 
 @media (max-width: 767px) {
-    .carousel-inner .carousel-item > div {
+    .carousel-inner .carousel-item>div {
         display: none;
     }
-    .carousel-inner .carousel-item > div:first-child {
+
+    .carousel-inner .carousel-item>div:first-child {
         display: block;
     }
 }
@@ -1078,24 +1080,26 @@ option {
 
 /* medium and up screens */
 @media (min-width: 768px) {
-    
+
     .carousel-inner .carousel-item-end.active,
     .carousel-inner .carousel-item-next {
-      transform: translateX(25%);
+        transform: translateX(25%);
     }
-    
-    .carousel-inner .carousel-item-start.active, 
+
+    .carousel-inner .carousel-item-start.active,
     .carousel-inner .carousel-item-prev {
-      transform: translateX(-25%);
+        transform: translateX(-25%);
     }
 }
 
 .carousel-inner .carousel-item-end,
-.carousel-inner .carousel-item-start { 
-  transform: translateX(0);
+.carousel-inner .carousel-item-start {
+    transform: translateX(0);
 }
 
-input, textarea, select {
+input,
+textarea,
+select {
     border: 1px solid #e8e9eb;
     background-color: #fff;
     color: #000;
@@ -1104,10 +1108,28 @@ input, textarea, select {
     border-radius: 2px;
 }
 
-input, textarea {
+input,
+textarea {
     padding: 8px 15px;
 }
 
 input {
     outline: none;
 }
+
+textarea {
+    min-height: 100px;
+}
+
+.drop-element {
+    padding: 20px 0;
+    background: #E6E8EB;
+    color: #A0A0A0;
+    transition: all 0.3s ease;
+}
+
+.drop-element:hover {
+    background: #CCC;
+    transition: all 0.3s ease;
+}
+
