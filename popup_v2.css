@@ -57,3 +57,9 @@
     align-items: center;
     z-index: 9999992;
 }
+
+.sg-wrap[data-label=Popup]>.sg-module {
+    padding: 30px!important;
+    overflow-y: auto;
+    height: 100%;
+}
