@@ -72,3 +72,8 @@
 .showPopup .container-toolbar-show {
     display: block !important;
 }
+
+.showPopup.module:hover {
+    outline: #e82b71 solid 1px;
+    z-index: 2;
+}
