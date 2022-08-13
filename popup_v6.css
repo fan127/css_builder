@@ -75,7 +75,6 @@
 
 .showPopup.module:hover {
     outline: #e82b71 solid 1px;
-    z-index: 2;
 }
 
 .sg-popupOverlay {
