@@ -63,3 +63,12 @@
     overflow-y: auto;
     height: 100%;
 }
+
+
+.showPopup .container-toolbar {
+    display: none;
+}
+
+.showPopup .container-toolbar-show {
+    display: block !important;
+}
