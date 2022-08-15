@@ -158,3 +158,9 @@
     height: 100%;
 }
 
+.sg-closePopup svg {
+    width: 12px;
+    height: 12px;
+    fill: inherit;
+    float: left;
+}
