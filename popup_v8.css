@@ -97,7 +97,7 @@
     animation-timing-function: ease-out;
 }
 
-.sg--popupAnchorList {
+.sg-popupAnchorList {
     position: fixed;
     right: 0;
     top: 50%;
@@ -106,14 +106,14 @@
     z-index: 99999991;
 }
 
-.sg--popupAnchorList {
+.sg-popupAnchorList {
     display: flex;
     flex-direction: column;
     width: 40px;
     justify-content: center;
 }
 
-.sg--popupAnchor {
+.sg-popupAnchor {
     width: 40px;
     max-height: 90px;
     background: orange;
@@ -132,7 +132,7 @@
     transition: box-shadow .2s,transform .2s,background .2s ease-in-out;
 }
 
-.sg--popupAnchorList .sg--popupAnchor {
+.sg-popupAnchorList .sg-popupAnchor {
     flex-grow: 1;
     flex-shrink: 3;
     overflow-x: hidden;
@@ -140,12 +140,12 @@
 }
 
 
-.sg--popupAnchorList .sg--popupAnchor:hover, .sg--popupAnchorList .sg--popupAnchor:not(.sg--popupOff) {
+.sg-popupAnchorList .sg-popupAnchor:hover, .sg-popupAnchorList .sg-popupAnchor:not(.sg-popupOff) {
     flex-shrink: 1;
     opacity: 1;
 }
 
-.sg--popupAnchorList .sg--popupAnchor span {
+.sg-popupAnchorList .sg-popupAnchor span {
     display: inline-block;
     height: 100%;
 }
