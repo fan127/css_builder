@@ -132,6 +132,14 @@
     transition: box-shadow .2s,transform .2s,background .2s ease-in-out;
 }
 
+.sg-popupAnchor.sg-popupOff {
+    opacity: .6;
+}
+
+.sg-popupAnchor:hover {
+    opacity: 1;
+}
+
 .sg-popupAnchorList .sg-popupAnchor {
     flex-grow: 1;
     flex-shrink: 3;
