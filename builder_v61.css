@@ -1191,6 +1191,14 @@ body #prevew_builder .sg_row,
     padding-right: 0!important;
 }
 
+.sg-product-list .module{
+    outline: none !important;
+}
+
+.sg-product-list .module .container-toolbar{
+    display: none !important;
+}
+
 
 
 
