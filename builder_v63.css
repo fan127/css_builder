@@ -955,6 +955,10 @@ body #prevew_builder .sg_row {
     width: 25%;
 }
 
+.sg_col-xs-2 {
+    width: 16.66667%;
+}
+
 .sg_row>.sg_column {
     margin: 0;
 }
