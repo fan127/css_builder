@@ -633,7 +633,7 @@ p {
     display: none;
 }
 
-.gf_equal-height>* {
+.sg_equal-height>* {
     visibility: visible;
 }
 
@@ -657,7 +657,7 @@ p {
     z-index: 11;
 }
 
-.gf_equal-height {
+.sg_equal-height {
     visibility: hidden;
 }
 
@@ -1132,4 +1132,76 @@ textarea {
     background: #CCC;
     transition: all 0.3s ease;
 }
+
+
+.sg_row {
+    margin-left: -16px;
+    margin-right: -16px;
+}
+
+.sg_row-no-width {
+    max-width: 100%!important;
+}
+
+.element-wrap, .sg_column, .sg_row, .module-wrap {
+    position: relative;
+    z-index: 1;
+}
+
+.sg_row.sg_row-no-padding {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+
+body #prevew_builder .sg_row,
+ body .sg-wrap[data-label=Popup] .sg_row {
+    padding-top: 30px;
+    max-width: 1200px;
+    margin-left: auto!important;
+    margin-right: auto!important;
+}
+
+
+.sg_col-lg-1, .sg_col-lg-2, .sg_col-lg-3, .sg_col-lg-4, .sg_col-lg-5, .sg_col-lg-6, .sg_col-lg-7, .sg_col-lg-8, .sg_col-lg-9, .sg_col-lg-10, .sg_col-lg-11, .sg_col-lg-12, .sg_col-md-1, .sg_col-md-2, .sg_col-md-3, .sg_col-md-4, .sg_col-md-5, .sg_col-md-6, .sg_col-md-7, .sg_col-md-8, .sg_col-md-9, .sg_col-md-10, .sg_col-md-11, .sg_col-md-12, .sg_col-sm-1, .sg_col-sm-2, .sg_col-sm-3, .sg_col-sm-4, .sg_col-sm-5, .sg_col-sm-6, .sg_col-sm-7, .sg_col-sm-8, .sg_col-sm-9, .sg_col-sm-10, .sg_col-sm-11, .sg_col-sm-12, .sg_col-xs-1, .sg_col-xs-2, .sg_col-xs-3, .sg_col-xs-4, .sg_col-xs-5, .sg_col-xs-6, .sg_col-xs-7, .sg_col-xs-8, .sg_col-xs-9, .sg_col-xs-10, .sg_col-xs-11, .sg_col-xs-12 {
+    position: relative;
+    min-height: 1px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.sg_col-xs-1, .sg_col-xs-2, .sg_col-xs-3, .sg_col-xs-4, .sg_col-xs-5, .sg_col-xs-6, .sg_col-xs-7, .sg_col-xs-8, .sg_col-xs-9, .sg_col-xs-10, .sg_col-xs-11, .sg_col-xs-12 {
+    float: left;
+}
+
+.sg_col-xs-6 {
+    width: 50%;
+}
+
+@media (max-width: 768px){
+    .sg_column {
+        display: block;
+    }
+}
+
+.element-wrap, .sg_column, .sg_row, .sg-wrap {
+    position: relative;
+    /* z-index: 1; */
+}
+
+.sg_row>.sg_column {
+    margin: 0;
+}
+
+.sg_row-no-padding>.sg_column {
+    padding-left: 0!important;
+    padding-right: 0!important;
+}
+
+
+
+
+
+
+
 
