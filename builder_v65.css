@@ -1206,6 +1206,15 @@ body #prevew_builder .sg_row,
 }
 
 
+.main .paper .block:hover {
+    outline: none !important;
+}
+
+.main .paper .module:hover {
+    outline: none !important;
+}
+
+
 
 
 
