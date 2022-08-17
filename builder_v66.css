@@ -1214,6 +1214,10 @@ body #prevew_builder .sg_row,
     outline: none !important;
 }
 
+.main .container:hover {
+    outline: none !important;
+}
+
 
 
 
