@@ -1222,6 +1222,10 @@ body #prevew_builder .sg_row,
     outline: none !important;
 }
 
+.sg_row:after, .sg_row:before {
+    content: " ";
+    display: table;
+}
 
 
 
