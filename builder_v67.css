@@ -188,6 +188,10 @@
     display: none;
 }
 
+.container-toolbar {
+    display: none;
+}
+
 .container-toolbar-show {
     display: block !important;
 }
