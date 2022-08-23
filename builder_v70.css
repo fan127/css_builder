@@ -220,6 +220,7 @@
     right: 0;
     background: greenyellow;
     z-index: 10;
+    height: 50px !important;
 }
 
 .container .container-toolbar {
