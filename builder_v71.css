@@ -1211,15 +1211,15 @@ body #prevew_builder .sg_row,
 }
 
 
-.main .paper .block:hover {
+.production .paper .block:hover {
     outline: none !important;
 }
 
-.main .paper .module:hover {
+.production .paper .module:hover {
     outline: none !important;
 }
 
-.main .container:hover {
+.production .container:hover {
     outline: none !important;
 }
 
