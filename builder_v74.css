@@ -469,19 +469,6 @@ p {
     position: relative;
 }
 
-.indicator {
-    position: fixed;
-    background-color: rgb(15, 177, 88);
-    transition: all 0.3s;
-    z-index: 1000;
-
-
-}
-
-.indicator.forbidden {
-    background-color: rgb(255, 24, 93);
-}
-
 
 .mp-toolbar-container.gf-r-tool {
     position: absolute;
