@@ -69,28 +69,6 @@
     }
 }
 
-.header-sg {
-    height: 60px;
-    background: #202124;
-    display: flex;
-    align-items: center;
-    padding: 0px 10px;
-}
-
-.logo-container {
-    width: 285px;
-    display: flex;
-    align-items: center;
-    color: #FFF;
-}
-
-.header-container {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-grow: 1;
-    height: 100%;
-}
 
 .button {
     padding: 10px 25px;
