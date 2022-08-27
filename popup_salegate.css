@@ -77,6 +77,10 @@
     outline: #e82b71 solid 1px;
 }
 
+.production .showPopup.module:hover {
+    outline: none;
+}
+
 .sg-popupOverlay {
     position: fixed;
     left: 0;
@@ -156,6 +160,7 @@
 .sg-popupAnchorList .sg-popupAnchor span {
     display: inline-block;
     height: 100%;
+    user-select: none;
 }
 
 .sg-closePopup svg {
