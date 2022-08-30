@@ -1190,6 +1190,14 @@ body #prevew_builder .sg_row,
     display: none !important;
 }
 
+.sg-article-list [data-label="Article"].module{
+    outline: none !important;
+}
+
+.sg-article-list [data-label="Article"].module>.container-toolbar{
+    display: none !important;
+}
+
 
 .production .paper .block:hover {
     outline: none !important;
