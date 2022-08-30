@@ -1053,41 +1053,6 @@ body #prevew_builder .sg_row {
     }
 }
 
-.sg_col-lg-12,
-.sg_col-md-12,
-.sg_col-sm-12,
-.sg_col-xs-12 {
-    width: 100%;
-}
-
-.sg_col-lg-6,
-.sg_col-md-6,
-.sg_col-sm-6,
-.sg_col-xs-6 {
-    width: 50%;
-}
-
-.sg_col-lg-4,
-.sg_col-md-4,
-.sg_col-sm-4,
-.sg_col-xs-4 {
-    width: 33.33%;
-}
-
-.sg_col-lg-3,
-.sg_col-md-3,
-.sg_col-sm-3,
-.sg_col-xs-3 {
-    width: 25%;
-}
-
-.sg_col-lg-2,
-.sg_col-md-2,
-.sg_col-sm-2,
-.sg_col-xs-2 {
-    width: 16.66667%;
-}
-
 .sg_row>.sg_column {
     margin: 0;
 }
