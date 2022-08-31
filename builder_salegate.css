@@ -472,7 +472,7 @@ p {
 .indicator {
     position: fixed;
     /*     background-color: rgb(15, 177, 88); */
-    background-color: repeating-linear-gradient(-45deg, #f3ebb8, #f3ebb8 2px, white 2px, white 3px);
+    background: repeating-linear-gradient(-45deg, #ccc, #ccc 1px, #f3ebb8 2px, #f3ebb8 5px);
     transition: all 0.3s;
     z-index: 1000;
 
