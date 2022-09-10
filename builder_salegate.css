@@ -1402,3 +1402,12 @@ body .sg-wrap[data-label=Popup] .sg_row {
 .sg_row:after {
     clear: both;
 }
+
+#image {
+    position: absolute;
+    display: block;
+    width: 50px;
+    height: 50px;
+    background-color: red;
+    pointer-events: none;
+  }
