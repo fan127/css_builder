@@ -480,7 +480,7 @@ p {
     background: repeating-linear-gradient(-45deg, #ccc, #ccc 1px, #f3ebb8 2px, #f3ebb8 5px);
     transition: all 0.3s;
     z-index: 1000;
-
+    pointer-events: none;
 
 }
 
