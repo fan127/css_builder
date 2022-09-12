@@ -1410,6 +1410,10 @@ body .sg-wrap[data-label=Popup] .sg_row {
     font-size: 18px;
 }
 
+.sg-row{
+
+}
+
 .dragging {
     background: #b6cf58;
     z-index: 10;
@@ -1431,5 +1435,5 @@ body .sg-wrap[data-label=Popup] .sg_row {
 .dragging .breadcrumb_wrapper,
 .dragging .icon-list-wrapper,
 .dragging .sg-pricing-wrapper{
-    display: none;
+    display: none !important;
 }
