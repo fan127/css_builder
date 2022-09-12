@@ -1434,6 +1434,7 @@ body .sg-wrap[data-label=Popup] .sg_row {
 .dragging .sg-static,
 .dragging .breadcrumb_wrapper,
 .dragging .icon-list-wrapper,
-.dragging .sg-pricing-wrapper{
+.dragging .sg-pricing-wrapper,
+.dragging .count-down-wrap{
     display: none !important;
 }
