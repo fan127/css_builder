@@ -195,15 +195,7 @@
     position: relative;
 }
 
-.dragging {
-    background: #b6cf58;
-    z-index: 10;
-    height: 50px !important;
-}
 
-.dragging .sg-module, .dragging .text-editor{
-    display: none;
-}
 
 .container .container-toolbar {
     display: none;
@@ -1410,9 +1402,34 @@ body .sg-wrap[data-label=Popup] .sg_row {
     z-index: 999999;
     border-radius: 5px;
     padding: 5px;
-  }
-  .preview-drag span{
+}
+
+.preview-drag span {
     color: white;
     font-weight: bold;
     font-size: 18px;
-  }
+}
+
+.dragging {
+    background: #b6cf58;
+    z-index: 10;
+    height: 50px !important;
+    outline: none !important;
+}
+
+.dragging .sg-module,
+.dragging .text-editor,
+.dragging .bl,
+.dragging .sg-parallax,
+.dragging .sg-image,
+.dragging .sg-row,
+.dragging .sg-wrapper,
+.dragging .sg-hero-banner,
+.dragging .sg-wrapper,
+.dragging .sg-accordion-content,
+.dragging .sg-static,
+.dragging .breadcrumb_wrapper,
+.dragging .icon-list-wrapper,
+.dragging .sg-pricing-wrapper{
+    display: none;
+}
