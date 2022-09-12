@@ -196,7 +196,7 @@
 }
 
 .dragging {
-    background: greenyellow;
+    background: #b6cf58;
     z-index: 10;
     height: 50px !important;
 }
