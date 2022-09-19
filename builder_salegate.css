@@ -1322,9 +1322,6 @@ body .sg-wrap[data-label=Popup] .sg_row {
     float: left;
 }
 
-.sg_col-xs-6 {
-    width: 50%;
-}
 
 @media (max-width: 768px) {
     .sg_column {
