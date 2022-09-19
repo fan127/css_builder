@@ -1414,6 +1414,12 @@ body .sg-wrap[data-label=Popup] .sg_row {
 
 }
 
+.hidden-content{
+    visibility: hidden;
+    height: 50px;
+    overflow: hidden;
+}
+
 .dragging {
     background: #b6cf58;
     z-index: 10;
@@ -1424,7 +1430,7 @@ body .sg-wrap[data-label=Popup] .sg_row {
 .dragging .sg-module,
 .dragging .text-editor,
 .dragging .bl,
-.dragging .sg-parallax,
+.dragging.sg-parallax,
 .dragging .sg-image,
 .dragging .sg-row,
 .dragging .sg-hero-banner,
