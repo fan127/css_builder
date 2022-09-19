@@ -1417,9 +1417,26 @@ body .sg-wrap[data-label=Popup] .sg_row {
     overflow: hidden;
 }
 
+.sg_gmaps-overlay, .sg_vimeo-overlay, .sg_youtube-overlay {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    z-index: 99;
+    display: none;
+}
+
+.sg_gmaps-overlay.show, .sg_vimeo-overlay.show, .sg_youtube-overlay.show {
+    display: block !important;
+}
+
+
+
 .dragging {
     background: #b6cf58;
-    z-index: 10;
+    z-index: 100;
     height: 50px !important;
     outline: none !important;
 }
