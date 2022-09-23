@@ -1382,6 +1382,10 @@ body .sg-wrap[data-label=Popup] .sg_row {
     outline: none !important;
 }
 
+.production .editing {
+    outline: none !important;
+}
+
 .sg_row:after,
 .sg_row:before {
     content: " ";
