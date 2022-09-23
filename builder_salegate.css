@@ -1384,6 +1384,7 @@ body .sg-wrap[data-label=Popup] .sg_row {
 
 .production .editing {
     outline: none !important;
+    box-shadow:none !important;
 }
 
 .sg_row:after,
