@@ -1469,5 +1469,5 @@ body .sg-wrap[data-label=Popup] .sg_row {
 }
 
 [contenteditable="true"] {
-    outline: 0px solid transparent;
+    outline: 1px solid #fbb144 !important;
 }
