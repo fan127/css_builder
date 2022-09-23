@@ -1468,6 +1468,6 @@ body .sg-wrap[data-label=Popup] .sg_row {
     margin-bottom: 0;
 }
 
-[contenteditable="true"] {
+[contenteditable="true"]:focus {
     outline: 1px solid #fbb144 !important;
 }
