@@ -1467,3 +1467,7 @@ body .sg-wrap[data-label=Popup] .sg_row {
 .h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
     margin-bottom: 0;
 }
+
+[contenteditable="true"] {
+    outline: 0px solid transparent;
+}
