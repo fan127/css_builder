@@ -168,6 +168,12 @@
     outline: 1px solid #0060e5;
 }
 
+
+.sg-container:hover {
+    outline: 1px solid #0060e5;
+}
+
+
 .container .container-toolbar {
     display: none;
 }
@@ -1375,6 +1381,10 @@ body .sg-wrap[data-label=Popup] .sg_row {
 }
 
 .production .container:hover {
+    outline: none !important;
+}
+
+.production .sg-container:hover {
     outline: none !important;
 }
 
