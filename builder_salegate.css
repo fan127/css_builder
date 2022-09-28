@@ -807,7 +807,6 @@ a:focus {
 }
 
 .sg_separator {
-    display: inline-block;
     margin: 0;
     padding: 0;
     background: transparent;
