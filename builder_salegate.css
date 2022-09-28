@@ -1513,3 +1513,8 @@ body .sg-wrap[data-label=Popup] .sg_row {
     outline: 1px solid #fbb144 !important;
     box-shadow: 0 0 3px #fbb144;
 }
+
+
+p:last-child {
+    margin-bottom: 0;
+}
