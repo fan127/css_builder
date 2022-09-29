@@ -1516,7 +1516,3 @@ body .sg-wrap[data-label=Popup] .sg_row {
 p:last-child {
     margin-bottom: 0;
 }
-
-.sg_col_no_tools{
-    clear: left;
-}
