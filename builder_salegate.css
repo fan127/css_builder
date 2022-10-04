@@ -1516,3 +1516,48 @@ body .sg-wrap[data-label=Popup] .sg_row {
 p:last-child {
     margin-bottom: 0;
 }
+
+
+.visible-xs, .visible-sm,
+.visible-md, .visible-lg {
+    display: none!important;
+}
+
+.sg_clearfix:after {
+    clear: both;
+}
+
+.sg_clearfix:after, .sg_clearfix:before {
+    content: " ";
+    display: table;
+}
+
+
+@media (min-width: 992px) and (max-width: 1199px)
+{
+    .visible-md {
+        display: block!important;
+    }
+}
+
+@media (min-width: 1200px)
+{
+        .visible-lg {
+        display: block!important;
+    }
+}
+
+
+@media (min-width: 768px) and (max-width: 991px)
+{
+    .visible-sm {
+        display: block!important;
+    }
+}
+
+@media (max-width: 767px)
+{
+    .visible-xs {
+        display: block!important;
+    }
+}
