@@ -1565,3 +1565,11 @@ p:last-child {
 .pointer{
     cursor: pointer;
 }
+
+.icon-copy{
+    position: relative;
+}
+
+.toast-absolute{
+    position: absolute;
+}
