@@ -1561,3 +1561,7 @@ p:last-child {
         display: block!important;
     }
 }
+
+.pointer{
+    cursor: pointer;
+}
