@@ -1572,4 +1572,8 @@ p:last-child {
 
 .toast-absolute{
     position: absolute;
+    width: fit-content;
+    right: 0;
+    color: white;
+    background: #333;
 }
