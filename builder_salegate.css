@@ -1581,3 +1581,11 @@ p:last-child {
 .production .sg-hidden{
     display: none !important;
 }
+
+.sg-hidden-text{
+    display: none !important;
+}
+
+/* .production .sg-show{
+    display: none !important;
+} */
