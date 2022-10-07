@@ -1579,5 +1579,5 @@ p:last-child {
 }
 
 .production .sg-hidden{
-    display: none;
+    display: none !important;
 }
