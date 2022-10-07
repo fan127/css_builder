@@ -1586,17 +1586,7 @@ p:last-child {
     display: none !important;
 }
 
-.sg-message-success{
-    color: rgb(129, 215, 66);
-    display: block;
-    font-size: 1.6rem;
-}
 
-.sg-message-error{
-    color: rgb(249, 7, 7);
-    display: block;
-    font-size: 1.6rem;
-}
 
 /* .production .sg-show{
     display: none !important;
@@ -1647,3 +1637,11 @@ p:last-child {
     from {bottom: 30px; opacity: 1;}
     to {bottom: 0; opacity: 0;}
   }
+
+.msg-success{
+    background-color: rgb(66, 155, 2) !important;
+}
+
+.msg-error{
+    background-color: rgb(249, 7, 7) !important;
+}
