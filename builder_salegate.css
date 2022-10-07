@@ -1577,3 +1577,7 @@ p:last-child {
     color: white;
     background: #333;
 }
+
+.production .sg-hidden{
+    display: none;
+}
