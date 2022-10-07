@@ -1586,6 +1586,18 @@ p:last-child {
     display: none !important;
 }
 
+.sg-message-success{
+    color: rgb(129, 215, 66);
+    display: block;
+    font-size: 1.6rem;
+}
+
+.sg-message-error{
+    color: rgb(249, 7, 7);
+    display: block;
+    font-size: 1.6rem;
+}
+
 /* .production .sg-show{
     display: none !important;
 } */
