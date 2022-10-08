@@ -55,17 +55,17 @@
 
 .paper .block:hover {
     outline: #42c184 solid 1px;
-    z-index: 2;
+    z-index: 1;
 }
 
 .paper .module:hover {
     outline: #e82b71 solid 1px;
-    z-index: 2;
+    z-index: 1;
 }
 
 .static:hover {
     outline: #f9c302 solid 1px;
-    z-index: 2;
+    z-index: 1;
 }
 
 @media only screen and (min-width: 1400px) {
