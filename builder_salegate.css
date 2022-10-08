@@ -1648,3 +1648,7 @@ p:last-child {
 .msg-info{
     background-color: rgb(73, 132, 250) !important;
 }
+
+.sg-button:hover{
+    opacity: 1;
+}
