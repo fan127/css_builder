@@ -1717,3 +1717,7 @@ p:last-child {
         width: 100%;
     }
 }
+
+.sg-wrap .sg-module .item-content {
+    min-height: 50px;
+}
