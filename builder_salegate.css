@@ -74,6 +74,37 @@
     }
 }
 
+.block__loader {
+  width: 90%;
+  border: none;
+  outline: none;
+  position: relative;
+  box-shadow: 0 18px 40px hsla(231, 56%, 56%, .3);
+  overflow: hidden;
+  cursor: not-allowed;
+  height: 10px;
+}
+
+.block__loader::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 150%;
+  height: 100%; 
+  background: 
+  repeating-linear-gradient(-45deg, #b90c2b, #b90c2b 0.6rem, #f2395a 0.5rem, #f2395a 1.25rem);
+  animation: load 0.4s infinite linear;
+}
+
+@keyframes load {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-1.75rem);
+  }
+}
 
 .button {
     padding: 10px 25px;
