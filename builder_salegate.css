@@ -1556,9 +1556,8 @@ p:last-child {
     display: table;
 }
 
-.sg_clearfix.visible-all {
-    display: block!important;
-    clear: left;
+.sg_clearfix-first {
+    clear: both;
 }
 
 
