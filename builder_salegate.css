@@ -1456,7 +1456,7 @@ body .sg-wrap[data-label=Popup] .sg_row {
     display: table;
 }
 
-.sg_row:after {
+.sg_row:after, .sg_row:before {
     clear: both;
 }
 
@@ -1554,10 +1554,6 @@ p:last-child {
 .sg_clearfix:after, .sg_clearfix:before {
     content: " ";
     display: table;
-}
-
-.sg_clearfix-first {
-    clear: both;
 }
 
 
