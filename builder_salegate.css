@@ -1556,6 +1556,11 @@ p:last-child {
     display: table;
 }
 
+.sg_clearfix.visible-all {
+    display: block!important;
+    clear: left;
+}
+
 
 @media (min-width: 992px) and (max-width: 1199px)
 {
