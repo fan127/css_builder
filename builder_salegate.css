@@ -1456,7 +1456,7 @@ body .sg-wrap[data-label=Popup] .sg_row {
     display: table;
 }
 
-.sg_row:after, .sg_row:before {
+.sg_row:after {
     clear: both;
 }
 
@@ -1751,4 +1751,9 @@ p:last-child {
 
 .sg-wrap .sg-module .item-content {
     min-height: 50px;
+}
+
+
+.sg_row:before{
+    display: none!important;
 }
