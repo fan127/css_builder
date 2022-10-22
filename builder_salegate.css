@@ -1817,6 +1817,6 @@ p:last-child {
 .sg_row:before {
     display: none !important;
 }
-.mp-root-toolbar-container.dynamic .mp-toolbar-container.gf-r-tool {
+.mp-root-toolbar-container.dynamic >.mp-toolbar-container.gf-r-tool {
     background: rgb(153, 0, 255) !important;
 }
