@@ -1819,6 +1819,6 @@ p:last-child {
 }
 
 
-.preview.dragging .mp-root-toolbar-container{
+.preview.dragging .r-handle{
     display: none!important;
 }
