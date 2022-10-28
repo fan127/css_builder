@@ -1519,6 +1519,8 @@ body .sg-wrap[data-label=Popup] .sg_row {
     z-index: 100;
     height: 50px !important;
     outline: none !important;
+    padding: 0 !important;
+    margin: 0!important;
 }
 
 .dragging .sg-module,
@@ -1819,7 +1821,7 @@ p:last-child {
 }
 
 
-.preview.editor_dragging  .r-handle{
+.preview.editor_dragging  .is-dragging .r-handle{
     display: none !important;
 }
 
