@@ -1822,3 +1822,8 @@ p:last-child {
 .preview.editor_dragging  .r-handle{
     display: none !important;
 }
+
+
+.editor_dragging .indicator{
+    z-index: 9999999;
+}
