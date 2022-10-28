@@ -77,9 +77,38 @@
     outline: #e82b71 solid 1px;
 }
 
+.showPopup .module:hover {
+    outline: #e82b71 solid 1px;
+}
+
+.showPopup .block:hover {
+    outline: #42c184 solid 1px;
+    z-index: 1;
+}
+
+.showPopup .module.dynamic:hover {
+    outline: #9900FF solid 1px;
+    z-index: 1;
+}
+
 .production .showPopup.module:hover {
     outline: none;
 }
+
+.production .showPopup .block{
+    outline: none;
+}
+
+.production .showPopup .module{
+    outline: none;
+}
+
+.production .showPopup .module.dynamic{
+    outline: none;
+}
+
+
+
 
 .sg-popupOverlay {
     position: fixed;
