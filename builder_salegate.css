@@ -1845,6 +1845,10 @@ p:last-child {
     z-index: 99999;
 }
 
+.button-contact-vr.right-bottom{
+    right: 0;
+}
+
 
 @-webkit-keyframes phone-vr-circle-fill {
     0% {
