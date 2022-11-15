@@ -1520,7 +1520,7 @@ body .sg-wrap[data-label=Popup] .sg_row {
     height: 50px !important;
     outline: none !important;
     padding: 0 !important;
-    margin: 0!important;
+    margin: 0 !important;
 }
 
 .dragging .sg-module,
@@ -1821,12 +1821,12 @@ p:last-child {
 }
 
 
-.preview.editor_dragging  .is-dragging .r-handle{
+.preview.editor_dragging .is-dragging .r-handle {
     display: none !important;
 }
 
 
-.editor_dragging .indicator{
+.editor_dragging .indicator {
     z-index: 9999999;
 }
 
@@ -1834,11 +1834,30 @@ p:last-child {
 .button-contact-vr {
     margin: -10px;
 }
+
 .button-contact-vr {
     transform: scale(0.8);
 }
+
 .button-contact-vr {
     position: fixed;
     bottom: 0;
     z-index: 99999;
+}
+
+
+@keyframes zoom {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        /* Changed to 1.25 */
+        transform: scale(1.5);
+    }
+
+    100% {
+        /* Changed to 1.5 */
+        transform: scale(1);
+    }
 }
