@@ -1846,18 +1846,48 @@ p:last-child {
 }
 
 
-@keyframes zoom {
+@-webkit-keyframes phone-vr-circle-fill {
     0% {
-        transform: scale(1);
+        -webkit-transform: rotate(0) scale(1) skew(1deg)
+    }
+
+    10% {
+        -webkit-transform: rotate(-25deg) scale(1) skew(1deg)
+    }
+
+    20% {
+        -webkit-transform: rotate(25deg) scale(1) skew(1deg)
+    }
+
+    30% {
+        -webkit-transform: rotate(-25deg) scale(1) skew(1deg)
+    }
+
+    40% {
+        -webkit-transform: rotate(25deg) scale(1) skew(1deg)
     }
 
     50% {
-        /* Changed to 1.25 */
-        transform: scale(1.5);
+        -webkit-transform: rotate(0) scale(1) skew(1deg)
     }
 
     100% {
-        /* Changed to 1.5 */
+        -webkit-transform: rotate(0) scale(1) skew(1deg)
+    }
+}
+
+@-webkit-keyframes zoom {
+    0% {
+        transform: scale(.9)
+    }
+
+    70% {
         transform: scale(1);
+        box-shadow: 0 0 0 15px transparent
+    }
+
+    100% {
+        transform: scale(.9);
+        box-shadow: 0 0 0 0 transparent
     }
 }
