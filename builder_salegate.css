@@ -1831,13 +1831,13 @@ p:last-child {
 }
 
 
-#button-contact-vr {
+.button-contact-vr {
     margin: -10px;
 }
-#button-contact-vr {
+.button-contact-vr {
     transform: scale(0.8);
 }
-#button-contact-vr {
+.button-contact-vr {
     position: fixed;
     bottom: 0;
     z-index: 99999;
