@@ -1849,6 +1849,17 @@ p:last-child {
     right: 0;
 }
 
+.button-contact-vr.right-top{
+    bottom: unset;
+    top: 0;
+    right: 0;
+}
+
+.button-contact-vr.left-top{
+    top: 0;
+    bottom: unset;
+}
+
 
 @-webkit-keyframes phone-vr-circle-fill {
     0% {
