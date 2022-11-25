@@ -1284,6 +1284,14 @@ textarea {
     min-height: 100px;
 }
 
+.element-background-overlay {
+    height: 100%;
+    width: 100%;
+    top: 0px;
+    left: 0px;
+    position: absolute;
+}
+
 .drop-element {
     padding: 20px 0;
     background: #E6E8EB;
