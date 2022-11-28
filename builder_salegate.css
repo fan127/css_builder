@@ -1284,6 +1284,15 @@ textarea {
     min-height: 100px;
 }
 
+.element-background-overlay {
+    height: 100%;
+    width: 100%;
+    top: 0px;
+    left: 0px;
+    position: absolute;
+    z-index: 10;
+}
+
 .drop-element {
     padding: 20px 0;
     background: #E6E8EB;
@@ -1294,6 +1303,24 @@ textarea {
 .drop-element:hover {
     background: #CCC;
     transition: all 0.3s ease;
+}
+
+.drop-element-container {
+    background-color: #FFF;
+    border: 1px dashed #ccc;
+    position: relative;
+    height: 50px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.drop-element-container span {
+    position: absolute;
+    font-size: 13px;
+    top: 50%;
+    left: 50%;
+    color: #a0a0a0;
+    transform: translate(-50%, -50%);
 }
 
 
