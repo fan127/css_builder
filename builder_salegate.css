@@ -1290,6 +1290,7 @@ textarea {
     top: 0px;
     left: 0px;
     position: absolute;
+    z-index: 10;
 }
 
 .drop-element {
