@@ -13,7 +13,7 @@
             console.log(t,'t');
             var t, pr = section.closest('[data-label="Product"]'), pr = (pr && pr.length && pr.attr("id") && (pid = pr.attr("id")),
             section.closest('[data-label="Product"]')), pr = (0 < pr.length && ("default" != pr.attr("data-status") && "dynamic" != pr.attr("data-status") || (pr = context.getUrlParameter("variant"),
-            t = "" != context.getUrlParameter("variant") ? pr : 0)));
+            t = "" != context.getUrlParameter("variant") ? pr : 0)),1231231);
             console.log(section, 'section');
             console.log(this.settings, 'setting');
             console.log(pr, 'pr');
