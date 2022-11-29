@@ -23,4 +23,4 @@
             m(this).data("minv1product", t))
         })
     }
-}(minQuery || jQuery));
+}(jQuery));
