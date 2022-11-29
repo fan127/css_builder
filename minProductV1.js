@@ -16,7 +16,7 @@
             t = "" != context.getUrlParameter("variant") ? pr : 0)));
             console.log(section, 'section');
             console.log(this.settings, 'setting');
-            console.log(t, 't2');
+            console.log(pr, 'pr');
             return {
 
             }
