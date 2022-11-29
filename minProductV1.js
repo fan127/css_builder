@@ -16,6 +16,7 @@
             t = "" != context.getUrlParameter("variant") ? pr : 0)));
             console.log(section, 'section');
             console.log(this.settings, 'setting');
+            console.log(t, 't2');
             return {
 
             }
@@ -43,7 +44,12 @@
                 })
             }),
             a
-        }
+        },
+        this.getUrlParameter = function(t) {
+            t = t.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+            t = new RegExp("[\\?&]" + t + "=([^&#]*)").exec(location.search);
+            return null === t ? "" : decodeURIComponent(t[1].replace(/\+/g, " "))
+        };
         this.init();
     }
     m.fn.minV1Product = function (e) {
