@@ -1306,6 +1306,7 @@ textarea {
 }
 
 .drop-element-container {
+    width: 100%;
     background-color: #FFF;
     border: 1px dashed #ccc;
     position: relative;
