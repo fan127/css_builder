@@ -11,37 +11,127 @@ function refreshRechargeOptions(t, e, a) {
             console.log(t)
         }
 };
-(Shopify = "undefined" == typeof Shopify ? {} : Shopify).formatMoney || (Shopify.formatMoney = function (t, e) {
-    var a = ""
-        , n = /\{\{\s*(\w+)\s*\}\}/
-        , e = e || this.money_format;
-    function i(t, e) {
-        return void 0 === t ? e : t
+(function(u) {
+    u.mpZoon = function (t, e) {
+        var i, r, o, d, c, a = {
+            target: void 0,
+            imageUrl: void 0,
+            imageZoomUrl: void 0,
+            magnify: 1
+        }, s = (this.settings = {},
+            u(t)), l = this;
+        this.init = function () {
+            return this.settings = u.extend({}, a, e),
+                s.css({
+                    position: "relative",
+                    overflow: "hidden"
+                }),
+                i = null != l.settings.target ? l.settings.target : s,
+                l.initZoom(),
+                !1
+        }
+            ,
+            this.destroy = function () {
+                return s.off(".zoom"),
+                    i.find(".zoomImg").remove(),
+                    !1
+            }
+            ,
+            this.initZoom = function (t, e) {
+                l.destroy(),
+                    r = document.createElement("img"),
+                    o = u(r);
+                var a = s.find("img[data-zoom]");
+                return null != t && a.attr("src", t),
+                    null != e ? a.attr("data-zoom", e) : e = a.attr("data-zoom"),
+                    null != e && (r.onload = function () {
+                        d = i.outerWidth(),
+                            c = i.outerHeight();
+                        var t, e, a = r.width, n = r.height, a = (t = a < d && 1 == l.settings.magnify ? d / a : l.settings.magnify,
+                            o.addClass("zoomImg").css({
+                                position: "absolute",
+                                top: 0,
+                                left: 0,
+                                opacity: 0,
+                                width: a * t,
+                                height: n * t,
+                                border: "none",
+                                maxWidth: "none",
+                                maxHeight: "none"
+                            }).appendTo(i),
+                            u(".gryffeditor").hasClass("editing") ? "dev" : "production");
+                        a && "production" == a && 0 < (n = i.find("a[href]")).length && ((e = n.attr("href")) && "" != e && s.off("click.openLink").on("click.openLink", function (t) {
+                            window.location.href = e
+                        })),
+                            s.on("mouseover.zoom", l.startZoom).on("mouseleave.zoom", l.stopZoom).on("mousemove.zoom", l.moveZoom)
+                    }
+                        ,
+                        r.src = e),
+                    !1
+            }
+            ,
+            this.moveZoom = function (t) {
+                var e = t.pageX - i.offset().left
+                    , t = t.pageY - i.offset().top
+                    , a = (r.width - d) / d
+                    , n = (r.height - c) / c;
+                o.css({
+                    left: e * -a + "px",
+                    top: t * -n + "px"
+                })
+            }
+            ,
+            this.startZoom = function (t) {
+                d != i.outerWidth() && l.initZoom(),
+                    l.moveZoom(t),
+                    o.stop().fadeTo(300, 1)
+            }
+            ,
+            this.stopZoom = function (t) {
+                o.stop().fadeTo(300, 0)
+            }
+            ,
+            this.init()
     }
-    function r(t, e, a, n) {
-        return e = i(e, 2),
-            a = i(a, ","),
-            n = i(n, "."),
-            isNaN(t) || null == t ? 0 : (e = (t = (t / 100).toFixed(e)).split("."))[0].replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1" + a) + (e[1] ? n + e[1] : "")
-    }
-    switch ("string" == typeof t && (t = t.replace(".", "")),
-    e.match(n)[1]) {
-        case "amount":
-            a = r(t, 2);
-            break;
-        case "amount_no_decimals":
-            a = r(t, 0);
-            break;
-        case "amount_with_comma_separator":
-            a = r(t, 2, ".", ",");
-            break;
-        case "amount_no_decimals_with_comma_separator":
-            a = r(t, 0, ".", ",")
-    }
-    return e.replace(n, a)
-}
-),
-    (function (m) {
+        ,
+        u.fn.mpZoon = function (e) {
+            return this.each(function () {
+                var t;
+                null == u(this).data("mpzoom") && (t = new u.mpZoon(this, e),
+                    u(this).data("mpzoom", t))
+            })
+        }
+} (window.GemQuery || jQuery)),
+    (Shopify = "undefined" == typeof Shopify ? {} : Shopify).formatMoney || (Shopify.formatMoney = function (t, e) {
+        var a = ""
+            , n = /\{\{\s*(\w+)\s*\}\}/
+            , e = e || this.money_format;
+        function i(t, e) {
+            return void 0 === t ? e : t
+        }
+        function r(t, e, a, n) {
+            return e = i(e, 2),
+                a = i(a, ","),
+                n = i(n, "."),
+                isNaN(t) || null == t ? 0 : (e = (t = (t / 100).toFixed(e)).split("."))[0].replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1" + a) + (e[1] ? n + e[1] : "")
+        }
+        switch ("string" == typeof t && (t = t.replace(".", "")),
+        e.match(n)[1]) {
+            case "amount":
+                a = r(t, 2);
+                break;
+            case "amount_no_decimals":
+                a = r(t, 0);
+                break;
+            case "amount_with_comma_separator":
+                a = r(t, 2, ".", ",");
+                break;
+            case "amount_no_decimals_with_comma_separator":
+                a = r(t, 0, ".", ",")
+        }
+        return e.replace(n, a)
+    }),
+    function (m) {
         m.minV1Product = function (c, q) {
             var n = {
                 click2cart: "0"
@@ -87,15 +177,15 @@ function refreshRechargeOptions(t, e, a) {
                 }
                 ,
                 this.subscribeMediaData = function () {
-                    window.MINSTORE && window.MINSTORE.subscribe("gemActiveMediaData-" + i, function (t) {
+                    window.MINSTORE && window.MINSTORE.subscribe("minActiveMediaData-" + i, function (t) {
                         var e, t = context.getVariantFromMedia(t.id);
-                        t && ((e = context.findProductModule().data("gfv3product")) ? e.setVariant(t, !1) : console.warn("couldn't find parent product module"))
+                        t && ((e = context.findProductModule().data("mpv1product")) ? e.setVariant(t, !1) : console.warn("couldn't find parent product module"))
                     })
                 }
                 ,
                 this.findProductModule = function () {
                     var t = section.closest('[data-label="Product"]').children(".module");
-                    return t = 0 == t.length ? section.closest('[data-icon="gpicon-product"]').children(".module") : t
+                    return t = 0 == t.length ? section.closest('[data-icon="mpicon-product"]').children(".module") : t
                 },
                 this.getVariant = function () {
                     return variants
@@ -180,34 +270,34 @@ function refreshRechargeOptions(t, e, a) {
                     }
                 },
                 this.triggerChangeVariant = function (t) {
-                    window.MINSTORE && window.MINSTORE.dispatch("product-" + i + "-variant", t)
+                    window.MINSTORE && window.MINSTORE.dispatch("product-" + pid + "-variant", t)
                 }
                 ,
                 this.triggerAddedToCart = function (t, e) {
-                    window.MINSTORE && (window.MINSTORE.dispatch("product-" + i + "-addtocart-success", t, e),
+                    window.MINSTORE && (window.MINSTORE.dispatch("product-" + pid + "-addtocart-success", t, e),
                         f("#" + i).trigger("addToCartSuccess.gfaction"))
                 }
                 ,
                 this.triggerErrorAddToCart = function (t, e) {
-                    window.MINSTORE && (window.MINSTORE.dispatch("product-" + i + "-addtocart-error", t, e),
+                    window.MINSTORE && (window.MINSTORE.dispatch("product-" + pid + "-addtocart-error", t, e),
                         f("#" + i).trigger("addToCartError.gfaction"))
                 }
                 ,
                 this.onChangeVariant = function () {
-                    window.MINSTORE && window.MINSTORE.subscribe("product-" + i + "-variant", function (t) {
+                    window.MINSTORE && window.MINSTORE.subscribe("product-" + pid + "-variant", function (t) {
                         context.setVariant(t)
                     })
                 }
                 ,
                 this.onChangeVariantId = function () {
-                    window.MINSTORE && window.MINSTORE.subscribe("product-" + i + "-variant-id", function (t) {
+                    window.MINSTORE && window.MINSTORE.subscribe("product-" + pid + "-variant-id", function (t) {
                         t = context.getVariantById(t);
                         context.setVariant(t)
                     })
                 }
                 ,
                 this.onChangeQuantity = function () {
-                    window.MINSTORE && window.MINSTORE.subscribe("product-" + i + "-quantity", function (t) {
+                    window.MINSTORE && window.MINSTORE.subscribe("product-" + pid + "-quantity", function (t) {
                         context.changeQuantityValue(t)
                     })
                 }
@@ -428,7 +518,7 @@ function refreshRechargeOptions(t, e, a) {
                     m(this).data("mpv1product", t))
             })
         }
-    }(window.MinQuery || jQuery)),
+    }(window.MinQuery || jQuery),
     function (v) {
         v.minV1ProductVariants = function (t, e) {
             var data = {
@@ -550,7 +640,7 @@ function refreshRechargeOptions(t, e, a) {
                 ,
                 this.findParentProduct = function () {
                     var t = section.closest('[data-label="Product"]').children(".module");
-                    return t = 0 == t.length ? section.closest('[data-icon="gpicon-product"]').children(".module") : t
+                    return t = 0 == t.length ? section.closest('[data-icon="mpicon-product"]').children(".module") : t
                 }
                 ,
                 this.init()
@@ -656,7 +746,7 @@ function refreshRechargeOptions(t, e, a) {
                 ,
                 this.findParentProduct = function () {
                     var t = section.closest('[data-label="Product"]').children(".module");
-                    return t = 0 == t.length ? section.closest('[data-icon="gpicon-product"]').children(".module") : t
+                    return t = 0 == t.length ? section.closest('[data-icon="mpicon-product"]').children(".module") : t
                 }
                 ,
                 this.init()
@@ -1045,7 +1135,7 @@ function refreshRechargeOptions(t, e, a) {
                 ),
                 this.findParentProduct = function () {
                     var t = f.closest('[data-label="Product"]').children(".module");
-                    return t = 0 == t.length ? section.closest('[data-icon="gpicon-product"]').children(".module") : t
+                    return t = 0 == t.length ? section.closest('[data-icon="mpicon-product"]').children(".module") : t
                 }
                 ,
                 this.getUpdatePrice = function (t, e, a, n) {
@@ -1151,13 +1241,13 @@ function refreshRechargeOptions(t, e, a) {
                 ,
                 this.findPImageModule = function () {
                     var t = section.closest('[data-label="(P) Image"]');
-                    return t = 0 == t.length ? section.closest('[data-icon="gpicon-product-image"]') : t
+                    return t = 0 == t.length ? section.closest('[data-icon="mpicon-product-image"]') : t
                 }
                 ,
                 this.findPpriceModule = function () {
                     var t = this.findParentProduct()
                         , e = t.find('[data-label="(P) Price"]');
-                    return e = 0 == e.length ? t.find('[data-icon="gpicon-product-price"]') : e
+                    return e = 0 == e.length ? t.find('[data-icon="mpicon-product-price"]') : e
                 }
                 ,
                 this.subscribeSettingBadgeChange = function () {
@@ -1411,12 +1501,12 @@ function refreshRechargeOptions(t, e, a) {
                 ,
                 this.findWrapProductId = function () {
                     var t = section.closest('[data-label="Product"]');
-                    return (t = 0 == t.length ? section.closest('[data-icon="gpicon-product"]') : t).attr("id") || ""
+                    return (t = 0 == t.length ? section.closest('[data-icon="mpicon-product"]') : t).attr("id") || ""
                 }
                 ,
                 this.findParentProduct = function () {
                     var t = section.closest('[data-label="Product"]').children(".module");
-                    return t = 0 == t.length ? section.closest('[data-icon="gpicon-product"]').children(".module") : t
+                    return t = 0 == t.length ? section.closest('[data-icon="mpicon-product"]').children(".module") : t
                 }
                 ,
                 this.findWrapProductTitle = function () {
@@ -1679,7 +1769,7 @@ function refreshRechargeOptions(t, e, a) {
                 ,
                 this.findParentProduct = function () {
                     var t = section.closest('[data-label="Product"]').children(".module");
-                    return t = 0 == t.length ? section.closest('[data-icon="gpicon-product"]').children(".module") : t
+                    return t = 0 == t.length ? section.closest('[data-icon="mpicon-product"]').children(".module") : t
                 }
                 ,
                 this.init()
@@ -1856,7 +1946,7 @@ function refreshRechargeOptions(t, e, a) {
                 ,
                 this.findParentProduct = function () {
                     var t = section.closest('[data-label="Product"]').children(".module");
-                    return t = 0 == t.length ? section.closest('[data-icon="gpicon-product"]').children(".module") : t
+                    return t = 0 == t.length ? section.closest('[data-icon="mpicon-product"]').children(".module") : t
                 }
                 ,
                 this.init()
