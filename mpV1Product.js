@@ -306,7 +306,8 @@ function refreshRechargeOptions(t, e, a) {
                         , a = section.closest('[data-label="Product"]');
                     if (0 < a.find(".product-json").length)
                         try {
-                            var n = section.children('.sg-module').children("form").children('[name="id"]').attr("data-productid");
+                            var n = section.find('.sg-module').find(">form").children('[name="id"]').attr("data-productid");
+                            console.log(section.html(),'section');
                             console.log(n,'n');
                             if (o = 0 < a.find("#product-json" + n).length ? f.parseJSON(a.find("#product-json" + n).html()) : f.parseJSON(a.find(".product-json").html()),
                                 0 == t) {
