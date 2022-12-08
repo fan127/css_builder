@@ -176,7 +176,7 @@ function refreshRechargeOptions(t, e, a) {
                         }
                 },
                 this.subscribeMediaData = function () {
-                    window.MINSTORE && window.MINSTORE.subscribe("minActiveMediaData-" + pr, function (t) {
+                    window.MINSTORE && window.MINSTORE.subscribe("minActiveMediaData-" + pid, function (t) {
                         var e, t = context.getVariantFromMedia(t.id);
                         t && ((e = context.findProductModule().data("mpv1product")) ? e.setVariant(t, !1) : console.warn("couldn't find parent product module"))
                     })
