@@ -331,7 +331,7 @@ function refreshRechargeOptions(t, e, a) {
                         }
                     else
                         try {
-                            n = l.attr("data-pid");
+                            n = section.attr("data-pid");
                             if (null != window.parent.jQuery("#mpFrame").contents().find(".gryffeditor").data("gryffeditor")) {
                                 var o = window.parent.jQuery("#mpFrame").contents().find(".gryffeditor").data("gryffeditor").searchProductInList(n);
                                 if (0 == t) {
