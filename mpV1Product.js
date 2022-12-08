@@ -11,7 +11,7 @@ function refreshRechargeOptions(t, e, a) {
             console.log(t)
         }
 };
-(function(u) {
+(function (u) {
     u.mpZoon = function (t, e) {
         var i, r, o, d, c, a = {
             target: void 0,
@@ -101,7 +101,7 @@ function refreshRechargeOptions(t, e, a) {
                     u(this).data("mpzoom", t))
             })
         }
-} (window.GemQuery || jQuery)),
+}(window.GemQuery || jQuery)),
     (Shopify = "undefined" == typeof Shopify ? {} : Shopify).formatMoney || (Shopify.formatMoney = function (t, e) {
         var a = ""
             , n = /\{\{\s*(\w+)\s*\}\}/
@@ -131,17 +131,17 @@ function refreshRechargeOptions(t, e, a) {
         }
         return e.replace(n, a)
     }),
-    function (m) {
-        m.minV1Product = function (c, q) {
-            var n = {
+    function (f) {
+        f.minV1Product = function (c, q) {
+            var data = {
                 click2cart: "0"
             },
                 context = this,
                 pid = '',
-                section = (this.settings = {}, m(c)),
+                section = (this.settings = {}, f(c)),
                 variants = {};
             this.init = function () {
-                this.settings = m.extend({}, n, q),
+                this.settings = f.extend({}, data, q),
                     t = null != section.attr("data-variant") && "auto" != section.attr("data-variant") ? section.attr("data-variant") : 0;
                 var t, pr = section.closest('[data-label="Product"]'), pr = (pr && pr.length && pr.attr("id") && (pid = pr.attr("id")),
                     section.closest('[data-label="Product"]')), pr = (0 < pr.length && ("default" != pr.attr("data-status") && "dynamic" != pr.attr("data-status") || (pr = context.getUrlParameter("variant"),
@@ -174,15 +174,13 @@ function refreshRechargeOptions(t, e, a) {
                         } catch (t) {
                             console.warn(t.message)
                         }
-                }
-                ,
+                },
                 this.subscribeMediaData = function () {
                     window.MINSTORE && window.MINSTORE.subscribe("minActiveMediaData-" + i, function (t) {
                         var e, t = context.getVariantFromMedia(t.id);
                         t && ((e = context.findProductModule().data("mpv1product")) ? e.setVariant(t, !1) : console.warn("couldn't find parent product module"))
                     })
-                }
-                ,
+                },
                 this.findProductModule = function () {
                     var t = section.closest('[data-label="Product"]').children(".module");
                     return t = 0 == t.length ? section.closest('[data-icon="mpicon-product"]').children(".module") : t
@@ -271,37 +269,31 @@ function refreshRechargeOptions(t, e, a) {
                 },
                 this.triggerChangeVariant = function (t) {
                     window.MINSTORE && window.MINSTORE.dispatch("product-" + pid + "-variant", t)
-                }
-                ,
+                },
                 this.triggerAddedToCart = function (t, e) {
                     window.MINSTORE && (window.MINSTORE.dispatch("product-" + pid + "-addtocart-success", t, e),
                         f("#" + i).trigger("addToCartSuccess.gfaction"))
-                }
-                ,
+                },
                 this.triggerErrorAddToCart = function (t, e) {
                     window.MINSTORE && (window.MINSTORE.dispatch("product-" + pid + "-addtocart-error", t, e),
                         f("#" + i).trigger("addToCartError.gfaction"))
-                }
-                ,
+                },
                 this.onChangeVariant = function () {
                     window.MINSTORE && window.MINSTORE.subscribe("product-" + pid + "-variant", function (t) {
                         context.setVariant(t)
                     })
-                }
-                ,
+                },
                 this.onChangeVariantId = function () {
                     window.MINSTORE && window.MINSTORE.subscribe("product-" + pid + "-variant-id", function (t) {
                         t = context.getVariantById(t);
                         context.setVariant(t)
                     })
-                }
-                ,
+                },
                 this.onChangeQuantity = function () {
                     window.MINSTORE && window.MINSTORE.subscribe("product-" + pid + "-quantity", function (t) {
                         context.changeQuantityValue(t)
                     })
-                }
-                ,
+                },
                 this.changeQuantityValue = function (t) {
                     var e = section.find('input[name="quantity"], .sg_pq_qty');
                     return e && e.length && e.each(function () {
@@ -367,7 +359,6 @@ function refreshRechargeOptions(t, e, a) {
                         }
                     return e
                 },
-
                 this.getVariantByImage = function (t) {
                     var t = t.split("?")[0].split(".")
                         , e = t.pop()
@@ -414,14 +405,12 @@ function refreshRechargeOptions(t, e, a) {
                             console.log(t.message)
                         }
                     return i
-                }
-                ,
+                },
                 this.getUrlParameter = function (t) {
                     t = t.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
                     t = new RegExp("[\\?&]" + t + "=([^&#]*)").exec(location.search);
                     return null === t ? "" : decodeURIComponent(t[1].replace(/\+/g, " "))
-                }
-                ,
+                },
                 this.updateUrlParameter = function (t, a, n) {
                     var i, e = document.createElement("a"), t = (e.href = t,
                         e.pathname), t = (t && "/" != t.substr(0, 1) && (t = "/" + t),
@@ -431,8 +420,7 @@ function refreshRechargeOptions(t, e, a) {
                     }),
                         0 < i.length && (t += "?" + i.join("&"))) : t += null !== n ? e.search + "&" + a + "=" + n : e.search : null !== n && (t += "?" + a + "=" + n),
                         t += e.hash
-                }
-                ,
+                },
                 this.addItemToCart = function (e, a) {
                     var n, t, i, r, o, d, c, s;
                     return window.MINSTORE && window.MINSTORE.checkKeyValid("bestWayAddToCart") ? (t = new FormData(section.children("form")[0]),
@@ -511,10 +499,10 @@ function refreshRechargeOptions(t, e, a) {
                 };
             this.init();
         }
-        m.fn.minV1Product = function (e) {
+        f.fn.minV1Product = function (e) {
             return this.each(function () {
                 var t;
-                null == m(this).data("mpv1product") && (t = new m.minV1Product(this, e),
+                null == m(this).data("mpv1product") && (t = new f.minV1Product(this, e),
                     m(this).data("mpv1product", t))
             })
         }
@@ -544,7 +532,7 @@ function refreshRechargeOptions(t, e, a) {
                         null != t && ("1" == t ? section.find(".sg_variants").each(function () {
                             v(this).prepend('<option class="blank-option sg_blank-option" selected="selected" value="">' + e + "</option>"),
                                 v(this).attr("required", "required")
-                        }) : m.find(".sg_variants").each(function () {
+                        }) : section.find(".sg_variants").each(function () {
                             v(this).find("option.blank-option").remove(),
                                 v(this).removeAttr("required")
                         }))
