@@ -200,8 +200,8 @@ function refreshRechargeOptions(t, e, a) {
                 this.checkPassBlankOption = function () {
                     var a = !0;
                     return section.closest('[data-label="Product"]').children(".sg-module").find('[data-label="(P) Variants"]').each(function () {
-                        m(this).find(".sg_variants").each(function () {
-                            var t = m(this).find("option:selected")
+                        f(this).find(".sg_variants").each(function () {
+                            var t = f(this).find("option:selected")
                                 , e = t.hasClass("sg_blank-option")
                                 , t = "disabled" == t.attr("disabled");
                             (e || t) && (a = !1)
@@ -229,36 +229,36 @@ function refreshRechargeOptions(t, e, a) {
                             } catch (t) { }
                         }
                         return section.find('[data-label="(P) Variants"]').each(function () {
-                            var t = m(this);
+                            var t = f(this);
                             null != t.children(".module").data("mpv1productvariants") && t.children(".module").data("mpv1productvariants").initWithVariant(e)
                         }),
                             // section.find('[data-label="(P) Swatches"]').each(function () {
-                            //     var t = m(this);
+                            //     var t = f(this);
                             //     null != t.children(".module").data("mpv1productswatches") && t.children(".module").data("mpv1productswatches").initWithVariant(e)
                             // }),
                             section.find('[data-label="(P) Quantity"]').each(function () {
-                                null != ($quantity = m(this)).children(".module").data("mpv1productquantity") && $quantity.children(".module").data("mpv1productquantity").initWithVariant(e)
+                                null != ($quantity = f(this)).children(".module").data("mpv1productquantity") && $quantity.children(".module").data("mpv1productquantity").initWithVariant(e)
                             }),
                             section.find('[data-label="(P) Price"]').each(function () {
-                                var t = m(this);
+                                var t = f(this);
                                 null != t.children(".module").data("mpv1productprice") && t.children(".module").data("mpv1productprice").initWithVariant(e)
                             }),
                             section.find('[data-label="(P) Image"]').each(function () {
-                                var t = m(this);
+                                var t = f(this);
                                 null != t.children(".module").data("mpv1productimage") && t.children(".module").data("mpv1productimage").initWithVariant(e, a)
                             }),
                             section.find('[data-label="(P) Cart Button"]').each(function () {
-                                var t = m(this).children(".module").data("mpv1productcartbutton");
+                                var t = f(this).children(".module").data("mpv1productcartbutton");
                                 null != t && t.initWithVariant(e)
                             }),
                             section.find('[data-label="(P) Image List"]').each(function () {
-                                var t = m(this);
+                                var t = f(this);
                                 setTimeout(function () {
                                     null != t.children(".module").data("mpv1productimagelist") && t.children(".module").data("mpv1productimagelist").gotoThumb(e)
                                 }, 0)
                             }),
                             // section.find('[data-label="(P) Stock Counter"]').each(function () {
-                            //     var t = m(this);
+                            //     var t = f(this);
                             //     setTimeout(function () {
                             //         null != t.children(".module").data("gfv1stockcounter") && t.children(".module").data("gfv1stockcounter").initWithVariant(e)
                             //     }, 0)
@@ -502,8 +502,8 @@ function refreshRechargeOptions(t, e, a) {
         f.fn.minV1Product = function (e) {
             return this.each(function () {
                 var t;
-                null == m(this).data("mpv1product") && (t = new f.minV1Product(this, e),
-                    m(this).data("mpv1product", t))
+                null == f(this).data("mpv1product") && (t = new f.minV1Product(this, e),
+                    f(this).data("mpv1product", t))
             })
         }
     }(window.MinQuery || jQuery),
