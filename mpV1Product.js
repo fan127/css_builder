@@ -692,7 +692,7 @@ function refreshRechargeOptions(t, e, a) {
                                 e.show(),
                                 t.off("click").on("click", function (t) {
                                     t.preventDefault();
-                                    var t = parseInt(i.val())
+                                    var t = parseInt(i.val()||1)
                                         , e = (--t < 1 && (t = 1),
                                             context.findParentProduct().not(i).find('input[name="quantity"], .sg_pq_qty'));
                                             // context.triggerChangeQuantity(t)
@@ -702,7 +702,7 @@ function refreshRechargeOptions(t, e, a) {
                                 }),
                                 e.off("click").on("click", function (t) {
                                     t.preventDefault();
-                                    var t = parseInt(i.val())
+                                    var t = parseInt(i.val()||1)
                                         , e = (t++,
                                             context.findParentProduct().not(i).find('input[name="quantity"], .sg_pq_qty'));
                                             // context.triggerChangeQuantity(t)
