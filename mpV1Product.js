@@ -146,7 +146,8 @@ function refreshRechargeOptions(t, e, a) {
                 var t, pr = section.closest('[data-label="Product"]'), pr = (pr && pr.length && pr.attr("id") && (pid = pr.attr("id")),
                     section.closest('[data-label="Product"]')), pr = (0 < pr.length && ("default" != pr.attr("data-status") && "dynamic" != pr.attr("data-status") || (pr = context.getUrlParameter("variant"),
                         t = "" != context.getUrlParameter("variant") ? pr : 0)), context.getVariantById(t));
-
+                console.log(t,"t");
+                console.log(pr,"pr");
                 return context.setVariant(pr, true),
                     context.onChangeVariant(),
                     context.onChangeVariantId(),
@@ -307,8 +308,6 @@ function refreshRechargeOptions(t, e, a) {
                     if (0 < a.find(".product-json").length)
                         try {
                             var n = section.find('.sg-module').find(">form").children('[name="id"]').attr("data-productid");
-                            console.log(section.html(),'section');
-                            console.log(n,'n');
                             if (o = 0 < a.find("#product-json" + n).length ? f.parseJSON(a.find("#product-json" + n).html()) : f.parseJSON(a.find(".product-json").html()),
                                 0 == t) {
                                 for (var e = o.variants[0], i = 1; !e.available && i < o.variants.length;)
@@ -784,7 +783,7 @@ function refreshRechargeOptions(t, e, a) {
                     , i = (window.mpBCCSupportInterval || (window.mpBCCSupportInterval = setInterval(function () {
                         n++,
                             0 < v('select.currency-switcher[name="doubly-currencies"]').length && (v('select.currency-switcher[name="doubly-currencies"]').off("change.changeCurrency").on("change.changeCurrency", function () {
-                                window.MINSTORE && window.GEMMINSTORESTORE.checkKeyValid("doublyHotfix") ? setTimeout(function () {
+                                window.MINSTORE && window.MINSTORE.checkKeyValid("doublyHotfix") ? setTimeout(function () {
                                     e.find('.sg_module[data-label="(P) Quantity"]').children(".module").data("mpv1productquantity") ? e.find('.sg_module[data-label="(P) Quantity"]').children(".module").data("mpv1productquantity").updatePrice() : g.setPriceWithQuantity(1)
                                 }, 100) : e.find('.sg_module[data-label="(P) Quantity"]').children(".module").data("mpv1productquantity") ? e.find('.sg_module[data-label="(P) Quantity"]').children(".module").data("mpv1productquantity").updatePrice() : g.setPriceWithQuantity(1)
                             }),
