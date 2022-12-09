@@ -647,8 +647,8 @@ function refreshRechargeOptions(t, e, a) {
         d.minV1ProductQuantity = function (t, a) {
             var section = d(t)
                 , data = {
-                    minusClass: "sg_product-quantity-minus",
-                    plusClass: "sg_product-quantity-plus",
+                    minusClass: "sg-product-quantity-minus",
+                    plusClass: "sg-product-quantity-plus",
                     style: "default",
                     updatePrice: "0"
                 }
@@ -695,7 +695,7 @@ function refreshRechargeOptions(t, e, a) {
                                     var t = parseInt(i.val())
                                         , e = (--t < 1 && (t = 1),
                                             context.findParentProduct().not(i).find('input[name="quantity"], .sg_pq_qty'));
-                                            context.triggerChangeQuantity(t)
+                                            // context.triggerChangeQuantity(t)
                                     return e && e.length && e.val(t),
                                         i.val(t).trigger("change"),
                                         !1
@@ -705,7 +705,7 @@ function refreshRechargeOptions(t, e, a) {
                                     var t = parseInt(i.val())
                                         , e = (t++,
                                             context.findParentProduct().not(i).find('input[name="quantity"], .sg_pq_qty'));
-                                            context.triggerChangeQuantity(t)
+                                            // context.triggerChangeQuantity(t)
                                     return e && e.length && e.val(t),
                                         i.val(t).trigger("change"),
                                         !1
