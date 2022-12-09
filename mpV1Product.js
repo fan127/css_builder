@@ -238,7 +238,7 @@ function refreshRechargeOptions(t, e, a) {
                             //     null != t.children(".module").data("mpv1productswatches") && t.children(".module").data("mpv1productswatches").initWithVariant(e)
                             // }),
                             section.find('[data-label="(P) Quantity"]').each(function () {
-                                null != ($quantity = f(this)).children(".sg-module").data("mpv1productquantity") && $quantity.children(".module").data("mpv1productquantity").initWithVariant(e)
+                                null != ($quantity = f(this)).children(".sg-module").data("mpv1productquantity") && $quantity.children(".sg-module").data("mpv1productquantity").initWithVariant(e)
                             }),
                             section.find('[data-label="(P) Price"]').each(function () {
                                 var t = f(this);
