@@ -695,6 +695,7 @@ function refreshRechargeOptions(t, e, a) {
                                     var t = parseInt(i.val())
                                         , e = (--t < 1 && (t = 1),
                                             context.findParentProduct().not(i).find('input[name="quantity"], .sg_pq_qty'));
+                                            context.triggerChangeQuantity(t)
                                     return e && e.length && e.val(t),
                                         i.val(t).trigger("change"),
                                         !1
@@ -704,6 +705,7 @@ function refreshRechargeOptions(t, e, a) {
                                     var t = parseInt(i.val())
                                         , e = (t++,
                                             context.findParentProduct().not(i).find('input[name="quantity"], .sg_pq_qty'));
+                                            context.triggerChangeQuantity(t)
                                     return e && e.length && e.val(t),
                                         i.val(t).trigger("change"),
                                         !1
