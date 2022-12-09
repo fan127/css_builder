@@ -237,24 +237,24 @@ function refreshRechargeOptions(t, e, a) {
                             //     null != t.children(".module").data("mpv1productswatches") && t.children(".module").data("mpv1productswatches").initWithVariant(e)
                             // }),
                             section.find('[data-label="(P) Quantity"]').each(function () {
-                                null != ($quantity = f(this)).children(".module").data("mpv1productquantity") && $quantity.children(".module").data("mpv1productquantity").initWithVariant(e)
+                                null != ($quantity = f(this)).children(".sg-module").data("mpv1productquantity") && $quantity.children(".module").data("mpv1productquantity").initWithVariant(e)
                             }),
                             section.find('[data-label="(P) Price"]').each(function () {
                                 var t = f(this);
-                                null != t.children(".module").data("mpv1productprice") && t.children(".module").data("mpv1productprice").initWithVariant(e)
+                                null != t.children(".sg-module").data("mpv1productprice") && t.children(".sg-module").data("mpv1productprice").initWithVariant(e)
                             }),
                             section.find('[data-label="(P) Image"]').each(function () {
                                 var t = f(this);
-                                null != t.children(".module").data("mpv1productimage") && t.children(".module").data("mpv1productimage").initWithVariant(e, a)
+                                null != t.children(".sg-module").data("mpv1productimage") && t.children(".sg-module").data("mpv1productimage").initWithVariant(e, a)
                             }),
                             section.find('[data-label="(P) Cart Button"]').each(function () {
-                                var t = f(this).children(".module").data("mpv1productcartbutton");
+                                var t = f(this).children(".sg-module").data("mpv1productcartbutton");
                                 null != t && t.initWithVariant(e)
                             }),
                             section.find('[data-label="(P) Image List"]').each(function () {
                                 var t = f(this);
                                 setTimeout(function () {
-                                    null != t.children(".module").data("mpv1productimagelist") && t.children(".module").data("mpv1productimagelist").gotoThumb(e)
+                                    null != t.children(".sg-module").data("mpv1productimagelist") && t.children(".sg-module").data("mpv1productimagelist").gotoThumb(e)
                                 }, 0)
                             }),
                             // section.find('[data-label="(P) Stock Counter"]').each(function () {
@@ -687,7 +687,7 @@ function refreshRechargeOptions(t, e, a) {
                         , e = section.find("." + e);
                     return setTimeout(function () {
                         1 == n ? context.updatePrice(i.val()) : context.updatePrice(1)
-                    }, 1e3),
+                    }, 1000),
                         "simple" == a ? (t.hide(),
                             e.hide()) : (t.show(),
                                 e.show(),
@@ -712,6 +712,7 @@ function refreshRechargeOptions(t, e, a) {
                         i.off("change keyup paste").on("change keyup paste", function () {
                             var t = d(this).val()
                                 , e = context.findParentProduct().not(i).find('input[name="quantity"], .sg_pq_qty');
+                            console.log("paste");
                             return e && e.length && e.val(t),
                                 1 == n && context.updatePrice(t),
                                 context.triggerChangeQuantity(t),
@@ -1529,7 +1530,8 @@ function refreshRechargeOptions(t, e, a) {
                 return o && o.length && o.attr("id") && (l = o.attr("id")),
                     null != f.data("mpv1product") && (o = f.data("mpv1product").getVariant(),
                         context.initWithVariant(o)),
-                    (a = 0 < section.find(".sg_add-to-cart").length ? section.find(".sg_add-to-cart") : section.find('button[type="submit"]')) && 0 < a.length && (o = "click.cart",
+                    (a = 0 < section.find(".sg_add-to-cart").length ? section.find(".sg_add-to-cart") : section.find('button[type="submit"]')) && 0 < a.length && 
+                    (o = "click.cart",
                         window.MINSTORE && window.MINSTORE.checkKeyValid("clickAddToCart") && (o = "click.cart touchend.cart"),
                         a.on(o, function () {
                             context.triggerAddToCartClick();
