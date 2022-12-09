@@ -713,7 +713,6 @@ function refreshRechargeOptions(t, e, a) {
                         i.off("change keyup paste").on("change keyup paste", function () {
                             var t = d(this).val()
                                 , e = context.findParentProduct().not(i).find('input[name="quantity"], .sg_pq_qty');
-                            console.log("paste");
                             return e && e.length && e.val(t),
                                 1 == n && context.updatePrice(t),
                                 context.triggerChangeQuantity(t),
