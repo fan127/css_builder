@@ -1386,7 +1386,7 @@ function replaceImageToSize(t, e) {
                 }
                 ,
                 this.setFirstVideo = function () {
-                    var t = l.find(".sg_first_video");
+                    var t = section.find(".sg_first_video");
                     if (t.length) {
                         for (var e = "sg_image-item-" + window._gpProductImageIndex, a = t.find("video"), n = (window._gpProductImageIndex++,
                             window.gfCurrentVideoPlayer = e,
