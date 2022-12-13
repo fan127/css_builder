@@ -237,8 +237,8 @@ function replaceImageToSize(t, e) {
                     })
                 },
                 this.findProductModule = function () {
-                    var t = section.closest('[data-label="Product"]').children(".module");
-                    return t = 0 == t.length ? section.closest('[data-icon="mpicon-product"]').children(".module") : t
+                    var t = section.closest('[data-label="Product"]').children(".sg-module");
+                    return t = 0 == t.length ? section.closest('[data-icon="mpicon-product"]').children(".sg-module") : t
                 },
                 this.getVariant = function () {
                     return variants
@@ -285,11 +285,11 @@ function replaceImageToSize(t, e) {
                         }
                         return section.find('[data-label="(P) Variants"]').each(function () {
                             var t = f(this);
-                            null != t.children(".module").data("mpv1productvariants") && t.children(".module").data("mpv1productvariants").initWithVariant(e)
+                            null != t.children(".sg-module").data("mpv1productvariants") && t.children(".sg-module").data("mpv1productvariants").initWithVariant(e)
                         }),
                             // section.find('[data-label="(P) Swatches"]').each(function () {
                             //     var t = f(this);
-                            //     null != t.children(".module").data("mpv1productswatches") && t.children(".module").data("mpv1productswatches").initWithVariant(e)
+                            //     null != t.children(".sg-module").data("mpv1productswatches") && t.children(".sg-module").data("mpv1productswatches").initWithVariant(e)
                             // }),
                             section.find('[data-label="(P) Quantity"]').each(function () {
                                 null != ($quantity = f(this)).children(".sg-module").data("mpv1productquantity") && $quantity.children(".sg-module").data("mpv1productquantity").initWithVariant(e)
@@ -315,7 +315,7 @@ function replaceImageToSize(t, e) {
                             // section.find('[data-label="(P) Stock Counter"]').each(function () {
                             //     var t = f(this);
                             //     setTimeout(function () {
-                            //         null != t.children(".module").data("gfv1stockcounter") && t.children(".module").data("gfv1stockcounter").initWithVariant(e)
+                            //         null != t.children(".sg-module").data("gfv1stockcounter") && t.children(".sg-module").data("gfv1stockcounter").initWithVariant(e)
                             //     }, 0)
                             // }),
                             n && this.triggerChangeVariant(e),
@@ -662,7 +662,7 @@ function replaceImageToSize(t, e) {
                                 h += v(this).val(),
                                     v(this).find("option:selected").hasClass("sg_blank-option") && (p = !0)
                             }),
-                            e.find('[data-label="(P) Cart Button"]').children(".module").each(function () {
+                            e.find('[data-label="(P) Cart Button"]').children(".sg-module").each(function () {
                                 var t = v(this).data("mpv1productcartbutton");
                                 h || p ? (p && null != t || 1 == i.available && null != t) && t.changeStatus(!0) : null != t && t.changeStatus(!1)
                             })),
@@ -682,8 +682,8 @@ function replaceImageToSize(t, e) {
                 }
                 ,
                 this.findParentProduct = function () {
-                    var t = section.closest('[data-label="Product"]').children(".module");
-                    return t = 0 == t.length ? section.closest('[data-icon="mpicon-product"]').children(".module") : t
+                    var t = section.closest('[data-label="Product"]').children(".sg-module");
+                    return t = 0 == t.length ? section.closest('[data-icon="mpicon-product"]').children(".sg-module") : t
                 }
                 ,
                 this.init()
@@ -786,14 +786,14 @@ function replaceImageToSize(t, e) {
                     return null == e && (e = section.find('input[name="quantity"]').val()),
                         context.findParentProduct().find('[data-label="(P) Price"]').each(function () {
                             var t = d(this);
-                            null != t.children(".module").data("mpv1productprice") && t.children(".module").data("mpv1productprice").setPriceWithQuantity(e)
+                            null != t.children(".sg-module").data("mpv1productprice") && t.children(".sg-module").data("mpv1productprice").setPriceWithQuantity(e)
                         }),
                         !1
                 }
                 ,
                 this.findParentProduct = function () {
-                    var t = section.closest('[data-label="Product"]').children(".module");
-                    return t = 0 == t.length ? section.closest('[data-icon="mpicon-product"]').children(".module") : t
+                    var t = section.closest('[data-label="Product"]').children(".sg-module");
+                    return t = 0 == t.length ? section.closest('[data-icon="mpicon-product"]').children(".sg-module") : t
                 }
                 ,
                 this.init()
@@ -825,9 +825,9 @@ function replaceImageToSize(t, e) {
                 function setDefaultPrice() {
                     v('[data-label="Product"]').each(function (t, e) {
                         e = v(e);
-                        e.find('.module-wrap[data-label="(P) Quantity"]').children(".module").data("mpv1productquantity") ?
-                            e.find('.module-wrap[data-label="(P) Quantity"]').children(".module").data("mpv1productquantity").updatePrice() :
-                            e.find('.module-wrap[data-label="(P) Price"]').children(".module").data("mpv1productprice") && e.find('.module-wrap[data-label="(P) Price"]').children(".module").data("mpv1productprice").setPriceWithQuantity(1)
+                        e.find('.module-wrap[data-label="(P) Quantity"]').children(".sg-module").data("mpv1productquantity") ?
+                            e.find('.module-wrap[data-label="(P) Quantity"]').children(".sg-module").data("mpv1productquantity").updatePrice() :
+                            e.find('.module-wrap[data-label="(P) Price"]').children(".sg-module").data("mpv1productprice") && e.find('.module-wrap[data-label="(P) Price"]').children(".sg-module").data("mpv1productprice").setPriceWithQuantity(1)
                     })
                 }
                 var e = context.findParentProduct()
@@ -841,8 +841,8 @@ function replaceImageToSize(t, e) {
                         n++,
                             0 < v('select.currency-switcher[name="doubly-currencies"]').length && (v('select.currency-switcher[name="doubly-currencies"]').off("change.changeCurrency").on("change.changeCurrency", function () {
                                 window.MINSTORE && window.MINSTORE.checkKeyValid("doublyHotfix") ? setTimeout(function () {
-                                    e.find('.sg_module[data-label="(P) Quantity"]').children(".module").data("mpv1productquantity") ? e.find('.sg_module[data-label="(P) Quantity"]').children(".module").data("mpv1productquantity").updatePrice() : g.setPriceWithQuantity(1)
-                                }, 100) : e.find('.sg_module[data-label="(P) Quantity"]').children(".module").data("mpv1productquantity") ? e.find('.sg_module[data-label="(P) Quantity"]').children(".module").data("mpv1productquantity").updatePrice() : g.setPriceWithQuantity(1)
+                                    e.find('.sg_module[data-label="(P) Quantity"]').children(".sg-module").data("mpv1productquantity") ? e.find('.sg_module[data-label="(P) Quantity"]').children(".sg-module").data("mpv1productquantity").updatePrice() : g.setPriceWithQuantity(1)
+                                }, 100) : e.find('.sg_module[data-label="(P) Quantity"]').children(".sg-module").data("mpv1productquantity") ? e.find('.sg_module[data-label="(P) Quantity"]').children(".sg-module").data("mpv1productquantity").updatePrice() : g.setPriceWithQuantity(1)
                             }),
                                 n = 10),
                             10 == n && (clearInterval(window.mpBCCSupportInterval),
@@ -852,7 +852,7 @@ function replaceImageToSize(t, e) {
                     , r = (window.mpSCASupportInterval || (window.mpSCASupportInterval = setInterval(function () {
                         i++,
                             0 < v(".sca-body-currency .cs-options").length && (v(".sca-body-currency .cs-options li").on("click.changeCurrency", function () {
-                                e.find('.sg_module[data-label="(P) Quantity"]').children(".module").data("mpv1productquantity") ? e.find('.sg_module[data-label="(P) Quantity"]').children(".module").data("mpv1productquantity").updatePrice() : g.setPriceWithQuantity(1)
+                                e.find('.sg_module[data-label="(P) Quantity"]').children(".sg-module").data("mpv1productquantity") ? e.find('.sg_module[data-label="(P) Quantity"]').children(".sg-module").data("mpv1productquantity").updatePrice() : g.setPriceWithQuantity(1)
                             }),
                                 i = 10),
                             10 == i && (clearInterval(window.mpSCASupportInterval),
@@ -903,7 +903,7 @@ function replaceImageToSize(t, e) {
                         } catch (t) { }
                         var i = e.find('.module-wrap[data-label="(P) Quantity"]').first()
                             , r = 1
-                            , i = ("1" == i.children(".module").attr("data-updateprice") && (r = parseInt(i.find('input[name="quantity"]').val())),
+                            , i = ("1" == i.children(".sg-module").attr("data-updateprice") && (r = parseInt(i.find('input[name="quantity"]').val())),
                                 e.closest(".module-wrap[data-key='product']"))
                             , o = 3;
                         if (3 < (o = i && i.length ? parseFloat(e.closest(".module-wrap[data-key='product']").data("ver")) || 3 : o)) {
@@ -1181,8 +1181,8 @@ function replaceImageToSize(t, e) {
                     }
                 ),
                 this.findParentProduct = function () {
-                    var t = f.closest('[data-label="Product"]').children(".module");
-                    return t = 0 == t.length ? section.closest('[data-icon="mpicon-product"]').children(".module") : t
+                    var t = f.closest('[data-label="Product"]').children(".sg-module");
+                    return t = 0 == t.length ? section.closest('[data-icon="mpicon-product"]').children(".sg-module") : t
                 }
                 ,
                 this.getUpdatePrice = function (t, e, a, n) {
@@ -1228,7 +1228,7 @@ function replaceImageToSize(t, e) {
                             1 === currencyConfig.multiCurrency && -1 != window.shopifyMultiCurrencies.indexOf(t) ? pb_currency_converter.multiCurrency(t, !0) : window.MINSTORE.dispatch("changeCurrency")
                         }));
                     var t = g.findParentProduct();
-                    t.find('.sg_module[data-label="(P) Quantity"]').children(".module").data("mpv1productquantity") ? t.find('.sg_module[data-label="(P) Quantity"]').children(".module").data("mpv1productquantity").updatePrice() : context.setPriceWithQuantity(1)
+                    t.find('.sg_module[data-label="(P) Quantity"]').children(".sg-module").data("mpv1productquantity") ? t.find('.sg_module[data-label="(P) Quantity"]').children(".sg-module").data("mpv1productquantity").updatePrice() : context.setPriceWithQuantity(1)
                 }
                 ,
                 this.subscribeChangeCurrency = function () {
@@ -1265,7 +1265,6 @@ function replaceImageToSize(t, e) {
                 section.append('<div class="sg_image-loading-wrap"><div class="sg_image-loading"><div></div><div></div><div></div><div></div></div></div>'),
                     s = section.find(".sg_image-loading-wrap");
                 var t = context.findParentProduct();
-                console.log(t.data("mpv1product"),'123');
                 return context.setFirstVideo(),
                     null != t.data("mpv1product") && (t = t.data("mpv1product").getVariant(),
                         context.initWithVariant(t, !0),
@@ -1553,8 +1552,8 @@ function replaceImageToSize(t, e) {
                 }
                 ,
                 this.findParentProduct = function () {
-                    var t = section.closest('[data-label="Product"]');
-                    return t = 0 == t.length ? section.closest('[data-icon="mpicon-product"]') : t
+                    var t = section.closest('[data-label="Product"]').children(".sg-module");
+                    return t = 0 == t.length ? section.closest('[data-icon="mpicon-product"]').children(".sg-module") : t
                 }
                 ,
                 this.findWrapProductTitle = function () {
@@ -1817,8 +1816,8 @@ function replaceImageToSize(t, e) {
                 }
                 ,
                 this.findParentProduct = function () {
-                    var t = section.closest('[data-label="Product"]').children(".module");
-                    return t = 0 == t.length ? section.closest('[data-icon="mpicon-product"]').children(".module") : t
+                    var t = section.closest('[data-label="Product"]').children(".sg-module");
+                    return t = 0 == t.length ? section.closest('[data-icon="mpicon-product"]').children(".sg-module") : t
                 }
                 ,
                 this.init()
@@ -1982,10 +1981,10 @@ function replaceImageToSize(t, e) {
                                     e = null != n.attr("data-image") ? n.attr("data-image") : n.attr("src"),
                                     n.attr("data-zoom")), r = n.attr("alt") || n.find("img").attr("alt") || "", o = context.findParentProduct();
                         return 0 < o.find('[data-label="(P) Image"]').length && o.find('[data-label="(P) Image"]').each(function () {
-                            null != f(this).children(".module").data("mpv1productimage") ? f(this).children(".module").data("mpv1productimage").setImage(e, i, r) : o.find("img.sg_product-image").attr("src", e).attr("data-zoom", i).attr("alt", r)
+                            null != f(this).children(".sg-module").data("mpv1productimage") ? f(this).children(".sg-module").data("mpv1productimage").setImage(e, i, r) : o.find("img.sg_product-image").attr("src", e).attr("data-zoom", i).attr("alt", r)
                         }),
                             0 < o.find('[data-label="(P) Image List"]').length && 1 == l && (767 < f(window).width() && !/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) || 1 == u) ? o.find('[data-label="(P) Image List"]').each(function () {
-                                null != f(this).children(".module").data("mpv1productimagelist") && f(this).children(".module").data("mpv1productimagelist").gotoIndex(t)
+                                null != f(this).children(".sg-module").data("mpv1productimagelist") && f(this).children(".sg-module").data("mpv1productimagelist").gotoIndex(t)
                             }) : context.gotoIndex(t),
                             context.settings.onImageClicked(e, i),
                             !1
@@ -1994,8 +1993,8 @@ function replaceImageToSize(t, e) {
                 }
                 ,
                 this.findParentProduct = function () {
-                    var t = section.closest('[data-label="Product"]').children(".module");
-                    return t = 0 == t.length ? section.closest('[data-icon="mpicon-product"]').children(".module") : t
+                    var t = section.closest('[data-label="Product"]').children(".sg-module");
+                    return t = 0 == t.length ? section.closest('[data-icon="mpicon-product"]').children(".sg-module") : t
                 }
                 ,
                 this.init()
