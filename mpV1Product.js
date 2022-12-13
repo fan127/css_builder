@@ -1940,12 +1940,12 @@ function replaceImageToSize(t, e) {
                         section.find(".sg_product-image-thumb").each(function () {
                             var t = f(this)
                                 , e = t.attr("src");
-                            (e = (e = (e = (e = (e = e.replace("_100x100", "")).replace("_240x240", "")).replace("_480x480", "")).replace("_1024x1024", "")).replace("_2048x2048", "")) == a && t.closest("a").addClass("gf_product-image-thumbactive")
+                            (e = (e = (e = (e = (e = e.replace("_100x100", "")).replace("_240x240", "")).replace("_480x480", "")).replace("_1024x1024", "")).replace("_2048x2048", "")) == a && t.closest("a").addClass("sg_product-image-thumbactive")
                         }))
                 }
                 ,
                 this.applyEvents = function () {
-                    return context.find(".sg_product-image-thumb").closest("a").off("click").on("click", function () {
+                    return section.find(".sg_product-image-thumb").closest("a").off("click").on("click", function () {
                         var t, e, a = f(this), n = (section.find(".sg_product-image-thumb").closest("a").removeClass("sg_product-image-thumbactive"),
                             "1" != s && 1 != s || a.addClass("sg_product-image-thumbactive"),
                             a.find(".sg_product-image-thumb")), a = (t = (0 < a.closest(".owl-item").length ? a.closest(".owl-item") : a).index(),
