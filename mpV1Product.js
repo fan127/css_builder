@@ -22,51 +22,51 @@ function replaceImageToSize(t, e) {
         var a = e;
         if (hasImageShopify(t)) {
             var n = ""
-              , i = t.split("?");
+                , i = t.split("?");
             i && i.length && 2 <= i.length && (n = i[1]);
             var i = i[0].split("/").pop().split(".")
-              , r = i.pop();
+                , r = i.pop();
             if (-1 !== ["jfif"].indexOf(r))
                 return t;
             for (var i = i.join("."), o = i.split("_"), d = (o && 2 <= o.length && (o = o.pop(),
-            l = new RegExp(/(\d+)x(\d+)|(\d+)x|x(\d+)/,"gm"),
-            o && l.test(o) && "" == o.replace(l, "") && ((i = i.split("_")).pop(),
-            i = i.join("_"))),
-            t.split("?")[0].split("/")), c = "", s = 0; s < d.length - 1; s++)
+                l = new RegExp(/(\d+)x(\d+)|(\d+)x|x(\d+)/, "gm"),
+                o && l.test(o) && "" == o.replace(l, "") && ((i = i.split("_")).pop(),
+                    i = i.join("_"))),
+                t.split("?")[0].split("/")), c = "", s = 0; s < d.length - 1; s++)
                 c += d[s] + "/";
             t = e ? c + i + "_" + e + "." + r : c + i + "." + r,
-            n && (t = t + "?" + n)
+                n && (t = t + "?" + n)
         }
         if (hasImageUCare(t)) {
             o = t.split("/-");
             if (o && o.length) {
                 var l = o.length
-                  , e = o[0]
-                  , i = e.replace("https://", "").replace("http://", "")
-                  , u = (/\.(gif|jpe?g|tiff|png|webp|bmp)$/i.test(i) && ((r = i.split("/")).pop(),
-                i = r.join("/")),
-                e.includes("https") ? e = "https://" + i : e.includes("http") && (e = "http://" + i),
-                o.slice(1, l));
-                u.find(function(t) {
+                    , e = o[0]
+                    , i = e.replace("https://", "").replace("http://", "")
+                    , u = (/\.(gif|jpe?g|tiff|png|webp|bmp)$/i.test(i) && ((r = i.split("/")).pop(),
+                        i = r.join("/")),
+                        e.includes("https") ? e = "https://" + i : e.includes("http") && (e = "http://" + i),
+                        o.slice(1, l));
+                u.find(function (t) {
                     t.includes("preview")
                 }) || u.unshift("/preview");
                 for (var f = 0; f < u.length; f++) {
                     var g, h = u[f];
                     "/" == u[f][0] && (h = u[f].slice(1, h.length)),
-                    (h = "/" == u[f][h.length - 1] ? u[f].slice(0, h.length - 1) : h).includes("preview") && (h = u[f],
-                    a.includes("x") ? (g = a.split("x")) && g.length && 1 == (g = g.filter(function(t) {
-                        t.trim().length
-                    })).length && (a = g[0] + "x" + g[0]) : isNaN(parseInt(a)) || (a = a + "x" + a),
-                    h = "/preview/" + a,
-                    u && 1 == u.length && "/preview" == u[0] && (h += "/"),
-                    u[f] = h)
+                        (h = "/" == u[f][h.length - 1] ? u[f].slice(0, h.length - 1) : h).includes("preview") && (h = u[f],
+                            a.includes("x") ? (g = a.split("x")) && g.length && 1 == (g = g.filter(function (t) {
+                                t.trim().length
+                            })).length && (a = g[0] + "x" + g[0]) : isNaN(parseInt(a)) || (a = a + "x" + a),
+                            h = "/preview/" + a,
+                            u && 1 == u.length && "/preview" == u[0] && (h += "/"),
+                            u[f] = h)
                 }
                 t = e + "/-" + u.join("/-")
             }
         }
     }
     return t
-  };
+};
 (function (u) {
     u.mpZoon = function (t, e) {
         var i, r, o, d, c, a = {
@@ -738,8 +738,8 @@ function replaceImageToSize(t, e) {
                         , i = section.find('input[name="quantity"], .sg_pq_qty')
                         , t = section.find("." + t)
                         , e = section.find("." + e);
-                    
-                    
+
+
                     return !i.val() && i.val(1), setTimeout(function () {
                         1 == n ? context.updatePrice(i.val()) : context.updatePrice(1)
                     }, 1000),
@@ -748,20 +748,20 @@ function replaceImageToSize(t, e) {
                                 e.show(),
                                 t.off("click").on("click", function (t) {
                                     t.preventDefault();
-                                    var t = parseInt(i.val()||1)
+                                    var t = parseInt(i.val() || 1)
                                         , e = (--t < 1 && (t = 1),
                                             context.findParentProduct().not(i).find('input[name="quantity"], .sg_pq_qty'));
-                                            // context.triggerChangeQuantity(t)
+                                    // context.triggerChangeQuantity(t)
                                     return e && e.length && e.val(t),
                                         i.val(t).trigger("change"),
                                         !1
                                 }),
                                 e.off("click").on("click", function (t) {
                                     t.preventDefault();
-                                    var t = parseInt(i.val()||1)
+                                    var t = parseInt(i.val() || 1)
                                         , e = (t++,
                                             context.findParentProduct().not(i).find('input[name="quantity"], .sg_pq_qty'));
-                                            // context.triggerChangeQuantity(t)
+                                    // context.triggerChangeQuantity(t)
                                     return e && e.length && e.val(t),
                                         i.val(t).trigger("change"),
                                         !1
@@ -841,8 +841,8 @@ function replaceImageToSize(t, e) {
                         n++,
                             0 < v('select.currency-switcher[name="doubly-currencies"]').length && (v('select.currency-switcher[name="doubly-currencies"]').off("change.changeCurrency").on("change.changeCurrency", function () {
                                 window.MINSTORE && window.MINSTORE.checkKeyValid("doublyHotfix") ? setTimeout(function () {
-                                    e.find('.sg_module[data-label="(P) Quantity"]').children(".sg-module").data("mpv1productquantity") ? e.find('.sg_module[data-label="(P) Quantity"]').children(".sg-module").data("mpv1productquantity").updatePrice() : g.setPriceWithQuantity(1)
-                                }, 100) : e.find('.sg_module[data-label="(P) Quantity"]').children(".sg-module").data("mpv1productquantity") ? e.find('.sg_module[data-label="(P) Quantity"]').children(".sg-module").data("mpv1productquantity").updatePrice() : g.setPriceWithQuantity(1)
+                                    e.find('.sg_module[data-label="(P) Quantity"]').children(".sg-module").data("mpv1productquantity") ? e.find('.sg_module[data-label="(P) Quantity"]').children(".sg-module").data("mpv1productquantity").updatePrice() : context.setPriceWithQuantity(1)
+                                }, 100) : e.find('.sg_module[data-label="(P) Quantity"]').children(".sg-module").data("mpv1productquantity") ? e.find('.sg_module[data-label="(P) Quantity"]').children(".sg-module").data("mpv1productquantity").updatePrice() : context.setPriceWithQuantity(1)
                             }),
                                 n = 10),
                             10 == n && (clearInterval(window.mpBCCSupportInterval),
@@ -852,7 +852,7 @@ function replaceImageToSize(t, e) {
                     , r = (window.mpSCASupportInterval || (window.mpSCASupportInterval = setInterval(function () {
                         i++,
                             0 < v(".sca-body-currency .cs-options").length && (v(".sca-body-currency .cs-options li").on("click.changeCurrency", function () {
-                                e.find('.sg_module[data-label="(P) Quantity"]').children(".sg-module").data("mpv1productquantity") ? e.find('.sg_module[data-label="(P) Quantity"]').children(".sg-module").data("mpv1productquantity").updatePrice() : g.setPriceWithQuantity(1)
+                                e.find('.sg_module[data-label="(P) Quantity"]').children(".sg-module").data("mpv1productquantity") ? e.find('.sg_module[data-label="(P) Quantity"]').children(".sg-module").data("mpv1productquantity").updatePrice() : context.setPriceWithQuantity(1)
                             }),
                                 i = 10),
                             10 == i && (clearInterval(window.mpSCASupportInterval),
@@ -877,14 +877,14 @@ function replaceImageToSize(t, e) {
                                 o = 10),
                             10 == o && (clearInterval(window.mpBearCCSupportInterval),
                                 window.mpBearCCSupportInterval = void 0)
-                    }, 1e3)),
+                    }, 1000)),
                         0)
                     , c = !1;
-                return window.mpDynamicCCSupportInterval || ("object" == typeof pb_currency_converter && pb_currency_converter.getConvertedPrice && (g.dynamicCurrencySetup(),
+                return window.mpDynamicCCSupportInterval || ("object" == typeof pb_currency_converter && pb_currency_converter.getConvertedPrice && (context.dynamicCurrencySetup(),
                     c = !0),
                     c || (window.mpDynamicCCSupportInterval = setInterval(function () {
                         d++,
-                            "object" == typeof pb_currency_converter && pb_currency_converter.getConvertedPrice && (g.dynamicCurrencySetup(),
+                            "object" == typeof pb_currency_converter && pb_currency_converter.getConvertedPrice && (context.dynamicCurrencySetup(),
                                 c = !0,
                                 d = 10),
                             10 == d && (clearInterval(window.mpDynamicCCSupportInterval),
@@ -896,37 +896,19 @@ function replaceImageToSize(t, e) {
                 t ? (this.initWithVariant = function (t) {
                     if (!v.isEmptyObject(t)) {
                         var e = context.findParentProduct()
-                            , a = e.find("#sg-hidden-variant" + t.id)
                             , n = "${{ amount }}";
-                        try {
-                            window.parent && window.parent.jQuery && window.parent.jQuery("#mpFrame") && window.parent.jQuery("#mpFrame").attr("data-money") && (n = window.parent.jQuery("#mpFrame").attr("data-money"))
-                        } catch (t) { }
-                        var i = e.find('.module-wrap[data-label="(P) Quantity"]').first()
+                        var i = e.find('.sg-wrap[data-label="(P) Quantity"]').first()
                             , r = 1
                             , i = ("1" == i.children(".sg-module").attr("data-updateprice") && (r = parseInt(i.find('input[name="quantity"]').val())),
-                                e.closest(".module-wrap[data-key='product']"))
+                          e.closest(".sg-wrap[data-key='product']"))
                             , o = 3;
-                        if (3 < (o = i && i.length ? parseFloat(e.closest(".module-wrap[data-key='product']").data("ver")) || 3 : o)) {
-                            try {
-                                var d = window.parent.jQuery("#mpFrame").contents().find(".prevew_builder")
-                            } catch (t) { }
-                            d && d.length ? (c = t.price,
-                                s = t.compare_at_price,
-                                n = n.replace(/{{.*}}/g, "{{amount}}"),
-                                window.parent.jQuery("#mpFrame").attr("data-money", n)) : (i = section.find(".sg_product-prices").attr("data-oldformat"),
-                                    c = context.convertNumberToPrice(t.price / 100, i),
-                                    0 < t.compare_at_price && (s = context.convertNumberToPrice(t.compare_at_price / 100, i)))
-                        } else if (null != a && 0 < a.length)
-                            var c = a.attr("data-price")
-                                , s = a.attr("data-compare-price");
-                        else {
-                            c = t.price,
-                                s = t.compare_at_price;
-                            n = n.replace(/{{.*}}/g, "{{amount}}");
-                            try {
-                                window.parent.jQuery("#mpFrame").attr("data-money", n)
-                            } catch (t) { }
-                        }
+                        var c = t.price,
+                            s = t.compare_at_price;
+                        n = n.replace(/{{.*}}/g, "{{amount}}");
+                        try {
+                            window.parent.jQuery("#mpFrame").attr("data-money", n)
+                        } catch (t) { }
+
                         e = context.getUpdatePrice(c, r, n, h);
                         section.find(h).attr("data-price", c),
                             context.setPrice(e),
@@ -951,7 +933,7 @@ function replaceImageToSize(t, e) {
                                     t = parseFloat(t),
                                     e = (e = e.match(/\d/g)).join(""),
                                     (e = parseFloat(e)) && 0 < e ? (a = (a = (a = e - t) / e * 100).toFixed(0),
-                                        n = i.find(".gf_pq-percent"),
+                                        n = i.find(".sg_pq-percent"),
                                         i.show(),
                                         n.html(a + "%")) : i.hide()
                             } catch (t) {
@@ -1034,7 +1016,7 @@ function replaceImageToSize(t, e) {
                     ,
                     this.setPriceWithQuantity = function (t) {
                         (null == t || parseFloat(t) < 1) && (t = 1);
-                        var e, a = context.findParentProduct(), n = a.attr("data-current-variant"), a = a.find("#gf-hidden-variant" + n), n = void 0;
+                        var e, a = context.findParentProduct(), n = a.attr("data-current-variant"), a = a.find("#sg-hidden-variant" + n), n = void 0;
                         try {
                             window.parent.jQuery("#mpFrame").attr("data-money") && (n = window.parent.jQuery("#mpFrame").attr("data-money"))
                         } catch (t) { }
@@ -1080,31 +1062,21 @@ function replaceImageToSize(t, e) {
                     }
                 ) : (this.initWithVariant = function (t) {
                     if (!v.isEmptyObject(t) && !v.isEmptyObject(t)) {
-                        var e = context.findParentProduct().find("#sg-hidden-variant" + t.id);
-                        if (null != e && 0 < e.length) {
-                            var a = e.attr("data-price");
+                        var n, e = void 0;
+                        try {
+                            window.parent.jQuery("#mpFrame").attr("data-money") && (e = window.parent.jQuery("#mpFrame").attr("data-money"))
+                        } catch (t) { }
+                        null != e && (a = Shopify.formatMoney(t.price, e),
                             context.setPrice(a),
-                                null != e.attr("data-compare-price") && "" != e.attr("data-compare-price") ? (n = e.attr("data-compare-price"),
-                                    section.find(p).show(),
-                                    context.setComparePrice(n)) : section.find(p).hide(),
-                                context.setPercentDiscount(a, n)
-                        } else {
-                            var n, e = void 0;
-                            try {
-                                window.parent.jQuery("#mpFrame").attr("data-money") && (e = window.parent.jQuery("#mpFrame").attr("data-money"))
-                            } catch (t) { }
-                            null != e && (a = Shopify.formatMoney(t.price, e),
-                                context.setPrice(a),
-                                (n = Shopify.formatMoney(t.compare_at_price, e)) ? (section.find(p).show(),
-                                    context.setComparePrice(n)) : f.find(p).hide(),
-                                context.setPercentDiscount(a, n))
-                        }
+                            (n = Shopify.formatMoney(t.compare_at_price, e)) ? (section.find(p).show(),
+                                context.setComparePrice(n)) : f.find(p).hide(),
+                            context.setPercentDiscount(a, n))
                     }
                     return !1
                 }
                     ,
                     this.setPercentDiscount = function (t, e) {
-                        var a, n, i = section.find(".gf_pq-discount-selector");
+                        var a, n, i = section.find(".sg_pq-discount-selector");
                         if (t == e)
                             section.find(p).hide(),
                                 i.hide();
@@ -1114,7 +1086,7 @@ function replaceImageToSize(t, e) {
                                     t = parseFloat(t),
                                     e = (e = e.match(/\d/g)).join(""),
                                     (e = parseFloat(e)) && 0 < e ? (a = (a = (a = e - t) / e * 100).toFixed(0),
-                                        n = i.find(".gf_pq-percent"),
+                                        n = i.find(".sg_pq-percent"),
                                         i.show(),
                                         n.html(a + "%")) : i.hide()
                             } catch (t) {
@@ -1196,7 +1168,7 @@ function replaceImageToSize(t, e) {
                 }
                 ,
                 this.getPriceNumber = function (t, e) {
-                    var e = section.find(".gf_product-prices").attr("data-oldformat") || e || "{{ amount }}"
+                    var e = section.find(".sg_product-prices").attr("data-oldformat") || e || "{{ amount }}"
                         , t = (t = t.replace(/\s/g, ""),
                             /(\d|,|\.|')+/g.exec(t));
                     return t && t.length && (t = t[0],
@@ -1261,7 +1233,7 @@ function replaceImageToSize(t, e) {
             this.init = function () {
                 this.settings = o.extend({}, data, e),
                     window._gpProductImageIndex || (window._gpProductImageIndex = 0),
-                    context.applyZoom();     
+                    context.applyZoom();
                 section.append('<div class="sg_image-loading-wrap"><div class="sg_image-loading"><div></div><div></div><div></div><div></div></div></div>'),
                     s = section.find(".sg_image-loading-wrap");
                 var t = context.findParentProduct();
@@ -1586,7 +1558,7 @@ function replaceImageToSize(t, e) {
                 return o && o.length && o.attr("id") && (l = o.attr("id")),
                     null != f.data("mpv1product") && (o = f.data("mpv1product").getVariant(),
                         context.initWithVariant(o)),
-                    (a = 0 < section.find(".sg_add-to-cart").length ? section.find(".sg_add-to-cart") : section.find('button[type="submit"]')) && 0 < a.length && 
+                    (a = 0 < section.find(".sg_add-to-cart").length ? section.find(".sg_add-to-cart") : section.find('button[type="submit"]')) && 0 < a.length &&
                     (o = "click.cart",
                         window.MINSTORE && window.MINSTORE.checkKeyValid("clickAddToCart") && (o = "click.cart touchend.cart"),
                         a.on(o, function () {
