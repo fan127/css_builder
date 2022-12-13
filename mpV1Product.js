@@ -738,6 +738,7 @@ function replaceImageToSize(t, e) {
                         , i = section.find('input[name="quantity"], .sg_pq_qty')
                         , t = section.find("." + t)
                         , e = section.find("." + e);
+                    i.val(1);
                     return setTimeout(function () {
                         1 == n ? context.updatePrice(i.val()) : context.updatePrice(1)
                     }, 1000),
