@@ -1153,7 +1153,7 @@ function replaceImageToSize(t, e) {
                     }
                 ),
                 this.findParentProduct = function () {
-                    var t = f.closest('[data-label="Product"]').children(".sg-module");
+                    var t = section.closest('[data-label="Product"]').children(".sg-module");
                     return t = 0 == t.length ? section.closest('[data-icon="mpicon-product"]').children(".sg-module") : t
                 }
                 ,
