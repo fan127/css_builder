@@ -1265,6 +1265,9 @@ function replaceImageToSize(t, e) {
                 section.append('<div class="sg_image-loading-wrap"><div class="sg_image-loading"><div></div><div></div><div></div><div></div></div></div>'),
                     s = section.find(".sg_image-loading-wrap");
                 var t = context.findParentProduct();
+                (t = t.data("mpv1product").getVariant(),
+                        context.initWithVariant(t, !0),
+                        context.listenVariantChange())
                 return context.setFirstVideo(),
                     null != t.data("mpv1product") && (t = t.data("mpv1product").getVariant(),
                         context.initWithVariant(t, !0),
@@ -1563,7 +1566,7 @@ function replaceImageToSize(t, e) {
                         e
                 }
                 ,
-                this.init()
+                this.init();
         }
             ,
             o.fn.minV1ProductImage = function (e) {
