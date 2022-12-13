@@ -1266,9 +1266,6 @@ function replaceImageToSize(t, e) {
                     s = section.find(".sg_image-loading-wrap");
                 var t = context.findParentProduct();
                 console.log(t.data("mpv1product"),'123');
-                (t = t.data("mpv1product").getVariant(),
-                        context.initWithVariant(t, !0),
-                        context.listenVariantChange())
                 return context.setFirstVideo(),
                     null != t.data("mpv1product") && (t = t.data("mpv1product").getVariant(),
                         context.initWithVariant(t, !0),
@@ -1556,8 +1553,8 @@ function replaceImageToSize(t, e) {
                 }
                 ,
                 this.findParentProduct = function () {
-                    var t = section.closest('[data-label="Product"]').children(".sg-module");
-                    return t = 0 == t.length ? section.closest('[data-icon="mpicon-product"]').children(".sg-module") : t
+                    var t = section.closest('[data-label="Product"]');
+                    return t = 0 == t.length ? section.closest('[data-icon="mpicon-product"]') : t
                 }
                 ,
                 this.findWrapProductTitle = function () {
