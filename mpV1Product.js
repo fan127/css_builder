@@ -902,13 +902,12 @@ function replaceImageToSize(t, e) {
                             , i = ("1" == i.children(".sg-module").attr("data-updateprice") && (r = parseInt(i.find('input[name="quantity"]').val())),
                           e.closest(".sg-wrap[data-key='product']"))
                             , o = 3;
-                        var c = t.price,
+                        var c = context.convertNumberToPrice(t.price / 100, i),
                             s = t.compare_at_price;
                         n = n.replace(/{{.*}}/g, "{{amount}}");
                         try {
                             window.parent.jQuery("#mpFrame").attr("data-money", n)
                         } catch (t) { }
-
                         e = context.getUpdatePrice(c, r, n, h);
                         section.find(h).attr("data-price", c),
                             context.setPrice(e),
