@@ -1806,7 +1806,19 @@ function replaceImageToSize(t, e) {
     function (f) {
         f.minV1ProductImageList = function (t, e) {
             var data = {
-                onImageClicked: function (t, e) { }
+                onImageClicked: function (t, e, id) { 
+                    var a = context.findParentProduct();
+                    if (0 < a.find(".product-json").length){
+                        var varians = f.parseJSON( a.find(".product-json").html()).varians
+                        for(var i = 0; i< varians.length; i++){
+                            var variant = varians[i];
+                            if(variant.featured_media.id == id){
+                                a.data('mpv1product').setVariant(variant);
+                                break;
+                            }
+                        }
+                    }
+                }
             }
                 , section = (this.settings = {},
                     f(t))
@@ -1946,6 +1958,8 @@ function replaceImageToSize(t, e) {
                 ,
                 this.applyEvents = function () {
                     return section.find(".sg_product-image-thumb").closest("a").off("click").on("click", function () {
+                        var id = f(this).find(".sg_product-image-thumb").attr("data-id");
+                        console.log(id,'id')
                         var t, e, a = f(this), n = (section.find(".sg_product-image-thumb").closest("a").removeClass("sg_product-image-thumbactive"),
                             "1" != s && 1 != s || a.addClass("sg_product-image-thumbactive"),
                             a.find(".sg_product-image-thumb")), a = (t = (0 < a.closest(".owl-item").length ? a.closest(".owl-item") : a).index(),
@@ -1958,7 +1972,7 @@ function replaceImageToSize(t, e) {
                             0 < o.find('[data-label="(P) Image List"]').length && 1 == l && (767 < f(window).width() && !/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) || 1 == u) ? o.find('[data-label="(P) Image List"]').each(function () {
                                 null != f(this).children(".sg-module").data("mpv1productimagelist") && f(this).children(".sg-module").data("mpv1productimagelist").gotoIndex(t)
                             }) : context.gotoIndex(t),
-                            context.settings.onImageClicked(e, i),
+                            context.settings.onImageClicked(e, i, id),
                             !1
                     }),
                         !1
