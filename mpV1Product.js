@@ -11,6 +11,9 @@ function refreshRechargeOptions(t, e, a) {
             console.log(t)
         }
 };
+function hasImageShopify(t) {
+    return !!t && (-1 != t.indexOf("cdn.shopify.com/s/files/") || -1 != t.indexOf("apps.shopifycdn.com/"))
+};
 function replaceImageToSize(t, e) {
     if (t && null != e && null != e) {
         var a = e;
