@@ -902,6 +902,7 @@ function replaceImageToSize(t, e) {
                             , i = ("1" == i.children(".sg-module").attr("data-updateprice") && (r = parseInt(i.find('input[name="quantity"]').val())),
                           e.closest(".sg-wrap[data-key='product']"))
                             , o = 3;
+                        i = section.find(".sg_product-prices").attr("data-oldformat");
                         var c = context.convertNumberToPrice(t.price / 100, i),
                             s = t.compare_at_price;
                         n = n.replace(/{{.*}}/g, "{{amount}}");
