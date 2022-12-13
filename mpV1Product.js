@@ -11,6 +11,56 @@ function refreshRechargeOptions(t, e, a) {
             console.log(t)
         }
 };
+function replaceImageToSize(t, e) {
+    if (t && null != e && null != e) {
+        var a = e;
+        if (hasImageShopify(t)) {
+            var n = ""
+              , i = t.split("?");
+            i && i.length && 2 <= i.length && (n = i[1]);
+            var i = i[0].split("/").pop().split(".")
+              , r = i.pop();
+            if (-1 !== ["jfif"].indexOf(r))
+                return t;
+            for (var i = i.join("."), o = i.split("_"), d = (o && 2 <= o.length && (o = o.pop(),
+            l = new RegExp(/(\d+)x(\d+)|(\d+)x|x(\d+)/,"gm"),
+            o && l.test(o) && "" == o.replace(l, "") && ((i = i.split("_")).pop(),
+            i = i.join("_"))),
+            t.split("?")[0].split("/")), c = "", s = 0; s < d.length - 1; s++)
+                c += d[s] + "/";
+            t = e ? c + i + "_" + e + "." + r : c + i + "." + r,
+            n && (t = t + "?" + n)
+        }
+        if (hasImageUCare(t)) {
+            o = t.split("/-");
+            if (o && o.length) {
+                var l = o.length
+                  , e = o[0]
+                  , i = e.replace("https://", "").replace("http://", "")
+                  , u = (/\.(gif|jpe?g|tiff|png|webp|bmp)$/i.test(i) && ((r = i.split("/")).pop(),
+                i = r.join("/")),
+                e.includes("https") ? e = "https://" + i : e.includes("http") && (e = "http://" + i),
+                o.slice(1, l));
+                u.find(function(t) {
+                    t.includes("preview")
+                }) || u.unshift("/preview");
+                for (var f = 0; f < u.length; f++) {
+                    var g, h = u[f];
+                    "/" == u[f][0] && (h = u[f].slice(1, h.length)),
+                    (h = "/" == u[f][h.length - 1] ? u[f].slice(0, h.length - 1) : h).includes("preview") && (h = u[f],
+                    a.includes("x") ? (g = a.split("x")) && g.length && 1 == (g = g.filter(function(t) {
+                        t.trim().length
+                    })).length && (a = g[0] + "x" + g[0]) : isNaN(parseInt(a)) || (a = a + "x" + a),
+                    h = "/preview/" + a,
+                    u && 1 == u.length && "/preview" == u[0] && (h += "/"),
+                    u[f] = h)
+                }
+                t = e + "/-" + u.join("/-")
+            }
+        }
+    }
+    return t
+  };
 (function (u) {
     u.mpZoon = function (t, e) {
         var i, r, o, d, c, a = {
@@ -146,8 +196,6 @@ function refreshRechargeOptions(t, e, a) {
                 var t, pr = section.closest('[data-label="Product"]'), pr = (pr && pr.length && pr.attr("id") && (pid = pr.attr("id")),
                     section.closest('[data-label="Product"]')), pr = (0 < pr.length && ("default" != pr.attr("data-status") && "dynamic" != pr.attr("data-status") || (pr = context.getUrlParameter("variant"),
                         t = "" != context.getUrlParameter("variant") ? pr : 0)), context.getVariantById(t));
-                console.log(t,"t");
-                console.log(pr,"pr");
                 return context.setVariant(pr, true),
                     context.onChangeVariant(),
                     context.onChangeVariantId(),
@@ -1205,9 +1253,9 @@ function refreshRechargeOptions(t, e, a) {
             this.init = function () {
                 this.settings = o.extend({}, data, e),
                     window._gpProductImageIndex || (window._gpProductImageIndex = 0),
-                    u.applyZoom();
+                    context.applyZoom();     
                 section.append('<div class="sg_image-loading-wrap"><div class="sg_image-loading"><div></div><div></div><div></div><div></div></div></div>'),
-                    s = section.find(".gf_image-loading-wrap");
+                    s = section.find(".sg_image-loading-wrap");
                 var t = context.findParentProduct();
                 return context.setFirstVideo(),
                     null != t.data("mpv1product") && (t = t.data("mpv1product").getVariant(),
@@ -1243,7 +1291,7 @@ function refreshRechargeOptions(t, e, a) {
                 ,
                 this.subscribeSettingBadgeChange = function () {
                     var t = context.findParentProduct()
-                        , t = (null != t.data("gfv3product") && (t = t.data("gfv3product").getVariant(),
+                        , t = (null != t.data("mpv1product") && (t = t.data("mpv1product").getVariant(),
                             context.changeBadgeSettingsFunction(t)),
                             this.findWrapProductId());
                     window.MINSTORE && 0 < context.findPImageModule().length && window.MINSTORE.subscribe("product-" + t + "-variant", context.changeBadgeSettingsFunction)
@@ -1267,8 +1315,8 @@ function refreshRechargeOptions(t, e, a) {
                                         i.html(o);
                                     break;
                                 case "number":
-                                    var c = context.findPpriceModule().find(".gf_product-prices").attr("data-oldformat") || "{{ amount }}"
-                                        , s = context.findParentProduct().find("#gf-hidden-variant" + t.id)
+                                    var c = context.findPpriceModule().find(".sg_product-prices").attr("data-oldformat") || "{{ amount }}"
+                                        , s = context.findParentProduct().find("#sg-hidden-variant" + t.id)
                                         , s = (null != s && 0 < s.length ? (e = s.attr("data-price"),
                                             null != s.attr("data-compare-price") && "" != s.attr("data-compare-price") && (a = s.attr("data-compare-price"))) : (e = t.price / 100,
                                                 a = t.compare_at_price / 100),
