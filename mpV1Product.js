@@ -1807,17 +1807,9 @@ function replaceImageToSize(t, e) {
         f.minV1ProductImageList = function (t, e) {
             var data = {
                 onImageClicked: function (t, e, id) { 
-                    var a = context.findParentProduct();
-                    if (0 < a.find(".product-json").length){
-                        var varians = f.parseJSON( a.find(".product-json").html()).varians
-                        for(var i = 0; i< varians.length; i++){
-                            var variant = varians[i];
-                            if(variant.featured_media.id == id){
-                                a.data('mpv1product').setVariant(variant);
-                                break;
-                            }
-                        }
-                    }
+                    var ct, a = context.findParentProduct();
+                    var variant = (ct = a.data("mpv1product")) ? ct.getVariantFromMedia(id): false;
+                    variant && (ct ? ct.setVariant(variant, !1) : console.warn("couldn't find parent product module"))
                 }
             }
                 , section = (this.settings = {},
