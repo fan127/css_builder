@@ -889,7 +889,7 @@ function replaceImageToSize(t, e) {
                                 d = 10),
                             10 == d && (clearInterval(window.mpDynamicCCSupportInterval),
                                 window.mpDynamicCCSupportInterval = void 0)
-                    }, 1e3))),
+                    }, 1000))),
                     !1
             }
                 ,
@@ -904,7 +904,7 @@ function replaceImageToSize(t, e) {
                             , o = 3;
                         i = section.find(".sg_product-prices").attr("data-oldformat");
                         var c = context.convertNumberToPrice(t.price / 100, i),
-                            s = t.compare_at_price;
+                            s = context.convertNumberToPrice(t.compare_at_price / 100, i);
                         n = n.replace(/{{.*}}/g, "{{amount}}");
                         try {
                             window.parent.jQuery("#mpFrame").attr("data-money", n)
@@ -1069,7 +1069,7 @@ function replaceImageToSize(t, e) {
                         null != e && (a = Shopify.formatMoney(t.price, e),
                             context.setPrice(a),
                             (n = Shopify.formatMoney(t.compare_at_price, e)) ? (section.find(p).show(),
-                                context.setComparePrice(n)) : f.find(p).hide(),
+                                context.setComparePrice(n)) : section.find(p).hide(),
                             context.setPercentDiscount(a, n))
                     }
                     return !1
