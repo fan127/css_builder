@@ -972,11 +972,13 @@ function replaceImageToSize(t, e) {
                         0 < e.find(".product-json").length)
                             try {
                                 for (r = C.parseJSON(e.find(".product-json").html()),
-                                o = 0; o < r.variants.length; o++)
+                                o = 0; o < r.variants.length; o++){
+                                    console.log(r.variants[o],'12313')
                                     if ((d = r.variants[o].options).join(",") === s.join(",")) {
                                         n = r.variants[o];
                                         break
                                     }
+                                }
                             } catch (t) {
                                 console.log(t.message)
                             }
@@ -986,7 +988,7 @@ function replaceImageToSize(t, e) {
                         //           , c = section.closest("[data-pid]").attr("data-pid");
                         //         if (null != window.parent.jQuery("#mpFrame").contents().find(".gryffeditor").data("gryffeditor"))
                         //             for (r = window.parent.jQuery("#mpFrame").contents().find(".gryffeditor").data("gryffeditor").searchProductInList(c),
-                        //             o = 0; o < r.variants.length; o++) {
+                        //             o = 0; o < r.variants.lengtxxxxxxxh; o++) {
                         //                 for (var u = r.variants[o], d = [], f = 1; null != u["option" + f] && null != u["option" + f]; )
                         //                     d.push(u["option" + f]),
                         //                     f++;
