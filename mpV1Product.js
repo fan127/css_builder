@@ -667,7 +667,7 @@ function replaceImageToSize(t, e) {
                                 h || p ? (p && null != t || 1 == i.available && null != t) && t.changeStatus(!0) : null != t && t.changeStatus(!1)
                             })),
                             context.settings.onVariantSelected(i, t);
-                        var h, p, n = e.find('.module-wrap[data-label="(P) Quantity"] .module').first(), a = n.data("gfv3productquantity");
+                        var h, p, n = e.find('.module-wrap[data-label="(P) Quantity"] .module').first(), a = n.data("mpv1productquantity");
                         if (0 < n.length && null != a) {
                             if (a && a.settings && "0" == a.settings.updatePrice)
                                 return !1;
@@ -697,6 +697,450 @@ function replaceImageToSize(t, e) {
                 })
             }
     }(window.GemQuery || jQuery),
+    function(C) {
+        C.mpV1ProductSwatches = function(t, c) {
+            var s, l, m, w, data = {
+                swatchText: "1",
+                onSwatchSelected: function(t, e) {}
+            }, section = (this.settings = {},
+            C(t)), context = this, b = [], u = [];
+            this.init = function() {
+                this.settings = C.extend({}, data, c);
+                var t, u = context.findParentProduct();
+                if (null != u.data("mpv1product") && (t = u.data("mpv1product").getVariant(),
+                context.initWithVariant(t)),
+                "1" == this.settings.swatchText)
+                    section.find(".sg_swatch").children("span").css("visibility", "visible");
+                else {
+                    var e = section.attr("data-swatcher-hide");
+                    if (e && "All" !== e) {
+                        section.find(".sg_swatch").children("span").removeClass("sg_swatch-hide");
+                        try {
+                            for (var a in e = -1 !== (e = "Other" == e ? y.attr("data-swatcher-hideother") : e).indexOf(",") ? e.split(",") : [e]) {
+                                var n = (n = e[a]).trim()
+                                  , i = section.find('.sg_swatches-selector[data-name="' + n + '"]');
+                                0 < i.length && i.find(".sg_swatch").children("span").addClass("sg_swatch-hide")
+                            }
+                        } catch (t) {
+                            console.log(t),
+                            section.find(".sg_swatch").children("span").css("visibility", "hidden")
+                        }
+                    } else
+                        section.find(".gf_swatch").children("span").css("visibility", "hidden")
+                }
+                // if (null != section.attr("data-background"))
+                //     try {
+                //         var f = section.attr("data-background")
+                //           , f = JSON.parse(decodeURIComponent(escape(window.atob(f))))
+                //           , r = section.find(".sg_swatches-selector")
+                //           , g = context.getSwatchValue(r.eq(0).find(".sg_swatch").first())
+                //           , h = context.getSwatchValue(r.eq(1).find(".sg_swatch").first())
+                //           , p = context.getSwatchValue(r.eq(2).find(".sg_swatch").first());
+                //         r.each(function(s) {
+                //             var t = C(this)
+                //               , l = t.attr("data-name");
+                //             f[l] && t.find(".sg_swatch").each(function() {
+                //                 var t = C(this)
+                //                   , e = context.getSwatchValue(t);
+                //                 switch (f[l].type) {
+                //                 case "image":
+                //                     var a = ""
+                //                       , n = "";
+                //                     if (0 < u.find(".product-json").length)
+                //                         try {
+                //                             for (var i = C.parseJSON(u.find(".product-json").html()), r = 0; r < i.variants.length; r++)
+                //                                 if (i.variants[r]["option" + (s + 1)] == e && i.variants[r].featured_image && i.variants[r].featured_image.src) {
+                //                                     if (n = n || i.variants[r].featured_image.src,
+                //                                     0 == s && i.variants[r].option2 == h && i.variants[r].option3 == p) {
+                //                                         a = i.variants[r].featured_image.src;
+                //                                         break
+                //                                     }
+                //                                     if (1 == s && i.variants[r].option1 == g && i.variants[r].option3 == p) {
+                //                                         a = i.variants[r].featured_image.src;
+                //                                         break
+                //                                     }
+                //                                     if (2 != s || i.variants[r].option1 != g || i.variants[r].option2 != h)
+                //                                         break;
+                //                                     a = i.variants[r].featured_image.src;
+                //                                     break
+                //                                 }
+                //                         } catch (t) {
+                //                             console.log(t.message)
+                //                         }
+                //                     else
+                //                         try {
+                //                             var o = u.attr("data-pid");
+                //                             if (null != window.parent.jQuery("#mpFrame").contents().find(".gryffeditor").data("gryffeditor"))
+                //                                 for (i = window.parent.jQuery("#mpFrame").contents().find(".gryffeditor").data("gryffeditor").searchProductInList(o),
+                //                                 r = 0; r < i.variants.length; r++)
+                //                                     if (i.variants[r]["option" + (s + 1)] == e && i.variants[r].image_id && i.images) {
+                //                                         if (!n)
+                //                                             for (var d = i.variants[r].image_id, c = 0; c < i.images.length; c++)
+                //                                                 d == i.images[c].id && (n = i.images[c].src);
+                //                                         if (0 == s && i.variants[r].option2 == h && i.variants[r].option3 == p) {
+                //                                             for (d = i.variants[r].image_id,
+                //                                             c = 0; c < i.images.length; c++)
+                //                                                 if (d == i.images[c].id) {
+                //                                                     a = i.images[c].src;
+                //                                                     break
+                //                                                 }
+                //                                             break
+                //                                         }
+                //                                         if (1 == s && i.variants[r].option1 == g && i.variants[r].option3 == p) {
+                //                                             for (d = i.variants[r].image_id,
+                //                                             c = 0; c < i.images.length; c++)
+                //                                                 if (d == i.images[c].id) {
+                //                                                     a = i.images[c].src;
+                //                                                     break
+                //                                                 }
+                //                                             break
+                //                                         }
+                //                                         if (2 == s && i.variants[r].option1 == g && i.variants[r].option2 == h) {
+                //                                             for (d = i.variants[r].image_id,
+                //                                             c = 0; c < i.images.length; c++)
+                //                                                 if (d == i.images[c].id) {
+                //                                                     a = i.images[c].src;
+                //                                                     break
+                //                                                 }
+                //                                             break
+                //                                         }
+                //                                     }
+                //                         } catch (t) {
+                //                             console.log(t.message)
+                //                         }
+                //                     t.css("background-image", "url(" + context.resizeImage(a = a || n) + ")");
+                //                     break;
+                //                 case "color":
+                //                     o = e.toLowerCase();
+                //                     t.css("background-color", o);
+                //                     break;
+                //                 case "manual":
+                //                     if (f[l].variants && f[l].variants[e])
+                //                         switch (f[l].variants[e].type) {
+                //                         case "image":
+                //                             t.css("background-image", "url(" + context.resizeImage(f[l].variants[e].value) + ")");
+                //                             break;
+                //                         case "color":
+                //                             t.css("background-color", f[l].variants[e].value)
+                //                         }
+                //                 }
+                //             })
+                //         })
+                //     } catch (t) {
+                //         console.log(t.message)
+                //     }
+                // else if (null != section.attr("data-swatcher"))
+                //     try {
+                //         o = (o = section.attr("data-swatcher")).replace(/'/gi, '"'),
+                //         b = C.parseJSON(o),
+                //         y.find(".sg_swatch").each(function() {
+                //             var t = C(this)
+                //               , e = context.getSwatchValue(t)
+                //               , e = context.findSwatchinArray(e);
+                //             C.isEmptyObject(e) || context.renderSwatchColor(e.color1, e.color2, e.image, t)
+                //         })
+                //     } catch (t) {
+                //         console.log(t.message)
+                //     }
+                // else if (0 < section.find(".sg_swatches-data").length)
+                //     try {
+                //         var o = section.find(".sg_swatches-data").text()
+                //           , d = void 0 !== section.parent().attr("data-ver") ? y.parent().attr("data-ver") : "1";
+                //         parseInt(d) < 2 && (o = o.replace(/'/gi, '"')),
+                //         b = C.parseJSON(o),
+                //         section.find(".sg_swatch").each(function() {
+                //             var t = C(this)
+                //               , e = context.getSwatchValue(t)
+                //               , e = context.findSwatchinArray(e);
+                //             C.isEmptyObject(e) || context.renderSwatchColor(e.color1, e.color2, e.image, t)
+                //         })
+                //     } catch (t) {
+                //         console.log(t.message)
+                //     }
+                return s = section.attr("data-soldout"),
+                l = section.attr("data-soldout-color"),
+                m = section.attr("data-soldout-style"),
+                w = section.attr("data-soldout-logic"),
+                null == m && (m = "default"),
+                null == w && (w = "1"),
+                "1" == s && (context.updateSwatchAvailableVariants()
+                // ,
+                // "1" == w ? context.addSoldOut() : "2" == w && context.addSoldOutLogic2()
+                ),
+                context.applyEvents(),
+                !1
+            }
+            ,
+            this.getSwatchValue = function(t) {
+                var e;
+                return t && ((e = t.attr("data-value")) && e.trim() || (e = t.text()) && e.trim()) ? e.trim() : ""
+            }
+            ,
+            this.updateSwatchAvailableVariants = function() {
+                var t = context.findParentProduct()
+                  , e = {};
+                if (0 < t.find(".product-json").length)
+                    try {
+                        e = C.parseJSON(t.find(".product-json").html())
+                    } catch (t) {
+                        console.log(t.message)
+                    }
+                // else
+                //     try {
+                //         var a = section.closest("[data-pid]").attr("data-pid");
+                //         null != window.parent.jQuery("#mpFrame").contents().find(".gryffeditor").data("gryffeditor") && (e = window.parent.jQuery("#mpFrame").contents().find(".gryffeditor").data("gryffeditor").searchProductInList(a))
+                //     } catch (t) {
+                //         console.log(t.message)
+                //     }
+                if (!C.isEmptyObject(e))
+                    for (var n = 0; n < e.variants.length; n++) {
+                        var i = e.variants[n];
+                        null != i.available && i.available ? u.push(i) : (0 < i.inventory_quantity || "shopify" != i.inventory_management) && u.push(i)
+                    }
+                return u
+            }
+            ,
+            this.handleSwatchStyle = function(t, e) {
+                "default" == t ? 0 == e.children("svg").length && e.append('<svg height="100" width="100" preserveAspectRatio="none" class="sg_soldout"><line x1="0%" y1="0%" x2="100%" y2="100%" style="stroke:' + l + ';stroke-width:2" /><line x1="0%" y1="100%" x2="100%" y2="0%" style="stroke:' + l + ';stroke-width:2" /></svg>') : e.hasClass("sg_swatch-soldout") || e.addClass("sg_swatch-soldout")
+            }
+            ,
+            this.initWithVariant = function(t) {
+                if (!C.isEmptyObject(t)) {
+                    if (t.options && 0 < t.options.length)
+                        for (var e = [], a = 1; a <= t.options.length; a++)
+                            null != t["option" + a] && e.push(t["option" + a]);
+                    else
+                        e = t.title.split(" / ");
+                    var n = 0;
+                    section.find(".sg_swatch").removeClass("sg_selected"),
+                    section.find(".sg_swatches-selector").each(function() {
+                        C(this).find(".sg_swatch").each(function() {
+                            var t = C(this);
+                            context.getSwatchValue(t) == C.trim(e[n]) && t.addClass("sg_selected")
+                        }),
+                        n++
+                    })
+                    // ,
+                    // "1" == s && "2" == w && context.addSoldOutLogic2()
+                }
+                return !1
+            }
+            ,
+            this.applyEvents = function() {
+                return section.find(".sg_swatch").off("click").on("click", function() {
+                    var t = C(this)
+                      , e = context.findParentProduct()
+                      , a = t.closest(".sg_swatches")
+                      , a = (t.closest("form"),
+                    a.attr("data-type"))
+                      , n = (t.closest(".sg_column").find(".sg_swatch").removeClass("sg_selected"),
+                    t.addClass("sg_selected"),
+                    {});
+                    if ("together" == a) {
+                        var i = C(this).attr("data-vid");
+                        if (0 < e.find(".product-json").length)
+                            try {
+                                for (var r = C.parseJSON(e.find(".product-json").html()), o = 0; o < r.variants.length; o++) {
+                                    var d = r.variants[o].options;
+                                    if (r.variants[o].id == i) {
+                                        n = r.variants[o];
+                                        break
+                                    }
+                                }
+                            } catch (t) {
+                                console.log(t.message)
+                            }
+                        // else
+                        //     try {
+                        //         var c = section.closest("[data-pid]").attr("data-pid");
+                        //         if (null != window.parent.jQuery("#mpFrame").contents().find(".gryffeditor").data("gryffeditor"))
+                        //             for (r = window.parent.jQuery("#mpFrame").contents().find(".gryffeditor").data("gryffeditor").searchProductInList(c),
+                        //             o = 0; o < r.variants.length; o++)
+                        //                 if (r.variants[o].id == i) {
+                        //                     n = r.variants[o];
+                        //                     break
+                        //                 }
+                        //     } catch (t) {
+                        //         console.log(t.message)
+                        //     }
+                    } else {
+                        var s = [];
+                        if (section.find(".sg_swatch.sg_selected").each(function() {
+                            var t = context.getSwatchValue(C(this));
+                            s.push(C.trim(t))
+                        }),
+                        0 < e.find(".product-json").length)
+                            try {
+                                for (r = C.parseJSON(e.find(".product-json").html()),
+                                o = 0; o < r.variants.length; o++)
+                                    if ((d = r.variants[o].options).join(",") === s.join(",")) {
+                                        n = r.variants[o];
+                                        break
+                                    }
+                            } catch (t) {
+                                console.log(t.message)
+                            }
+                        // else
+                        //     try {
+                        //         var l = s.join(",")
+                        //           , c = section.closest("[data-pid]").attr("data-pid");
+                        //         if (null != window.parent.jQuery("#mpFrame").contents().find(".gryffeditor").data("gryffeditor"))
+                        //             for (r = window.parent.jQuery("#mpFrame").contents().find(".gryffeditor").data("gryffeditor").searchProductInList(c),
+                        //             o = 0; o < r.variants.length; o++) {
+                        //                 for (var u = r.variants[o], d = [], f = 1; null != u["option" + f] && null != u["option" + f]; )
+                        //                     d.push(u["option" + f]),
+                        //                     f++;
+                        //                 if ((d = 0 == d.length ? C.map(r.variants[o].title.split("/"), C.trim) : d).join(",") === l) {
+                        //                     n = u;
+                        //                     break
+                        //                 }
+                        //             }
+                        //     } catch (t) {
+                        //         console.log(t.message)
+                        //     }
+                    }
+                    return null != e.data("mpv1product") && e.data("mpv1product").setVariant(n),
+                    context.settings.onSwatchSelected(n, t),
+                    setTimeout(function() {
+                        refreshRechargeOptions(context.findParentProduct(), C, window.ReCharge)
+                    }, 10),
+                    !1
+                }),
+                !1
+            }
+            ,
+            this.replaceBGColorImportant = function(t, e) {
+                var a, n;
+                return !e && "" == e || (a = (a = t.attr("style")) ? a.split(";") : [],
+                n = [],
+                a.map(function(t) {
+                    "background-color" != t.split(":")[0] && n.push(t)
+                }),
+                n.push("background-color: " + e + " !important"),
+                t.attr("style", n.join(";"))),
+                !1
+            }
+            ,
+            this.renderSwatchColor = function(t, e, a, n) {
+                return "" != a ? n.css("background-image", "url(" + a + ")") : "" != e && "transparent" != e ? (a = "",
+                n.css("background-image", a += "linear-gradient(180deg, " + t + " 50%, " + e + " 50%)")) : (n.css("background-image", "none"),
+                context.replaceBGColorImportant(n, t)),
+                !1
+            }
+            ,
+            this.findSwatchinArray = function(t) {
+                for (var e = {}, a = 0; a < b.length; a++)
+                    if (C.trim(t.toLowerCase()) == C.trim(b[a].label.toLowerCase())) {
+                        e = b[a];
+                        break
+                    }
+                return e
+            }
+            ,
+            this.findParentProduct = function() {
+                var t = section.closest('[data-label="Product"]').children(".sg-module");
+                return t = 0 == t.length ? section.closest('[data-icon="gpicon-product"]').children(".sg-module") : t
+            }
+            ,
+            this.addSoldOut = function() {
+                return section.find(".sg_swatches").find(".sg_swatches-selector").each(function(i) {
+                    C(this).find(".sg_swatch").each(function() {
+                        for (var t = C(this), e = context.getSwatchValue(t), a = !1, n = 0; n < u.length; n++)
+                            if (u[n]["option" + (parseInt(i) + 1)] == e) {
+                                a = !0;
+                                break
+                            }
+                        a || context.handleSwatchStyle(m, t)
+                    })
+                }),
+                !1
+            }
+            ,
+            this.addSoldOutLogic2 = function() {
+                var t = section.find(".sg_swatches").find(".sg_swatches-selector")
+                  , o = t.length
+                  , e = (t.find(".sg_swatch").find("svg").remove(),
+                t.find(".sg_swatch").removeClass("sg_swatch-soldout"),
+                t.eq(0).children(".sg_swatch.sg_selected"))
+                  , d = context.getSwatchValue(e)
+                  , e = t.eq(1).children(".sg_swatch.sg_selected")
+                  , c = context.getSwatchValue(e)
+                  , e = t.eq(2).children(".sg_swatch.sg_selected")
+                  , s = context.getSwatchValue(e);
+                return t.each(function(r) {
+                    C(this).find(".sg_swatch").each(function() {
+                        for (var t = C(this), e = context.getSwatchValue(t), a = !1, n = 0; n < u.length; n++) {
+                            var i = u[n];
+                            if (2 == r && i.option1 == d && i.option2 == c && i.option3 == e) {
+                                a = !0;
+                                break
+                            }
+                            if (1 == r && i.option1 == d && i.option2 == e) {
+                                if (2 == o) {
+                                    a = !0;
+                                    break
+                                }
+                                if (3 == o && i.option3 == s) {
+                                    a = !0;
+                                    break
+                                }
+                            } else if (0 == r && i.option1 == e) {
+                                if (1 == o) {
+                                    a = !0;
+                                    break
+                                }
+                                if (2 == o && i.option2 == c) {
+                                    a = !0;
+                                    break
+                                }
+                                if (3 == o && i.option2 == c && i.option3 == s) {
+                                    a = !0;
+                                    break
+                                }
+                            }
+                        }
+                        a || context.handleSwatchStyle(m, t)
+                    })
+                }),
+                !1
+            }
+            ,
+            this.resizeImage = function(t) {
+                a = section.find(".sg_swatch"),
+                i = n = 30,
+                a && a.length && a.each(function() {
+                    C(this);
+                    var t = a.outerWidth() || 30
+                      , e = a.outerHeight() || 30;
+                    n < t && (n = t),
+                    i < e && (i = e)
+                }),
+                e = Math.max(n, i);
+                var a, n, i, e = {
+                    width: e *= 500 < e ? 1.2 : 250 < e ? 1.5 : 125 < e ? 2 : 3,
+                    height: e
+                };
+                try {
+                    var r = parseInt(e.width)
+                      , o = parseInt(e.height)
+                } catch (t) {
+                    r = 120,
+                    o = 120
+                }
+                return replaceImageToSize(t, r + "x" + o)
+            }
+            ,
+            this.init()
+        }
+        ,
+        C.fn.mpV1ProductSwatches = function(e) {
+            return this.each(function() {
+                var t;
+                null == C(this).data("mpv1productswatches") && (t = new C.mpV1ProductSwatches(this,e),
+                C(this).data("mpv1productswatches", t))
+            })
+        }
+      }(window.GemQuery || jQuery),
     function (d) {
         d.minV1ProductQuantity = function (t, a) {
             var section = d(t)
@@ -2002,7 +2446,7 @@ function replaceImageToSize(t, e) {
                                 section.next(".sg_product-image-hover-zoom"));
                             0 == i.length && r && "1" == r && t && "1" == t && (e = Date.now() + Math.floor(100 * Math.random() + 1),
                                 section.attr("data-hover", e),
-                                i = f(null == n ? '<div class="gf_product-image-hover-zoom" data-hover="' + e + '" style="position: absolute;top:0px;left:0px;background:rgba(0,0,0,0.2);width: calc(100% - ' + o + ");height: calc(100% - " + o + ');display: flex;justify-content: center;align-items: center;"><svg width="24px" viewBox="0 0 512 512"><path fill="#fff" d="M312 196v24c0 6.6-5.4 12-12 12h-68v68c0 6.6-5.4 12-12 12h-24c-6.6 0-12-5.4-12-12v-68h-68c-6.6 0-12-5.4-12-12v-24c0-6.6 5.4-12 12-12h68v-68c0-6.6 5.4-12 12-12h24c6.6 0 12 5.4 12 12v68h68c6.6 0 12 5.4 12 12zm196.5 289.9l-22.6 22.6c-4.7 4.7-12.3 4.7-17 0L347.5 387.1c-2.3-2.3-3.5-5.3-3.5-8.5v-13.2c-36.5 31.5-84 50.6-136 50.6C93.1 416 0 322.9 0 208S93.1 0 208 0s208 93.1 208 208c0 52-19.1 99.5-50.6 136h13.2c3.2 0 6.2 1.3 8.5 3.5l121.4 121.4c4.7 4.7 4.7 12.3 0 17zM368 208c0-88.4-71.6-160-160-160S48 119.6 48 208s71.6 160 160 160 160-71.6 160-160z"></path></svg></div>' : '<div class="gf_product-image-hover-zoom" data-hover="' + e + '" style="position: absolute;top:0px;left:0px;background:rgba(0,0,0,0.2);width: calc(100% - ' + o + ");height: calc(100% - " + o + ');display: flex;justify-content: center;align-items: center;"><svg width="24px" viewBox="0 0 512 512"><path fill="#fff" d="M424.4 214.7L72.4 6.6C43.8-10.3 0 6.1 0 47.9V464c0 37.5 40.7 60.1 72.4 41.3l352-208c31.4-18.5 31.5-64.1 0-82.6zm-16.2 55.1l-352 208C45.6 483.9 32 476.6 32 464V47.9c0-16.3 16.4-18.4 24.1-13.8l352 208.1c10.5 6.2 10.5 21.4.1 27.6z"></path></svg></div>'),
+                                i = f(null == n ? '<div class="sg_product-image-hover-zoom" data-hover="' + e + '" style="position: absolute;top:0px;left:0px;background:rgba(0,0,0,0.2);width: calc(100% - ' + o + ");height: calc(100% - " + o + ');display: flex;justify-content: center;align-items: center;"><svg width="24px" viewBox="0 0 512 512"><path fill="#fff" d="M312 196v24c0 6.6-5.4 12-12 12h-68v68c0 6.6-5.4 12-12 12h-24c-6.6 0-12-5.4-12-12v-68h-68c-6.6 0-12-5.4-12-12v-24c0-6.6 5.4-12 12-12h68v-68c0-6.6 5.4-12 12-12h24c6.6 0 12 5.4 12 12v68h68c6.6 0 12 5.4 12 12zm196.5 289.9l-22.6 22.6c-4.7 4.7-12.3 4.7-17 0L347.5 387.1c-2.3-2.3-3.5-5.3-3.5-8.5v-13.2c-36.5 31.5-84 50.6-136 50.6C93.1 416 0 322.9 0 208S93.1 0 208 0s208 93.1 208 208c0 52-19.1 99.5-50.6 136h13.2c3.2 0 6.2 1.3 8.5 3.5l121.4 121.4c4.7 4.7 4.7 12.3 0 17zM368 208c0-88.4-71.6-160-160-160S48 119.6 48 208s71.6 160 160 160 160-71.6 160-160z"></path></svg></div>' : '<div class="gf_product-image-hover-zoom" data-hover="' + e + '" style="position: absolute;top:0px;left:0px;background:rgba(0,0,0,0.2);width: calc(100% - ' + o + ");height: calc(100% - " + o + ');display: flex;justify-content: center;align-items: center;"><svg width="24px" viewBox="0 0 512 512"><path fill="#fff" d="M424.4 214.7L72.4 6.6C43.8-10.3 0 6.1 0 47.9V464c0 37.5 40.7 60.1 72.4 41.3l352-208c31.4-18.5 31.5-64.1 0-82.6zm-16.2 55.1l-352 208C45.6 483.9 32 476.6 32 464V47.9c0-16.3 16.4-18.4 24.1-13.8l352 208.1c10.5 6.2 10.5 21.4.1 27.6z"></path></svg></div>'),
                                 section.after(i),
                                 i.off("click.gallery").on("click.gallery", function () {
                                     var t;
@@ -2019,7 +2463,7 @@ function replaceImageToSize(t, e) {
                                         f("body").off("mousemove.image-hover" + e))
                                 }))
                         }),
-                        section.find(".gf_product-image-thumb").off("click.gallery").on("click.gallery", function () {
+                        section.find(".sg_product-image-thumb").off("click.gallery").on("click.gallery", function () {
                             var t, e;
                             r && "1" == r && ("" == (t = f(this).attr("data-video")) && (t = void 0),
                                 window.$itemThumbCurrent = f(this),
@@ -2183,8 +2627,8 @@ function replaceImageToSize(t, e) {
                 }
                 ,
                 this.initLightbox = function () {
-                    return 0 == f("body").children(".gf_featherlight").length && f("body").append('<div class="gf_featherlight"><div class="gf_featherlight-content"><button class="gf_featherlight-close-icon gf_featherlight-close" aria-label="Close">✕</button><img src="" alt="" class="gf_featherlight-image gf_featherlight-inner"><div id="gf_featherlight-video" class="gf_featherlight-inner" /><span class="gf_featherlight-previous"><span title="previous" data-action="previous"><svg viewBox="0 0 448 512" ><path d="M231.536 475.535l7.071-7.07c4.686-4.686 4.686-12.284 0-16.971L60.113 273H436c6.627 0 12-5.373 12-12v-10c0-6.627-5.373-12-12-12H60.113L238.607 60.506c4.686-4.686 4.686-12.284 0-16.971l-7.071-7.07c-4.686-4.686-12.284-4.686-16.97 0L3.515 247.515c-4.686 4.686-4.686 12.284 0 16.971l211.051 211.05c4.686 4.686 12.284 4.686 16.97-.001z" class=""></path></svg></span></span><span class="gf_featherlight-next"><span title="next" data-action="next"><svg viewBox="0 0 448 512"><path d="M216.464 36.465l-7.071 7.07c-4.686 4.686-4.686 12.284 0 16.971L387.887 239H12c-6.627 0-12 5.373-12 12v10c0 6.627 5.373 12 12 12h375.887L209.393 451.494c-4.686 4.686-4.686 12.284 0 16.971l7.071 7.07c4.686 4.686 12.284 4.686 16.97 0l211.051-211.05c4.686-4.686 4.686-12.284 0-16.971L233.434 36.465c-4.686-4.687-12.284-4.687-16.97 0z" class=""></path></svg></span></span><div class="gf_featherlight-loading"><div></div><div></div><div></div><div></div></div></div></div>'),
-                        l = f("body").children(".gf_featherlight"),
+                    return 0 == f("body").children(".sg_featherlight").length && f("body").append('<div class="sg_featherlight"><div class="sg_featherlight-content"><button class="sg_featherlight-close-icon sg_featherlight-close" aria-label="Close">✕</button><img src="" alt="" class="sg_featherlight-image sg_featherlight-inner"><div id="sg_featherlight-video" class="sg_featherlight-inner" /><span class="sg_featherlight-previous"><span title="previous" data-action="previous"><svg viewBox="0 0 448 512" ><path d="M231.536 475.535l7.071-7.07c4.686-4.686 4.686-12.284 0-16.971L60.113 273H436c6.627 0 12-5.373 12-12v-10c0-6.627-5.373-12-12-12H60.113L238.607 60.506c4.686-4.686 4.686-12.284 0-16.971l-7.071-7.07c-4.686-4.686-12.284-4.686-16.97 0L3.515 247.515c-4.686 4.686-4.686 12.284 0 16.971l211.051 211.05c4.686 4.686 12.284 4.686 16.97-.001z" class=""></path></svg></span></span><span class="gf_featherlight-next"><span title="next" data-action="next"><svg viewBox="0 0 448 512"><path d="M216.464 36.465l-7.071 7.07c-4.686 4.686-4.686 12.284 0 16.971L387.887 239H12c-6.627 0-12 5.373-12 12v10c0 6.627 5.373 12 12 12h375.887L209.393 451.494c-4.686 4.686-4.686 12.284 0 16.971l7.071 7.07c4.686 4.686 12.284 4.686 16.97 0l211.051-211.05c4.686-4.686 4.686-12.284 0-16.971L233.434 36.465c-4.686-4.687-12.284-4.687-16.97 0z" class=""></path></svg></span></span><div class="sg_featherlight-loading"><div></div><div></div><div></div><div></div></div></div></div>'),
+                        l = f("body").children(".sg_featherlight"),
                         !1
                 }
                 ,
