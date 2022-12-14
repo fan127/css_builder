@@ -667,7 +667,7 @@ function replaceImageToSize(t, e) {
                                 h || p ? (p && null != t || 1 == i.available && null != t) && t.changeStatus(!0) : null != t && t.changeStatus(!1)
                             })),
                             context.settings.onVariantSelected(i, t);
-                        var h, p, n = e.find('.module-wrap[data-label="(P) Quantity"] .module').first(), a = n.data("mpv1productquantity");
+                        var h, p, n = e.find('.sg-wrap[data-label="(P) Quantity"] .module').first(), a = n.data("mpv1productquantity");
                         if (0 < n.length && null != a) {
                             if (a && a.settings && "0" == a.settings.updatePrice)
                                 return !1;
@@ -912,11 +912,11 @@ function replaceImageToSize(t, e) {
                     else
                         e = t.title.split(" / ");
                     var n = 0;
-                    section.find(".sg_swatch").removeClass("sg_selected"),
+                    section.find(".sg_swatch").removeClass("active"),
                     section.find(".sg_swatches-selector").each(function() {
                         C(this).find(".sg_swatch").each(function() {
                             var t = C(this);
-                            context.getSwatchValue(t) == C.trim(e[n]) && t.addClass("sg_selected")
+                            context.getSwatchValue(t) == C.trim(e[n]) && t.addClass("active")
                         }),
                         n++
                     })
@@ -933,8 +933,8 @@ function replaceImageToSize(t, e) {
                       , a = t.closest(".sg_swatches")
                       , a = (t.closest("form"),
                     a.attr("data-type"))
-                      , n = (t.closest(".sg_column").find(".sg_swatch").removeClass("sg_selected"),
-                    t.addClass("sg_selected"),
+                      , n = (t.closest(".sg_column").find(".sg_swatch").removeClass("active"),
+                    t.addClass("active"),
                     {});
                     if ("together" == a) {
                         var i = C(this).attr("data-vid");
@@ -965,7 +965,7 @@ function replaceImageToSize(t, e) {
                         //     }
                     } else {
                         var s = [];
-                        if (section.find(".sg_swatch.sg_selected").each(function() {
+                        if (section.find(".sg_swatch.active").each(function() {
                             var t = context.getSwatchValue(C(this));
                             s.push(C.trim(t))
                         }),
@@ -1061,11 +1061,11 @@ function replaceImageToSize(t, e) {
                   , o = t.length
                   , e = (t.find(".sg_swatch").find("svg").remove(),
                 t.find(".sg_swatch").removeClass("sg_swatch-soldout"),
-                t.eq(0).children(".sg_swatch.sg_selected"))
+                t.eq(0).children(".sg_swatch.active"))
                   , d = context.getSwatchValue(e)
-                  , e = t.eq(1).children(".sg_swatch.sg_selected")
+                  , e = t.eq(1).children(".sg_swatch.active")
                   , c = context.getSwatchValue(e)
-                  , e = t.eq(2).children(".sg_swatch.sg_selected")
+                  , e = t.eq(2).children(".sg_swatch.active")
                   , s = context.getSwatchValue(e);
                 return t.each(function(r) {
                     C(this).find(".sg_swatch").each(function() {
