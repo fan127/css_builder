@@ -999,7 +999,7 @@ function replaceImageToSize(t, e) {
                         //         console.log(t.message)
                         //     }
                     }
-                    console.log(n,'variant')
+                    console.log(s,n,'variant')
                     return null != e.data("mpv1product") && e.data("mpv1product").setVariant(n),
                     context.settings.onSwatchSelected(n, t),
                     setTimeout(function() {
