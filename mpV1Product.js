@@ -934,7 +934,7 @@ function replaceImageToSize(t, e) {
                       , a = (t.closest("form"),
                     a.attr("data-type"))
                       , n = (t.closest(".sg_column").find(".sg_swatch").removeClass("active"),
-                    t.addClass("active"),
+                    // t.addClass("active"),
                     {});
                     if ("together" == a) {
                         var i = C(this).attr("data-vid");
