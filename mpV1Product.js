@@ -1001,6 +1001,7 @@ function replaceImageToSize(t, e) {
                         //         console.log(t.message)
                         //     }
                     }
+                    console.log(e.find(".product-json").length,'variant23')
                     console.log(s,n,'variant')
                     return null != e.data("mpv1product") && e.data("mpv1product").setVariant(n),
                     context.settings.onSwatchSelected(n, t),
