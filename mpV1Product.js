@@ -973,7 +973,6 @@ function replaceImageToSize(t, e) {
                             try {
                                 for (r = C.parseJSON(e.find(".product-json").html()),
                                 o = 0; o < r.variants.length; o++){
-                                    console.log(r.variants[o],'12313')
                                     if ((d = r.variants[o].options).join(",") === s.join(",")) {
                                         n = r.variants[o];
                                         break
@@ -1001,8 +1000,6 @@ function replaceImageToSize(t, e) {
                         //         console.log(t.message)
                         //     }
                     }
-                    console.log(e.find(".product-json").length,'variant23')
-                    console.log(s,n,'variant')
                     return null != e.data("mpv1product") && e.data("mpv1product").setVariant(n),
                     context.settings.onSwatchSelected(n, t),
                     setTimeout(function() {
