@@ -287,7 +287,7 @@ function replaceImageToSize(t, e) {
                             var t = f(this);
                             null != t.children(".sg-module").data("mpv1productvariants") && t.children(".sg-module").data("mpv1productvariants").initWithVariant(e)
                         }),
-                            section.find('[data-label="(P) Swatches"]').each(function () {
+                            section.find('[data-label="(P) Variants"]').each(function () {
                                 var t = f(this);
                                 null != t.children(".sg-module").data("mpv1productswatches") && t.children(".sg-module").data("mpv1productswatches").initWithVariant(e)
                             }),
