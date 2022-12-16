@@ -913,7 +913,7 @@ function replaceImageToSize(t, e) {
                         e = t.title.split(" / ");
                     var n = 0;
                     section.find(".sg_swatch").removeClass("active"),
-                    section.find(".sg_swatches-selector").each(function() {
+                    section.find(".sg-variant-item").each(function() {
                         C(this).find(".sg_swatch").each(function() {
                             var t = C(this);
                             context.getSwatchValue(t) == C.trim(e[n]) && t.addClass("active")
