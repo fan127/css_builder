@@ -287,10 +287,10 @@ function replaceImageToSize(t, e) {
                             var t = f(this);
                             null != t.children(".sg-module").data("mpv1productvariants") && t.children(".sg-module").data("mpv1productvariants").initWithVariant(e)
                         }),
-                            // section.find('[data-label="(P) Swatches"]').each(function () {
-                            //     var t = f(this);
-                            //     null != t.children(".sg-module").data("mpv1productswatches") && t.children(".sg-module").data("mpv1productswatches").initWithVariant(e)
-                            // }),
+                            section.find('[data-label="(P) Swatches"]').each(function () {
+                                var t = f(this);
+                                null != t.children(".sg-module").data("mpv1productswatches") && t.children(".sg-module").data("mpv1productswatches").initWithVariant(e)
+                            }),
                             section.find('[data-label="(P) Quantity"]').each(function () {
                                 null != ($quantity = f(this)).children(".sg-module").data("mpv1productquantity") && $quantity.children(".sg-module").data("mpv1productquantity").initWithVariant(e)
                             }),
