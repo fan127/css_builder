@@ -157,7 +157,7 @@ function replaceImageToSize(t, e) {
                     u(this).data("mpzoom", t))
             })
         }
-}(window.GemQuery || jQuery)),
+}(window.MinQuery || jQuery)),
     (Shopify = "undefined" == typeof Shopify ? {} : Shopify).formatMoney || (Shopify.formatMoney = function (t, e) {
         var a = ""
             , n = /\{\{\s*(\w+)\s*\}\}/
@@ -696,7 +696,7 @@ function replaceImageToSize(t, e) {
                         v(this).data("mpv1productvariants", t))
                 })
             }
-    }(window.GemQuery || jQuery),
+    }(window.MinQuery || jQuery),
     function(C) {
         C.mpV1ProductSwatches = function(t, c) {
             var s, l, m, w, data = {
@@ -1141,7 +1141,7 @@ function replaceImageToSize(t, e) {
                 C(this).data("mpv1productswatches", t))
             })
         }
-      }(window.GemQuery || jQuery),
+      }(window.MinQuery || jQuery),
     function (d) {
         d.minV1ProductQuantity = function (t, a) {
             var section = d(t)
@@ -1251,7 +1251,7 @@ function replaceImageToSize(t, e) {
                         d(this).data("mpv1productquantity", t))
                 })
             }
-    }(window.GemQuery || jQuery),
+    }(window.MinQuery || jQuery),
     function (v) {
         v.minV1ProductPrice = function (t, s) {
             var l, data = {
@@ -1666,7 +1666,7 @@ function replaceImageToSize(t, e) {
                         v(this).data("mpv1productprice", t))
                 })
             }
-    }(window.GemQuery || jQuery),
+    }(window.MinQuery || jQuery),
     function (o) {
         o.minV1ProductImage = function (t, e) {
             var s, data = {
@@ -1990,7 +1990,7 @@ function replaceImageToSize(t, e) {
                         o(this).data("mpv1productimage", t))
                 })
             }
-    }(window.GemQuery || jQuery),
+    }(window.MinQuery || jQuery),
     function (p) {
         p.minV1ProductCartButton = function (t, d) {
             var c, data = {
@@ -2247,7 +2247,7 @@ function replaceImageToSize(t, e) {
                         p(this).data("mpv1productcartbutton", t))
                 })
             }
-    }(window.GemQuery || jQuery),
+    }(window.MinQuery || jQuery),
     function (f) {
         f.minV1ProductImageList = function (t, e) {
             var data = {
@@ -2430,7 +2430,7 @@ function replaceImageToSize(t, e) {
                         f(this).data("mpv1productimagelist", t))
                 })
             }
-    }(window.GemQuery || jQuery),
+    }(window.MinQuery || jQuery),
     function (f) {
         f.minV1Lightbox = function (t, e) {
             var l, section = f(t), data = {}, context = (this.settings = {},
@@ -2643,4 +2643,4 @@ function replaceImageToSize(t, e) {
                         f(this).data("mpv1lightbox", t))
                 })
             }
-    }(window.GemQuery || jQuery);
+    }(window.MinQuery || jQuery);
