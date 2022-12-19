@@ -973,8 +973,10 @@ function replaceImageToSize(t, e) {
                         }),
                         0 < e.find(".product-json").length)
                             try {
+                                console.log(e.find(".product-json"));
                                 for (r = C.parseJSON(e.find(".product-json").html()),
                                 o = 0; o < r.variants.length; o++){
+                                    console.log(r.variants[o]);
                                     if ((d = r.variants[o].options).join(",") === s.join(",")) {
                                         n = r.variants[o];
                                         break
