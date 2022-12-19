@@ -265,6 +265,7 @@ function replaceImageToSize(t, e) {
                         a
                 },
                 this.setVariant = function (e, a) {
+                    console.log(e,'setVariant');
                     if (this.checkPassBlankOption(),
                         (a = null != a && a) || !e.id || !variants.id || variants.id != e.id) {
                         var t = null != e.id ? e.id : ""
@@ -905,6 +906,7 @@ function replaceImageToSize(t, e) {
             }
             ,
             this.initWithVariant = function(t) {
+                console.log(t,'swatch');
                 if (!C.isEmptyObject(t)) {
                     if (t.options && 0 < t.options.length)
                         for (var e = [], a = 1; a <= t.options.length; a++)
