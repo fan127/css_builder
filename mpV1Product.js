@@ -968,6 +968,7 @@ function replaceImageToSize(t, e) {
                             //     }
                         } else {
                             var s = [];
+                            console.log(0 < e.find(".product-json").length);
                             if (section.find(".sg_swatch.active").each(function () {
                                 var t = context.getSwatchValue(C(this));
                                 s.push(C.trim(t))
