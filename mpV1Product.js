@@ -115,7 +115,7 @@ function replaceImageToSize(t, e) {
                                 maxWidth: "none",
                                 maxHeight: "none"
                             }).appendTo(i),
-                            u(".gryffeditor").hasClass("editing") ? "dev" : "production");
+                            u("#prevew_builder").hasClass("editing") ? "dev" : "production");
                         a && "production" == a && 0 < (n = i.find("a[href]")).length && ((e = n.attr("href")) && "" != e && s.off("click.openLink").on("click.openLink", function (t) {
                             window.location.href = e
                         })),
@@ -223,7 +223,7 @@ function replaceImageToSize(t, e) {
                     else
                         try {
                             var n = section.closest("[data-pid]").attr("data-pid");
-                            return (a = null != window.parent.jQuery("#mpFrame").contents().find(".gryffeditor").data("gryffeditor") ? window.parent.jQuery("#mpFrame").contents().find(".gryffeditor").data("gryffeditor").searchProductInList(n) : a).variants.find(function (t) {
+                            return (a = null != window.parent.jQuery("#designEditor").contents().find("#prevew_builder").data("mpeditor") ? window.parent.jQuery("#designEditor").contents().find("#prevew_builder").data("mpeditor").searchProductInList(n) : a).variants.find(function (t) {
                                 return t.image_id == e
                             })
                         } catch (t) {
@@ -388,8 +388,9 @@ function replaceImageToSize(t, e) {
                     else
                         try {
                             n = section.attr("data-pid");
-                            if (null != window.parent.jQuery("#mpFrame").contents().find(".gryffeditor").data("gryffeditor")) {
-                                var o = window.parent.jQuery("#mpFrame").contents().find(".gryffeditor").data("gryffeditor").searchProductInList(n);
+                            console.log(window.parent.jQuery("#designEditor").contents().find("#prevew_builder").data("mpeditor"));
+                            if (null != window.parent.jQuery("#designEditor").contents().find("#prevew_builder").data("mpeditor")) {
+                                var o = window.parent.jQuery("#designEditor").contents().find("#prevew_builder").data("mpeditor").searchProductInList(n);
                                 if (0 == t) {
                                     e = o.variants[0];
                                     for (i = 1; !e.available && i < o.variants.length;)
@@ -443,8 +444,8 @@ function replaceImageToSize(t, e) {
                     else
                         try {
                             var s = section.attr("data-pid");
-                            if (null != window.parent.jQuery("#mpFrame").contents().find(".gryffeditor").data("gryffeditor")) {
-                                for (o = window.parent.jQuery("#mpFrame").contents().find(".gryffeditor").data("gryffeditor").searchProductInList(s),
+                            if (null != window.parent.jQuery("#designEditor").contents().find("#prevew_builder").data("mpeditor")) {
+                                for (o = window.parent.jQuery("#designEditor").contents().find("#prevew_builder").data("mpeditor").searchProductInList(s),
                                     d = 0; d < o.images.length; d++)
                                     if (-1 !== o.images[d].src.indexOf(n) && 0 < o.images[d].variant_ids.length) {
                                         r = o.images[d].variant_ids[0];
@@ -771,8 +772,8 @@ function replaceImageToSize(t, e) {
                 //                     else
                 //                         try {
                 //                             var o = u.attr("data-pid");
-                //                             if (null != window.parent.jQuery("#mpFrame").contents().find(".gryffeditor").data("gryffeditor"))
-                //                                 for (i = window.parent.jQuery("#mpFrame").contents().find(".gryffeditor").data("gryffeditor").searchProductInList(o),
+                //                             if (null != window.parent.jQuery("#designEditor").contents().find("#prevew_builder").data("mpeditor"))
+                //                                 for (i = window.parent.jQuery("#designEditor").contents().find("#prevew_builder").data("mpeditor").searchProductInList(o),
                 //                                 r = 0; r < i.variants.length; r++)
                 //                                     if (i.variants[r]["option" + (s + 1)] == e && i.variants[r].image_id && i.images) {
                 //                                         if (!n)
@@ -889,7 +890,7 @@ function replaceImageToSize(t, e) {
                 // else
                 //     try {
                 //         var a = section.closest("[data-pid]").attr("data-pid");
-                //         null != window.parent.jQuery("#mpFrame").contents().find(".gryffeditor").data("gryffeditor") && (e = window.parent.jQuery("#mpFrame").contents().find(".gryffeditor").data("gryffeditor").searchProductInList(a))
+                //         null != window.parent.jQuery("#designEditor").contents().find("#prevew_builder").data("mpeditor") && (e = window.parent.jQuery("#designEditor").contents().find("#prevew_builder").data("mpeditor").searchProductInList(a))
                 //     } catch (t) {
                 //         console.log(t.message)
                 //     }
@@ -955,8 +956,8 @@ function replaceImageToSize(t, e) {
                         // else
                         //     try {
                         //         var c = section.closest("[data-pid]").attr("data-pid");
-                        //         if (null != window.parent.jQuery("#mpFrame").contents().find(".gryffeditor").data("gryffeditor"))
-                        //             for (r = window.parent.jQuery("#mpFrame").contents().find(".gryffeditor").data("gryffeditor").searchProductInList(c),
+                        //         if (null != window.parent.jQuery("#designEditor").contents().find("#prevew_builder").data("mpeditor"))
+                        //             for (r = window.parent.jQuery("#designEditor").contents().find("#prevew_builder").data("mpeditor").searchProductInList(c),
                         //             o = 0; o < r.variants.length; o++)
                         //                 if (r.variants[o].id == i) {
                         //                     n = r.variants[o];
@@ -985,24 +986,24 @@ function replaceImageToSize(t, e) {
                             } catch (t) {
                                 console.log(t.message)
                             }
-                        // else
-                        //     try {
-                        //         var l = s.join(",")
-                        //           , c = section.closest("[data-pid]").attr("data-pid");
-                        //         if (null != window.parent.jQuery("#mpFrame").contents().find(".gryffeditor").data("gryffeditor"))
-                        //             for (r = window.parent.jQuery("#mpFrame").contents().find(".gryffeditor").data("gryffeditor").searchProductInList(c),
-                        //             o = 0; o < r.variants.lengtxxxxxxxh; o++) {
-                        //                 for (var u = r.variants[o], d = [], f = 1; null != u["option" + f] && null != u["option" + f]; )
-                        //                     d.push(u["option" + f]),
-                        //                     f++;
-                        //                 if ((d = 0 == d.length ? C.map(r.variants[o].title.split("/"), C.trim) : d).join(",") === l) {
-                        //                     n = u;
-                        //                     break
-                        //                 }
-                        //             }
-                        //     } catch (t) {
-                        //         console.log(t.message)
-                        //     }
+                        else
+                            try {
+                                var l = s.join(",")
+                                  , c = section.closest("[data-pid]").attr("data-pid");
+                                if (null != window.parent.jQuery("#designEditor").contents().find("#prevew_builder").data("mpeditor"))
+                                    for (r = window.parent.jQuery("#designEditor").contents().find("#prevew_builder").data("mpeditor").searchProductInList(c),
+                                    o = 0; o < r.variants.lengtxxxxxxxh; o++) {
+                                        for (var u = r.variants[o], d = [], f = 1; null != u["option" + f] && null != u["option" + f]; )
+                                            d.push(u["option" + f]),
+                                            f++;
+                                        if ((d = 0 == d.length ? C.map(r.variants[o].title.split("/"), C.trim) : d).join(",") === l) {
+                                            n = u;
+                                            break
+                                        }
+                                    }
+                            } catch (t) {
+                                console.log(t.message)
+                            }
                     }
                     console.log(s, 's');
                     console.log(n, 'active');
@@ -1272,7 +1273,7 @@ function replaceImageToSize(t, e) {
                 w = "";
             this.init = function () {
                 this.settings = v.extend({}, data, s),
-                    l = v(".gryffeditor").hasClass("editing") ? "dev" : "production";
+                    l = v("#prevew_builder").hasClass("editing") ? "dev" : "production";
                 function setDefaultPrice() {
                     v('[data-label="Product"]').each(function (t, e) {
                         e = v(e);
@@ -1358,7 +1359,7 @@ function replaceImageToSize(t, e) {
                             s = context.convertNumberToPrice(t.compare_at_price / 100, i);
                         n = n.replace(/{{.*}}/g, "{{amount}}");
                         try {
-                            window.parent.jQuery("#mpFrame").attr("data-money", n)
+                            window.parent.jQuery("#designEditor").attr("data-money", n)
                         } catch (t) { }
                         e = context.getUpdatePrice(c, r, n, h);
                         section.find(h).attr("data-price", c),
@@ -1469,7 +1470,7 @@ function replaceImageToSize(t, e) {
                         (null == t || parseFloat(t) < 1) && (t = 1);
                         var e, a = context.findParentProduct(), n = a.attr("data-current-variant"), a = a.find("#sg-hidden-variant" + n), n = void 0;
                         try {
-                            window.parent.jQuery("#mpFrame").attr("data-money") && (n = window.parent.jQuery("#mpFrame").attr("data-money"))
+                            window.parent.jQuery("#designEditor").attr("data-money") && (n = window.parent.jQuery("#designEditor").attr("data-money"))
                         } catch (t) { }
                         a = null != a && 0 < a.length ? (e = a.attr("data-price"),
                             a.attr("data-compare-price")) : (e = section.find(h).attr("data-price"),
@@ -1515,7 +1516,7 @@ function replaceImageToSize(t, e) {
                     if (!v.isEmptyObject(t) && !v.isEmptyObject(t)) {
                         var n, e = void 0;
                         try {
-                            window.parent.jQuery("#mpFrame").attr("data-money") && (e = window.parent.jQuery("#mpFrame").attr("data-money"))
+                            window.parent.jQuery("#designEditor").attr("data-money") && (e = window.parent.jQuery("#designEditor").attr("data-money"))
                         } catch (t) { }
                         null != e && (a = Shopify.formatMoney(t.price, e),
                             context.setPrice(a),
@@ -1574,7 +1575,7 @@ function replaceImageToSize(t, e) {
                         (null == n || parseFloat(n) < 1) && (n = 1);
                         var i, e, t, a = void 0;
                         try {
-                            window.parent.jQuery("#mpFrame").attr("data-money") && (a = window.parent.jQuery("#mpFrame").attr("data-money"))
+                            window.parent.jQuery("#designEditor").attr("data-money") && (a = window.parent.jQuery("#designEditor").attr("data-money"))
                         } catch (t) { }
                         return null != a ? null != (t = section.find(h).attr("data-price")) && (t = Number(t.replace(/[^0-9\.-]+/g, "")),
                             (t *= parseFloat(n)) % 1 != 0 && (t = t.toFixed(2)),
@@ -1801,8 +1802,8 @@ function replaceImageToSize(t, e) {
                     else
                         try {
                             var n = a.attr("data-pid");
-                            if (null != window.parent.jQuery("#mpFrame").contents().find(".gryffeditor").data("gryffeditor")) {
-                                var i = window.parent.jQuery("#mpFrame").contents().find(".gryffeditor").data("gryffeditor").searchProductInList(n);
+                            if (null != window.parent.jQuery("#designEditor").contents().find("#prevew_builder").data("mpeditor")) {
+                                var i = window.parent.jQuery("#designEditor").contents().find("#prevew_builder").data("mpeditor").searchProductInList(n);
                                 null != i.images[0] && (e = i.images[0].src);
                                 for (var r = 0; r < i.images.length; r++)
                                     if (-1 !== o.inArray(t.id, i.images[r].variant_ids)) {
@@ -2312,8 +2313,8 @@ function replaceImageToSize(t, e) {
                     else
                         try {
                             var n = a.attr("data-pid");
-                            if (null != window.parent.jQuery("#mpFrame").contents().find(".gryffeditor").data("gryffeditor")) {
-                                var i = window.parent.jQuery("#mpFrame").contents().find(".gryffeditor").data("gryffeditor").searchProductInList(n);
+                            if (null != window.parent.jQuery("#designEditor").contents().find("#prevew_builder").data("mpeditor")) {
+                                var i = window.parent.jQuery("#designEditor").contents().find("#prevew_builder").data("mpeditor").searchProductInList(n);
                                 null != i.images[0] && (e = i.images[0].src);
                                 for (var r = 0; r < i.images.length; r++)
                                     if (-1 !== f.inArray(t.id, i.images[r].variant_ids)) {
@@ -2630,7 +2631,7 @@ function replaceImageToSize(t, e) {
                     var t;
                     null != window.gfImageListVideoPlayer && (null != window.gfImageListVideoPlayer.pause ? window.gfImageListVideoPlayer.pause() : null != window.gfImageListVideoPlayer.pauseVideo && window.gfImageListVideoPlayer.pauseVideo()),
                         l.hide(),
-                        "dev" == (f(".gryffeditor").hasClass("editing") ? "dev" : "production") && (t = section.closest('[data-label="(P) Image List"]').attr("id")) && null != (t = parent.jQuery("body").find("#mpFrame").contents().find("#" + t)).data("gfmodule") && t.data("gfmodule").openModuleSettings()
+                        "dev" == (f("#prevew_builder").hasClass("editing") ? "dev" : "production") && (t = section.closest('[data-label="(P) Image List"]').attr("id")) && null != (t = parent.jQuery("body").find("#designEditor").contents().find("#" + t)).data("gfmodule") && t.data("gfmodule").openModuleSettings()
                 }
                 ,
                 this.initLightbox = function () {
