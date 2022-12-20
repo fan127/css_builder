@@ -1005,8 +1005,6 @@ function replaceImageToSize(t, e) {
                                 }
                             }
                         }
-                        console.log(s, 's');
-                        console.log(n, 'active');
                         return null != e.data("mpv1product") && e.data("mpv1product").setVariant(n),
                             context.settings.onSwatchSelected(n, t),
                             setTimeout(function () {
