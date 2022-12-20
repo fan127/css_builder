@@ -968,7 +968,6 @@ function replaceImageToSize(t, e) {
                             //     }
                         } else {
                             var s = [];
-                            console.log(0 < e.find(".product-json").length);
                             if (section.find(".sg_swatch.active").each(function () {
                                 var t = context.getSwatchValue(C(this));
                                 s.push(C.trim(t))
@@ -992,7 +991,7 @@ function replaceImageToSize(t, e) {
                                         , c = section.closest("[data-pid]").attr("data-pid");
                                     if (null != window.parent.jQuery("#designEditor").contents().find("#prevew_builder").data("mpeditor"))
                                         for (r = window.parent.jQuery("#designEditor").contents().find("#prevew_builder").data("mpeditor").searchProductInList(c),
-                                            o = 0; o < r.variants.lengtxxxxxxxh; o++) {
+                                            o = 0; o < r.variants.length; o++) {
                                             for (var u = r.variants[o], d = [], f = 1; null != u["option" + f] && null != u["option" + f];)
                                                 d.push(u["option" + f]),
                                                     f++;
