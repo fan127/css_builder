@@ -265,7 +265,7 @@ function replaceImageToSize(t, e) {
                         a
                 },
                 this.setVariant = function (e, a) {
-                    console.log(e,'setVariant');
+                    console.log(e, 'setVariant');
                     if (this.checkPassBlankOption(),
                         (a = null != a && a) || !e.id || !variants.id || variants.id != e.id) {
                         var t = null != e.id ? e.id : ""
@@ -699,19 +699,19 @@ function replaceImageToSize(t, e) {
                 })
             }
     }(window.MinQuery || jQuery),
-    function(C) {
-        C.mpV1ProductSwatches = function(t, c) {
+    function (C) {
+        C.mpV1ProductSwatches = function (t, c) {
             var s, l, m, w, data = {
                 swatchText: "1",
-                onSwatchSelected: function(t, e) {}
+                onSwatchSelected: function (t, e) { }
             }, section = (this.settings = {},
-            C(t)), context = this, b = [], u = [];
-            this.init = function() {
+                C(t)), context = this, b = [], u = [];
+            this.init = function () {
                 this.settings = C.extend({}, data, c);
                 var t, u = context.findParentProduct();
                 if (null != u.data("mpv1product") && (t = u.data("mpv1product").getVariant(),
-                context.initWithVariant(t)),
-                "1" == this.settings.swatchText)
+                    context.initWithVariant(t)),
+                    "1" == this.settings.swatchText)
                     section.find(".sg_swatch").children("span").css("visibility", "visible");
                 else {
                     var e = section.attr("data-swatcher-hide");
@@ -720,12 +720,12 @@ function replaceImageToSize(t, e) {
                         try {
                             for (var a in e = -1 !== (e = "Other" == e ? y.attr("data-swatcher-hideother") : e).indexOf(",") ? e.split(",") : [e]) {
                                 var n = (n = e[a]).trim()
-                                  , i = section.find('.sg_swatches-selector[data-name="' + n + '"]');
+                                    , i = section.find('.sg_swatches-selector[data-name="' + n + '"]');
                                 0 < i.length && i.find(".sg_swatch").children("span").addClass("sg_swatch-hide")
                             }
                         } catch (t) {
                             console.log(t),
-                            section.find(".sg_swatch").children("span").css("visibility", "hidden")
+                                section.find(".sg_swatch").children("span").css("visibility", "hidden")
                         }
                     } else
                         section.find(".gf_swatch").children("span").css("visibility", "hidden")
@@ -860,295 +860,295 @@ function replaceImageToSize(t, e) {
                 //         console.log(t.message)
                 //     }
                 return s = section.attr("data-soldout"),
-                l = section.attr("data-soldout-color"),
-                m = section.attr("data-soldout-style"),
-                w = section.attr("data-soldout-logic"),
-                null == m && (m = "default"),
-                null == w && (w = "1"),
-                "1" == s && (context.updateSwatchAvailableVariants()
-                // ,
-                // "1" == w ? context.addSoldOut() : "2" == w && context.addSoldOutLogic2()
-                ),
-                context.applyEvents(),
-                !1
+                    l = section.attr("data-soldout-color"),
+                    m = section.attr("data-soldout-style"),
+                    w = section.attr("data-soldout-logic"),
+                    null == m && (m = "default"),
+                    null == w && (w = "1"),
+                    "1" == s && (context.updateSwatchAvailableVariants()
+                        // ,
+                        // "1" == w ? context.addSoldOut() : "2" == w && context.addSoldOutLogic2()
+                    ),
+                    context.applyEvents(),
+                    !1
             }
-            ,
-            this.getSwatchValue = function(t) {
-                var e;
-                return t && ((e = t.attr("data-value")) && e.trim() || (e = t.text()) && e.trim()) ? e.trim() : ""
-            }
-            ,
-            this.updateSwatchAvailableVariants = function() {
-                var t = context.findParentProduct()
-                  , e = {};
-                if (0 < t.find(".product-json").length)
-                    try {
-                        e = C.parseJSON(t.find(".product-json").html())
-                    } catch (t) {
-                        console.log(t.message)
-                    }
-                // else
-                //     try {
-                //         var a = section.closest("[data-pid]").attr("data-pid");
-                //         null != window.parent.jQuery("#designEditor").contents().find("#prevew_builder").data("mpeditor") && (e = window.parent.jQuery("#designEditor").contents().find("#prevew_builder").data("mpeditor").searchProductInList(a))
-                //     } catch (t) {
-                //         console.log(t.message)
-                //     }
-                if (!C.isEmptyObject(e))
-                    for (var n = 0; n < e.variants.length; n++) {
-                        var i = e.variants[n];
-                        null != i.available && i.available ? u.push(i) : (0 < i.inventory_quantity || "shopify" != i.inventory_management) && u.push(i)
-                    }
-                return u
-            }
-            ,
-            this.handleSwatchStyle = function(t, e) {
-                "default" == t ? 0 == e.children("svg").length && e.append('<svg height="100" width="100" preserveAspectRatio="none" class="sg_soldout"><line x1="0%" y1="0%" x2="100%" y2="100%" style="stroke:' + l + ';stroke-width:2" /><line x1="0%" y1="100%" x2="100%" y2="0%" style="stroke:' + l + ';stroke-width:2" /></svg>') : e.hasClass("sg_swatch-soldout") || e.addClass("sg_swatch-soldout")
-            }
-            ,
-            this.initWithVariant = function(t) {
-                console.log(t,'swatch');
-                if (!C.isEmptyObject(t)) {
-                    if (t.options && 0 < t.options.length)
-                        for (var e = [], a = 1; a <= t.options.length; a++)
-                            null != t["option" + a] && e.push(t["option" + a]);
-                    else
-                        e = t.title.split(" / ");
-                    var n = 0;
-                    section.find(".sg_swatch").removeClass("active"),
-                    section.find(".sg-variant-item").each(function() {
-                        C(this).find(".sg_swatch").each(function() {
-                            var t = C(this);
-                            context.getSwatchValue(t) == C.trim(e[n]) && t.addClass("active")
-                        }),
-                        n++
-                    })
-                    // ,
-                    // "1" == s && "2" == w && context.addSoldOutLogic2()
+                ,
+                this.getSwatchValue = function (t) {
+                    var e;
+                    return t && ((e = t.attr("data-value")) && e.trim() || (e = t.text()) && e.trim()) ? e.trim() : ""
                 }
-                return !1
-            }
-            ,
-            this.applyEvents = function() {
-                return section.find(".sg_swatch").off("click").on("click", function() {
-                    var t = C(this)
-                      , e = context.findParentProduct()
-                      , a = t.closest(".sg_swatches")
-                      , a = (t.closest("form"),
-                    a.attr("data-type"))
-                      , n = (t.closest(".sg-variant-item").find(".sg_swatch").removeClass("active"),
-                    t.addClass("active"),
-                    {});
-                    if ("together" == a) {
-                        var i = C(this).attr("data-vid");
-                        if (0 < e.find(".product-json").length)
-                            try {
-                                for (var r = C.parseJSON(e.find(".product-json").html()), o = 0; o < r.variants.length; o++) {
-                                    var d = r.variants[o].options;
-                                    if (r.variants[o].id == i) {
-                                        n = r.variants[o];
-                                        break
-                                    }
-                                }
-                            } catch (t) {
-                                console.log(t.message)
-                            }
-                        // else
-                        //     try {
-                        //         var c = section.closest("[data-pid]").attr("data-pid");
-                        //         if (null != window.parent.jQuery("#designEditor").contents().find("#prevew_builder").data("mpeditor"))
-                        //             for (r = window.parent.jQuery("#designEditor").contents().find("#prevew_builder").data("mpeditor").searchProductInList(c),
-                        //             o = 0; o < r.variants.length; o++)
-                        //                 if (r.variants[o].id == i) {
-                        //                     n = r.variants[o];
-                        //                     break
-                        //                 }
-                        //     } catch (t) {
-                        //         console.log(t.message)
-                        //     }
-                    } else {
-                        var s = [];
-                        if (section.find(".sg_swatch.active").each(function() {
-                            var t = context.getSwatchValue(C(this));
-                            s.push(C.trim(t))
-                        }),
-                        0 < e.find(".product-json").length)
-                            try {
-                                console.log(e.find(".product-json"));
-                                for (r = C.parseJSON(e.find(".product-json").html()),
-                                o = 0; o < r.variants.length; o++){
-                                    console.log(r.variants[o].options);
-                                    if ((d = r.variants[o].options).join(",") === s.join(",")) {
-                                        n = r.variants[o];
-                                        break
-                                    }
-                                }
-                            } catch (t) {
-                                console.log(t.message)
-                            }
+                ,
+                this.updateSwatchAvailableVariants = function () {
+                    var t = context.findParentProduct()
+                        , e = {};
+                    if (0 < t.find(".product-json").length)
+                        try {
+                            e = C.parseJSON(t.find(".product-json").html())
+                        } catch (t) {
+                            console.log(t.message)
+                        }
+                    // else
+                    //     try {
+                    //         var a = section.closest("[data-pid]").attr("data-pid");
+                    //         null != window.parent.jQuery("#designEditor").contents().find("#prevew_builder").data("mpeditor") && (e = window.parent.jQuery("#designEditor").contents().find("#prevew_builder").data("mpeditor").searchProductInList(a))
+                    //     } catch (t) {
+                    //         console.log(t.message)
+                    //     }
+                    if (!C.isEmptyObject(e))
+                        for (var n = 0; n < e.variants.length; n++) {
+                            var i = e.variants[n];
+                            null != i.available && i.available ? u.push(i) : (0 < i.inventory_quantity || "shopify" != i.inventory_management) && u.push(i)
+                        }
+                    return u
+                }
+                ,
+                this.handleSwatchStyle = function (t, e) {
+                    "default" == t ? 0 == e.children("svg").length && e.append('<svg height="100" width="100" preserveAspectRatio="none" class="sg_soldout"><line x1="0%" y1="0%" x2="100%" y2="100%" style="stroke:' + l + ';stroke-width:2" /><line x1="0%" y1="100%" x2="100%" y2="0%" style="stroke:' + l + ';stroke-width:2" /></svg>') : e.hasClass("sg_swatch-soldout") || e.addClass("sg_swatch-soldout")
+                }
+                ,
+                this.initWithVariant = function (t) {
+                    console.log(t, 'swatch');
+                    if (!C.isEmptyObject(t)) {
+                        if (t.options && 0 < t.options.length)
+                            for (var e = [], a = 1; a <= t.options.length; a++)
+                                null != t["option" + a] && e.push(t["option" + a]);
                         else
-                            try {
-                                var l = s.join(",")
-                                  , c = section.closest("[data-pid]").attr("data-pid");
-                                if (null != window.parent.jQuery("#designEditor").contents().find("#prevew_builder").data("mpeditor"))
-                                    for (r = window.parent.jQuery("#designEditor").contents().find("#prevew_builder").data("mpeditor").searchProductInList(c),
-                                    o = 0; o < r.variants.lengtxxxxxxxh; o++) {
-                                        for (var u = r.variants[o], d = [], f = 1; null != u["option" + f] && null != u["option" + f]; )
-                                            d.push(u["option" + f]),
-                                            f++;
-                                        if ((d = 0 == d.length ? C.map(r.variants[o].title.split("/"), C.trim) : d).join(",") === l) {
-                                            n = u;
+                            e = t.title.split(" / ");
+                        var n = 0;
+                        section.find(".sg_swatch").removeClass("active"),
+                            section.find(".sg-variant-item").each(function () {
+                                C(this).find(".sg_swatch").each(function () {
+                                    var t = C(this);
+                                    context.getSwatchValue(t) == C.trim(e[n]) && t.addClass("active")
+                                }),
+                                    n++
+                            })
+                        // ,
+                        // "1" == s && "2" == w && context.addSoldOutLogic2()
+                    }
+                    return !1
+                }
+                ,
+                this.applyEvents = function () {
+                    return section.find(".sg_swatch").off("click").on("click", function () {
+                        var t = C(this)
+                            , e = context.findParentProduct()
+                            , a = t.closest(".sg_swatches")
+                            , a = (t.closest("form"),
+                                a.attr("data-type"))
+                            , n = (t.closest(".sg-variant-item").find(".sg_swatch").removeClass("active"),
+                                t.addClass("active"),
+                                {});
+                        if ("together" == a) {
+                            var i = C(this).attr("data-vid");
+                            if (0 < e.find(".product-json").length)
+                                try {
+                                    for (var r = C.parseJSON(e.find(".product-json").html()), o = 0; o < r.variants.length; o++) {
+                                        var d = r.variants[o].options;
+                                        if (r.variants[o].id == i) {
+                                            n = r.variants[o];
                                             break
                                         }
                                     }
-                            } catch (t) {
-                                console.log(t.message)
-                            }
-                    }
-                    console.log(s, 's');
-                    console.log(n, 'active');
-                    return null != e.data("mpv1product") && e.data("mpv1product").setVariant(n),
-                    context.settings.onSwatchSelected(n, t),
-                    setTimeout(function() {
-                        refreshRechargeOptions(context.findParentProduct(), C, window.ReCharge)
-                    }, 10),
-                    !1
-                }),
-                !1
-            }
-            ,
-            this.replaceBGColorImportant = function(t, e) {
-                var a, n;
-                return !e && "" == e || (a = (a = t.attr("style")) ? a.split(";") : [],
-                n = [],
-                a.map(function(t) {
-                    "background-color" != t.split(":")[0] && n.push(t)
-                }),
-                n.push("background-color: " + e + " !important"),
-                t.attr("style", n.join(";"))),
-                !1
-            }
-            ,
-            this.renderSwatchColor = function(t, e, a, n) {
-                return "" != a ? n.css("background-image", "url(" + a + ")") : "" != e && "transparent" != e ? (a = "",
-                n.css("background-image", a += "linear-gradient(180deg, " + t + " 50%, " + e + " 50%)")) : (n.css("background-image", "none"),
-                context.replaceBGColorImportant(n, t)),
-                !1
-            }
-            ,
-            this.findSwatchinArray = function(t) {
-                for (var e = {}, a = 0; a < b.length; a++)
-                    if (C.trim(t.toLowerCase()) == C.trim(b[a].label.toLowerCase())) {
-                        e = b[a];
-                        break
-                    }
-                return e
-            }
-            ,
-            this.findParentProduct = function() {
-                var t = section.closest('[data-label="Product"]').children(".sg-module");
-                return t = 0 == t.length ? section.closest('[data-icon="gpicon-product"]').children(".sg-module") : t
-            }
-            ,
-            this.addSoldOut = function() {
-                return section.find(".sg_swatches").find(".sg_swatches-selector").each(function(i) {
-                    C(this).find(".sg_swatch").each(function() {
-                        for (var t = C(this), e = context.getSwatchValue(t), a = !1, n = 0; n < u.length; n++)
-                            if (u[n]["option" + (parseInt(i) + 1)] == e) {
-                                a = !0;
-                                break
-                            }
-                        a || context.handleSwatchStyle(m, t)
-                    })
-                }),
-                !1
-            }
-            ,
-            this.addSoldOutLogic2 = function() {
-                var t = section.find(".sg_swatches").find(".sg_swatches-selector")
-                  , o = t.length
-                  , e = (t.find(".sg_swatch").find("svg").remove(),
-                t.find(".sg_swatch").removeClass("sg_swatch-soldout"),
-                t.eq(0).children(".sg_swatch.active"))
-                  , d = context.getSwatchValue(e)
-                  , e = t.eq(1).children(".sg_swatch.active")
-                  , c = context.getSwatchValue(e)
-                  , e = t.eq(2).children(".sg_swatch.active")
-                  , s = context.getSwatchValue(e);
-                return t.each(function(r) {
-                    C(this).find(".sg_swatch").each(function() {
-                        for (var t = C(this), e = context.getSwatchValue(t), a = !1, n = 0; n < u.length; n++) {
-                            var i = u[n];
-                            if (2 == r && i.option1 == d && i.option2 == c && i.option3 == e) {
-                                a = !0;
-                                break
-                            }
-                            if (1 == r && i.option1 == d && i.option2 == e) {
-                                if (2 == o) {
-                                    a = !0;
-                                    break
+                                } catch (t) {
+                                    console.log(t.message)
                                 }
-                                if (3 == o && i.option3 == s) {
-                                    a = !0;
-                                    break
+                            // else
+                            //     try {
+                            //         var c = section.closest("[data-pid]").attr("data-pid");
+                            //         if (null != window.parent.jQuery("#designEditor").contents().find("#prevew_builder").data("mpeditor"))
+                            //             for (r = window.parent.jQuery("#designEditor").contents().find("#prevew_builder").data("mpeditor").searchProductInList(c),
+                            //             o = 0; o < r.variants.length; o++)
+                            //                 if (r.variants[o].id == i) {
+                            //                     n = r.variants[o];
+                            //                     break
+                            //                 }
+                            //     } catch (t) {
+                            //         console.log(t.message)
+                            //     }
+                        } else {
+                            var s = [];
+                            if (section.find(".sg_swatch.active").each(function () {
+                                var t = context.getSwatchValue(C(this));
+                                s.push(C.trim(t))
+                            }),
+                                0 < e.find(".product-json").length) {
+                                try {
+                                    console.log(e.find(".product-json"));
+                                    for (r = C.parseJSON(e.find(".product-json").html()),
+                                        o = 0; o < r.variants.length; o++) {
+                                        if ((d = r.variants[o].options).join(",") === s.join(",")) {
+                                            n = r.variants[o];
+                                            break
+                                        }
+                                    }
+                                } catch (t) {
+                                    console.log(t.message)
                                 }
-                            } else if (0 == r && i.option1 == e) {
-                                if (1 == o) {
-                                    a = !0;
-                                    break
-                                }
-                                if (2 == o && i.option2 == c) {
-                                    a = !0;
-                                    break
-                                }
-                                if (3 == o && i.option2 == c && i.option3 == s) {
-                                    a = !0;
-                                    break
+                            } else {
+                                try {
+                                    var l = s.join(",")
+                                        , c = section.closest("[data-pid]").attr("data-pid");
+                                    if (null != window.parent.jQuery("#designEditor").contents().find("#prevew_builder").data("mpeditor"))
+                                        for (r = window.parent.jQuery("#designEditor").contents().find("#prevew_builder").data("mpeditor").searchProductInList(c),
+                                            o = 0; o < r.variants.lengtxxxxxxxh; o++) {
+                                            for (var u = r.variants[o], d = [], f = 1; null != u["option" + f] && null != u["option" + f];)
+                                                d.push(u["option" + f]),
+                                                    f++;
+                                            if ((d = 0 == d.length ? C.map(r.variants[o].title.split("/"), C.trim) : d).join(",") === l) {
+                                                n = u;
+                                                break
+                                            }
+                                        }
+                                } catch (t) {
+                                    console.log(t.message)
                                 }
                             }
                         }
-                        a || context.handleSwatchStyle(m, t)
-                    })
-                }),
-                !1
-            }
-            ,
-            this.resizeImage = function(t) {
-                a = section.find(".sg_swatch"),
-                i = n = 30,
-                a && a.length && a.each(function() {
-                    C(this);
-                    var t = a.outerWidth() || 30
-                      , e = a.outerHeight() || 30;
-                    n < t && (n = t),
-                    i < e && (i = e)
-                }),
-                e = Math.max(n, i);
-                var a, n, i, e = {
-                    width: e *= 500 < e ? 1.2 : 250 < e ? 1.5 : 125 < e ? 2 : 3,
-                    height: e
-                };
-                try {
-                    var r = parseInt(e.width)
-                      , o = parseInt(e.height)
-                } catch (t) {
-                    r = 120,
-                    o = 120
+                        console.log(s, 's');
+                        console.log(n, 'active');
+                        return null != e.data("mpv1product") && e.data("mpv1product").setVariant(n),
+                            context.settings.onSwatchSelected(n, t),
+                            setTimeout(function () {
+                                refreshRechargeOptions(context.findParentProduct(), C, window.ReCharge)
+                            }, 10),
+                            !1
+                    }),
+                        !1
                 }
-                return replaceImageToSize(t, r + "x" + o)
-            }
+                ,
+                this.replaceBGColorImportant = function (t, e) {
+                    var a, n;
+                    return !e && "" == e || (a = (a = t.attr("style")) ? a.split(";") : [],
+                        n = [],
+                        a.map(function (t) {
+                            "background-color" != t.split(":")[0] && n.push(t)
+                        }),
+                        n.push("background-color: " + e + " !important"),
+                        t.attr("style", n.join(";"))),
+                        !1
+                }
+                ,
+                this.renderSwatchColor = function (t, e, a, n) {
+                    return "" != a ? n.css("background-image", "url(" + a + ")") : "" != e && "transparent" != e ? (a = "",
+                        n.css("background-image", a += "linear-gradient(180deg, " + t + " 50%, " + e + " 50%)")) : (n.css("background-image", "none"),
+                            context.replaceBGColorImportant(n, t)),
+                        !1
+                }
+                ,
+                this.findSwatchinArray = function (t) {
+                    for (var e = {}, a = 0; a < b.length; a++)
+                        if (C.trim(t.toLowerCase()) == C.trim(b[a].label.toLowerCase())) {
+                            e = b[a];
+                            break
+                        }
+                    return e
+                }
+                ,
+                this.findParentProduct = function () {
+                    var t = section.closest('[data-label="Product"]').children(".sg-module");
+                    return t = 0 == t.length ? section.closest('[data-icon="gpicon-product"]').children(".sg-module") : t
+                }
+                ,
+                this.addSoldOut = function () {
+                    return section.find(".sg_swatches").find(".sg_swatches-selector").each(function (i) {
+                        C(this).find(".sg_swatch").each(function () {
+                            for (var t = C(this), e = context.getSwatchValue(t), a = !1, n = 0; n < u.length; n++)
+                                if (u[n]["option" + (parseInt(i) + 1)] == e) {
+                                    a = !0;
+                                    break
+                                }
+                            a || context.handleSwatchStyle(m, t)
+                        })
+                    }),
+                        !1
+                }
+                ,
+                this.addSoldOutLogic2 = function () {
+                    var t = section.find(".sg_swatches").find(".sg_swatches-selector")
+                        , o = t.length
+                        , e = (t.find(".sg_swatch").find("svg").remove(),
+                            t.find(".sg_swatch").removeClass("sg_swatch-soldout"),
+                            t.eq(0).children(".sg_swatch.active"))
+                        , d = context.getSwatchValue(e)
+                        , e = t.eq(1).children(".sg_swatch.active")
+                        , c = context.getSwatchValue(e)
+                        , e = t.eq(2).children(".sg_swatch.active")
+                        , s = context.getSwatchValue(e);
+                    return t.each(function (r) {
+                        C(this).find(".sg_swatch").each(function () {
+                            for (var t = C(this), e = context.getSwatchValue(t), a = !1, n = 0; n < u.length; n++) {
+                                var i = u[n];
+                                if (2 == r && i.option1 == d && i.option2 == c && i.option3 == e) {
+                                    a = !0;
+                                    break
+                                }
+                                if (1 == r && i.option1 == d && i.option2 == e) {
+                                    if (2 == o) {
+                                        a = !0;
+                                        break
+                                    }
+                                    if (3 == o && i.option3 == s) {
+                                        a = !0;
+                                        break
+                                    }
+                                } else if (0 == r && i.option1 == e) {
+                                    if (1 == o) {
+                                        a = !0;
+                                        break
+                                    }
+                                    if (2 == o && i.option2 == c) {
+                                        a = !0;
+                                        break
+                                    }
+                                    if (3 == o && i.option2 == c && i.option3 == s) {
+                                        a = !0;
+                                        break
+                                    }
+                                }
+                            }
+                            a || context.handleSwatchStyle(m, t)
+                        })
+                    }),
+                        !1
+                }
+                ,
+                this.resizeImage = function (t) {
+                    a = section.find(".sg_swatch"),
+                        i = n = 30,
+                        a && a.length && a.each(function () {
+                            C(this);
+                            var t = a.outerWidth() || 30
+                                , e = a.outerHeight() || 30;
+                            n < t && (n = t),
+                                i < e && (i = e)
+                        }),
+                        e = Math.max(n, i);
+                    var a, n, i, e = {
+                        width: e *= 500 < e ? 1.2 : 250 < e ? 1.5 : 125 < e ? 2 : 3,
+                        height: e
+                    };
+                    try {
+                        var r = parseInt(e.width)
+                            , o = parseInt(e.height)
+                    } catch (t) {
+                        r = 120,
+                            o = 120
+                    }
+                    return replaceImageToSize(t, r + "x" + o)
+                }
+                ,
+                this.init()
+        }
             ,
-            this.init()
-        }
-        ,
-        C.fn.mpV1ProductSwatches = function(e) {
-            return this.each(function() {
-                var t;
-                null == C(this).data("mpv1productswatches") && (t = new C.mpV1ProductSwatches(this,e),
-                C(this).data("mpv1productswatches", t))
-            })
-        }
-      }(window.MinQuery || jQuery),
+            C.fn.mpV1ProductSwatches = function (e) {
+                return this.each(function () {
+                    var t;
+                    null == C(this).data("mpv1productswatches") && (t = new C.mpV1ProductSwatches(this, e),
+                        C(this).data("mpv1productswatches", t))
+                })
+            }
+    }(window.MinQuery || jQuery),
     function (d) {
         d.minV1ProductQuantity = function (t, a) {
             var section = d(t)
@@ -1352,7 +1352,7 @@ function replaceImageToSize(t, e) {
                         var i = e.find('.sg-wrap[data-label="(P) Quantity"]').first()
                             , r = 1
                             , i = ("1" == i.children(".sg-module").attr("data-updateprice") && (r = parseInt(i.find('input[name="quantity"]').val())),
-                          e.closest(".sg-wrap[data-key='product']"))
+                                e.closest(".sg-wrap[data-key='product']"))
                             , o = 3;
                         i = section.find(".sg_product-prices").attr("data-oldformat");
                         var c = context.convertNumberToPrice(t.price / 100, i),
@@ -2258,9 +2258,9 @@ function replaceImageToSize(t, e) {
     function (f) {
         f.minV1ProductImageList = function (t, e) {
             var data = {
-                onImageClicked: function (t, e, id) { 
+                onImageClicked: function (t, e, id) {
                     var ct, a = context.findParentProduct();
-                    var variant = (ct = a.data("mpv1product")) ? ct.getVariantFromMedia(id): false;
+                    var variant = (ct = a.data("mpv1product")) ? ct.getVariantFromMedia(id) : false;
                     variant && (ct ? ct.setVariant(variant, !1) : console.warn("couldn't find parent product module"))
                 }
             }
@@ -2403,7 +2403,7 @@ function replaceImageToSize(t, e) {
                 this.applyEvents = function () {
                     return section.find(".sg_product-image-thumb").closest("a").off("click").on("click", function () {
                         var id = f(this).find(".sg_product-image-thumb").attr("data-id");
-                        console.log(id,'id')
+                        console.log(id, 'id')
                         var t, e, a = f(this), n = (section.find(".sg_product-image-thumb").closest("a").removeClass("sg_product-image-thumbactive"),
                             "1" != s && 1 != s || a.addClass("sg_product-image-thumbactive"),
                             a.find(".sg_product-image-thumb")), a = (t = (0 < a.closest(".owl-item").length ? a.closest(".owl-item") : a).index(),
