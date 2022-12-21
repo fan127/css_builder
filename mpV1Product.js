@@ -907,7 +907,6 @@ function replaceImageToSize(t, e) {
                 }
                 ,
                 this.initWithVariant = function (t) {
-                    console.log(t, 'swatch');
                     if (!C.isEmptyObject(t)) {
                         if (t.options && 0 < t.options.length)
                             for (var e = [], a = 1; a <= t.options.length; a++)
