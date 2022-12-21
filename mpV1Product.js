@@ -210,6 +210,7 @@ function replaceImageToSize(t, e) {
                     !1;
             },
                 this.getVariantFromMedia = function (e) {
+                    console.log(e,'e')
                     var t = context.findProductModule()
                         , a = {};
                     if (0 < t.find(".product-json").length)
@@ -224,6 +225,7 @@ function replaceImageToSize(t, e) {
                         try {
                             var n = section.closest("[data-pid]").attr("data-pid");
                             return (a = null != window.parent.jQuery("#designEditor").contents().find("#prevew_builder").data("mpeditor") ? window.parent.jQuery("#designEditor").contents().find("#prevew_builder").data("mpeditor").searchProductInList(n) : a).variants.find(function (t) {
+                                console.log(t.image_id,'image_id')
                                 return t.image_id == e
                             })
                         } catch (t) {
@@ -388,7 +390,6 @@ function replaceImageToSize(t, e) {
                     else
                         try {
                             n = section.attr("data-pid");
-                            console.log(window.parent.jQuery("#designEditor").contents().find("#prevew_builder").data("mpeditor"));
                             if (null != window.parent.jQuery("#designEditor").contents().find("#prevew_builder").data("mpeditor")) {
                                 var o = window.parent.jQuery("#designEditor").contents().find("#prevew_builder").data("mpeditor").searchProductInList(n);
                                 if (0 == t) {
@@ -2400,7 +2401,6 @@ function replaceImageToSize(t, e) {
                 this.applyEvents = function () {
                     return section.find(".sg_product-image-thumb").closest("a").off("click").on("click", function () {
                         var id = f(this).find(".sg_product-image-thumb").attr("data-id");
-                        console.log(id, 'id')
                         var t, e, a = f(this), n = (section.find(".sg_product-image-thumb").closest("a").removeClass("sg_product-image-thumbactive"),
                             "1" != s && 1 != s || a.addClass("sg_product-image-thumbactive"),
                             a.find(".sg_product-image-thumb")), a = (t = (0 < a.closest(".owl-item").length ? a.closest(".owl-item") : a).index(),
