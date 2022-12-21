@@ -1174,7 +1174,7 @@ function replaceImageToSize(t, e) {
                 }
                 ,
                 this.changeStatus = function (t) {
-                    return t ? section.fadeTo(300, 1).show() : 0 < context.findParentProduct().find(".product-json").length ? section.hide() : section.fadeTo(300, .2),
+                    return t ? section.fadeTo(300, 1).show() : 0 < context.findParentProduct().find(".product-json").length ? section.hide() : section.fadeTo(300, 1),
                         !1
                 }
                 ,
