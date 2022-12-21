@@ -726,7 +726,7 @@ function replaceImageToSize(t, e) {
                                 section.find(".sg_swatch").children("span").css("visibility", "hidden")
                         }
                     } else
-                        section.find(".gf_swatch").children("span").css("visibility", "hidden")
+                        section.find(".sg_swatch").children("span").css("visibility", "hidden")
                 }
                 // if (null != section.attr("data-background"))
                 //     try {
@@ -1426,7 +1426,7 @@ function replaceImageToSize(t, e) {
                     }
                     ,
                     this.calculatePriceByQuantity = function (t, e, a, n) {
-                        var a = section.find(".gf_product-prices").attr("data-oldformat") || a || "{{ amount }}"
+                        var a = section.find(".sg_product-prices").attr("data-oldformat") || a || "{{ amount }}"
                             , i = t;
                         "number" == typeof t && (i = "" + t);
                         t = a.replace(/{{.*}}/g, "{{gem}}").split("{{gem}}"),
@@ -1862,7 +1862,7 @@ function replaceImageToSize(t, e) {
                         var n, i = section, r = (section.find("model-viewer").length && section.find("model-viewer").remove(),
                             i.find('[data-src="' + t + '"]'));
                         if (a.host && a.videoId && (r = i.find('[data-video-id="' + a.videoId + '"]')),
-                            (r = a.sources && a.sources[0] && a.sources[0].src ? i.find('[data-source="' + a.sources[0].src + '"]') : r).length ? n = r.attr("id") : (n = "gf_image-item-" + window._gpProductImageIndex,
+                            (r = a.sources && a.sources[0] && a.sources[0].src ? i.find('[data-source="' + a.sources[0].src + '"]') : r).length ? n = r.attr("id") : (n = "sg_image-item-" + window._gpProductImageIndex,
                                 window._gpProductImageIndex++,
                                 d = '<div id="' + n + '" class="sg_image-item ' + (o = "sg_image-video") + '" data-src="' + t + '"></div>',
                                 a.host && a.videoId && (d = '<div id="' + n + '" class="sg_image-item ' + o + '" data-video-id="' + a.videoId + '"></div>'),
@@ -2071,7 +2071,7 @@ function replaceImageToSize(t, e) {
                                                                 "" != s && (0 < l.next(".ajaxified-cart-feedback").length ? l.next(".ajaxified-cart-feedback").removeClass("error").addClass("success").children("span").html(s) : l.after('<p class="ajaxified-cart-feedback success"><i class="fa fa-check"></i><span>' + s + "</span></p>"))
                                                         }, 1e3)
                                                 }, 300),
-                                                    l.hasClass("gf_pcartbutton-nocartdrawer"))
+                                                    l.hasClass("sg_pcartbutton-nocartdrawer"))
                                                     ;
                                                 else {
                                                     function e(e) {
@@ -2437,7 +2437,7 @@ function replaceImageToSize(t, e) {
     }(window.MinQuery || jQuery),
     function (f) {
         f.minV1Lightbox = function (t, e) {
-            var l, section = f(t), data = {}, context = (this.settings = {},
+            var modal, section = f(t), data = {}, context = (this.settings = {},
                 this);
             this.init = function () {
                 this.settings = f.extend({}, data, e);
@@ -2446,70 +2446,76 @@ function replaceImageToSize(t, e) {
                     , o = void 0 !== section.attr("data-spacing") ? section.attr("data-spacing") : "5px";
                 return section.find(".sg_product-image-hover-zoom").remove(),
                     r && "1" == r && (context.initLightbox(),
-                        section.find(".sg_product-image-thumb").on("mouseenter", function () {
-                            var e, section = f(this), n = section.attr("data-video"), i = ("" == n && (n = void 0),
-                                section.next(".sg_product-image-hover-zoom"));
-                            0 == i.length && r && "1" == r && t && "1" == t && (e = Date.now() + Math.floor(100 * Math.random() + 1),
-                                section.attr("data-hover", e),
-                                i = f(null == n ? '<div class="sg_product-image-hover-zoom" data-hover="' + e + '" style="position: absolute;top:0px;left:0px;background:rgba(0,0,0,0.2);width: calc(100% - ' + o + ");height: calc(100% - " + o + ');display: flex;justify-content: center;align-items: center;"><svg width="24px" viewBox="0 0 512 512"><path fill="#fff" d="M312 196v24c0 6.6-5.4 12-12 12h-68v68c0 6.6-5.4 12-12 12h-24c-6.6 0-12-5.4-12-12v-68h-68c-6.6 0-12-5.4-12-12v-24c0-6.6 5.4-12 12-12h68v-68c0-6.6 5.4-12 12-12h24c6.6 0 12 5.4 12 12v68h68c6.6 0 12 5.4 12 12zm196.5 289.9l-22.6 22.6c-4.7 4.7-12.3 4.7-17 0L347.5 387.1c-2.3-2.3-3.5-5.3-3.5-8.5v-13.2c-36.5 31.5-84 50.6-136 50.6C93.1 416 0 322.9 0 208S93.1 0 208 0s208 93.1 208 208c0 52-19.1 99.5-50.6 136h13.2c3.2 0 6.2 1.3 8.5 3.5l121.4 121.4c4.7 4.7 4.7 12.3 0 17zM368 208c0-88.4-71.6-160-160-160S48 119.6 48 208s71.6 160 160 160 160-71.6 160-160z"></path></svg></div>' : '<div class="gf_product-image-hover-zoom" data-hover="' + e + '" style="position: absolute;top:0px;left:0px;background:rgba(0,0,0,0.2);width: calc(100% - ' + o + ");height: calc(100% - " + o + ');display: flex;justify-content: center;align-items: center;"><svg width="24px" viewBox="0 0 512 512"><path fill="#fff" d="M424.4 214.7L72.4 6.6C43.8-10.3 0 6.1 0 47.9V464c0 37.5 40.7 60.1 72.4 41.3l352-208c31.4-18.5 31.5-64.1 0-82.6zm-16.2 55.1l-352 208C45.6 483.9 32 476.6 32 464V47.9c0-16.3 16.4-18.4 24.1-13.8l352 208.1c10.5 6.2 10.5 21.4.1 27.6z"></path></svg></div>'),
-                                section.after(i),
-                                i.off("click.gallery").on("click.gallery", function () {
-                                    var t;
-                                    r && "1" == r && (window.$itemThumbCurrent = f(this).parent().children(".gf_product-image-thumb"),
-                                        null == n ? (t = window.$itemThumbCurrent.attr("src"),
-                                            context.showLightbox(t)) : (t = window.$itemThumbCurrent.attr("data-video"),
-                                                context.showLightbox(t, null, !0)))
-                                }),
-                                f("body").on("mousemove.image-hover" + e, function (t) {
-                                    t = f(t.target);
-                                    t.closest(".sg_product-image-hover-zoom").attr("data-hover") != e && t.closest(".sg_product-image-thumb").attr("data-hover") != e && (section.removeAttr("data-hover"),
-                                        i.removeAttr("data-hover"),
-                                        a.next(".sg_product-image-hover-zoom").remove(),
-                                        f("body").off("mousemove.image-hover" + e))
-                                }))
-                        }),
                         section.find(".sg_product-image-thumb").off("click.gallery").on("click.gallery", function () {
-                            var t, e;
-                            r && "1" == r && ("" == (t = f(this).attr("data-video")) && (t = void 0),
-                                window.$itemThumbCurrent = f(this),
-                                null == t ? (e = window.$itemThumbCurrent.attr("src"),
-                                    context.showLightbox(e)) : (e = window.$itemThumbCurrent.attr("data-video"),
-                                        context.showLightbox(e, null, "video")))
+                            var current_url = $(this).attr('data-image');
+                            modal.children(".sg_featherlight-content").children("div[id^='sg_featherlight-item']").remove();
+                            section.find(".sg_product-image-thumb").each(function (index) {
+                                var url_image = $(this).attr("data-image");
+                                var style = current_url == url_image ? "opacity: 1; display: block; overflow:hidden" : "opacity: 1; display: none;overflow:hidden";
+                                modal.children(".sg_featherlight-content").append($('<div></div>')
+                                    .attr({
+                                        "id": "sg_featherlight-item-" + index,
+                                        "data-src": $(this).attr("data-image"),
+                                        "style": style,
+                                        "data-loaded": "1",
+                                        "data-width": "800",
+                                        "data-height": "800"
+                                    }).addClass("sg_featherlight-item")
+                                    .addClass("sg_featherlight-image").append($('<img/>').attr({
+                                        "src": url_image
+                                    }))
+                                );
+                            })
+                            modal.show();
                         }),
-                        l && 0 < l.length && (l.off("click.hide").on("click.hide", function (t) {
+                        modal && 0 < modal.length && (modal.off("click.hide").on("click.hide", function (t) {
                             0 == f(t.target).closest(".sg_featherlight-content").length && context.hideLightbox()
                         }),
-                            l.find(".sg_featherlight-close").off("click.close").on("click.close", function (t) {
+                            modal.find(".sg_featherlight-close").off("click.close").on("click.close", function (t) {
                                 t.preventDefault(),
                                     context.hideLightbox()
                             }),
-                            l.find('[data-action="next"]').off("click.next").on("click.next", function (t) {
+                            modal.find('[data-action="next"]').off("click.next").on("click.next", function (t) {
                                 t.preventDefault();
-                                l.find(".gf_featherlight-image");
-                                var t = ".item"
-                                    , e = window.$itemThumbCurrent.closest(".item")
-                                    , e = (e.parent().hasClass("owl-item") && (e = e.parent(),
-                                        t = ".owl-item"),
-                                        e.next(t))
-                                    , t = (0 == e.length && (e = section.find(t).first()),
-                                        window.$itemThumbCurrent = e.find(".sg_product-image-thumb, .sg_product-video-thumb"),
-                                        window.$itemThumbCurrent.attr("data-video"));
-                                null != t && "" != t ? context.showLightbox(t, "next", !0) : (t = window.$itemThumbCurrent.attr("src"),
-                                    context.showLightbox(t, "next"))
+                                var visible = 0;
+                                var size = modal.children(".sg_featherlight-content").children("div[id^='sg_featherlight-item']").length;
+                                $("div[id^='sg_featherlight-item']").each(function (i, el) {
+                                    var display = $(this).css("display");
+                                    if (display != 'none' || !display) {
+                                        $(this).hide();
+                                        if (i == size - 1) {
+                                            visible = 0;
+                                        } else {
+                                            visible = i + 1;
+                                        }
+                                    }
+                                });
+                                $("div[id^='sg_featherlight-item']").each(function (i, el) {
+                                    if (i == visible) {
+                                        $(this).show();
+                                    }
+                                });
                             }),
-                            l.find('[data-action="previous"]').off("click.next").on("click.next", function (t) {
+                            modal.find('[data-action="previous"]').off("click.next").on("click.next", function (t) {
                                 t.preventDefault();
-                                l.find(".sg_featherlight-image");
-                                var t = ".item"
-                                    , e = window.$itemThumbCurrent.closest(".item")
-                                    , e = (e.parent().hasClass("owl-item") && (e = e.parent(),
-                                        t = ".owl-item"),
-                                        e.prev(t))
-                                    , t = (0 == e.length && (e = section.find(t).last()),
-                                        window.$itemThumbCurrent = e.find(".sg_product-image-thumb, .sg_product-video-thumb"),
-                                        window.$itemThumbCurrent.attr("data-video"));
-                                null != t && "" != t ? context.showLightbox(t, "previous", !0) : (t = window.$itemThumbCurrent.attr("src"),
-                                    context.showLightbox(t, "previous"))
+                                let visible = 0;
+                                let size = modal.children(".sg_featherlight-content").children("div[id^='sg_featherlight-item']").length;
+                                $("div[id^='sg_featherlight-item']").each(function (i, el) {
+                                    var display = $(this).css("display");
+                                    if (display != 'none' || !display) {
+                                        $(this).hide();
+                                        if (i == 0) {
+                                            visible = size - 1;
+                                        } else {
+                                            visible = i - 1;
+                                        }
+                                    }
+                                });
+                                $("div[id^='sg_featherlight-item']").each(function (i, el) {
+                                    if (i == visible) {
+                                        $(this).show();
+                                    }
+                                });
                             }))),
                     !1
             }
@@ -2519,121 +2525,15 @@ function replaceImageToSize(t, e) {
                     e && a && (t.css("width", "").css("height", ""),
                         1 < (n = Math.max(e / (t.parent().width() - 1), a / (t.parent().height() - 1))) && (n = a / Math.floor(a / n),
                             t.css("width", e / n + "px").css("height", a / n + "px")))
-                }
-                ,
-                this.showLightbox = function (i, r, t) {
-                    if (null != window.gfImageListVideoPlayer && (null != window.gfImageListVideoPlayer.pause ? window.gfImageListVideoPlayer.pause() : null != window.gfImageListVideoPlayer.pauseVideo && window.gfImageListVideoPlayer.pauseVideo()),
-                        l && 0 < l.length && null != i && "" != i) {
-                        l.show();
-                        var e = l.find(".sg_featherlight-image")
-                            , a = l.find("#sg_featherlight-video");
-                        if (e.css("opacity", 0),
-                            a.css("opacity", 0),
-                            l.find(".sg_featherlight-loading").addClass("active"),
-                            t) {
-                            var n, o, d, c, s, e = l.find(".sg_featherlight-image");
-                            if ("iframe" == (a = l.find("#sg_featherlight-video")).prop("tagName").toLowerCase())
-                                return e.css("display", "none"),
-                                    a.css("display", "block"),
-                                    a.fadeTo(700, 1),
-                                    l.find(".sg_featherlight-loading").removeClass("active"),
-                                    !1;
-                            -1 != i.indexOf("vimeo.com/") ? (n = function () {
-                                window.gfImageListVideoPlayer = new Vimeo.Player("sg_featherlight-video", {
-                                    url: i,
-                                    loop: !1,
-                                    autoplay: !0,
-                                    title: !1,
-                                    byline: !1
-                                }),
-                                    window.gfImageListVideoPlayer.ready().then(function () {
-                                        var t = l.find(".sg_featherlight-image")
-                                            , e = l.find("#sg_featherlight-video");
-                                        t.css("display", "none"),
-                                            e.css("display", "block"),
-                                            !r || "next" != r && "previous" != r ? e.css("opacity", 1) : e.fadeTo(700, 1),
-                                            l.find(".sg_featherlight-loading").removeClass("active")
-                                    })
-                            }
-                                ,
-                                d = "https://player.vimeo.com/api/player.js",
-                                0 == f(document).find("script[src^='" + d + "']").length ? ((c = document.createElement("script")).onload = function () {
-                                    n()
-                                }
-                                    ,
-                                    (s = document.getElementsByTagName("script")[0]).parentNode.insertBefore(c, s),
-                                    c.src = d) : n()) : (o = function () {
-                                        window.gfImageListVideoPlayer = new YT.Player("sg_featherlight-video", {
-                                            videoId: video_id,
-                                            playerVars: {
-                                                autoplay: 1,
-                                                autohide: 1,
-                                                modestbranding: 1,
-                                                rel: 0,
-                                                showinfo: 0,
-                                                controls: 1,
-                                                disablekb: 1,
-                                                enablejsapi: 0,
-                                                iv_load_policy: 3,
-                                                hd: 1
-                                            },
-                                            events: {
-                                                onReady: function () {
-                                                    var t = l.find(".sg_featherlight-image")
-                                                        , e = l.find("#sg_featherlight-video");
-                                                    t.css("display", "none"),
-                                                        e.css("display", "block"),
-                                                        !r || "next" != r && "previous" != r ? e.css("opacity", 1) : e.fadeTo(700, 1),
-                                                        l.find(".sg_featherlight-loading").removeClass("active")
-                                                }
-                                            }
-                                        })
-                                    }
-                                        ,
-                                        (video_id = -1 != i.indexOf("youtu.be/") ? i.split("youtu.be/") : i.split(/watch\?v=/)) && null != video_id[1] && (video_id = video_id[1].split(/&/)[0]),
-                                        d = "https://www.youtube.com/iframe_api",
-                                        0 == f(document).find("script[src^='" + d + "']").length ? ((c = document.createElement("script")).onload = function () {
-                                            o()
-                                        }
-                                            ,
-                                            (s = document.getElementsByTagName("script")[0]).parentNode.insertBefore(c, s),
-                                            c.src = d) : o())
-                        } else {
-                            i = replaceImageToSize(i, "2048x2048");
-                            t = new Image;
-                            t.onload = function () {
-                                var e = this.width
-                                    , a = this.height
-                                    , t = l.find(".sg_featherlight-image")
-                                    , n = l.find("#sg_featherlight-video");
-                                t.css("display", "block"),
-                                    n.css("display", "none"),
-                                    t.attr("src", i),
-                                    l.find(".sg_featherlight-loading").removeClass("active"),
-                                    !r || "next" != r && "previous" != r ? t.css("opacity", 1) : t.fadeTo(700, 1),
-                                    u.resize(t, e, a),
-                                    f(window).off("resize.lightbox").on("resize.lightbox", function () {
-                                        var t = l.find(".sg_featherlight-image");
-                                        u.resize(t, e, a)
-                                    })
-                            }
-                                ,
-                                t.src = i
-                        }
-                    }
-                    return !1
-                }
-                ,
+                },
                 this.hideLightbox = function () {
-                    var t;
-                    null != window.gfImageListVideoPlayer && (null != window.gfImageListVideoPlayer.pause ? window.gfImageListVideoPlayer.pause() : null != window.gfImageListVideoPlayer.pauseVideo && window.gfImageListVideoPlayer.pauseVideo()),
-                        l.hide(),
-                        "dev" == (f("#prevew_builder").hasClass("editing") ? "dev" : "production") && (t = section.closest('[data-label="(P) Image List"]').attr("id")) && null != (t = parent.jQuery("body").find("#designEditor").contents().find("#" + t)).data("gfmodule") && t.data("gfmodule").openModuleSettings()
+                    modal.hide();
                 }
                 ,
                 this.initLightbox = function () {
-                    return 0 == f("body").children(".sg_featherlight").length && f("body").append('<div class="sg_featherlight"><div class="sg_featherlight-content"><button class="sg_featherlight-close-icon sg_featherlight-close" aria-label="Close">✕</button><img src="" alt="" class="sg_featherlight-image sg_featherlight-inner"><div id="sg_featherlight-video" class="sg_featherlight-inner" /><span class="sg_featherlight-previous"><span title="previous" data-action="previous"><svg viewBox="0 0 448 512" ><path d="M231.536 475.535l7.071-7.07c4.686-4.686 4.686-12.284 0-16.971L60.113 273H436c6.627 0 12-5.373 12-12v-10c0-6.627-5.373-12-12-12H60.113L238.607 60.506c4.686-4.686 4.686-12.284 0-16.971l-7.071-7.07c-4.686-4.686-12.284-4.686-16.97 0L3.515 247.515c-4.686 4.686-4.686 12.284 0 16.971l211.051 211.05c4.686 4.686 12.284 4.686 16.97-.001z" class=""></path></svg></span></span><span class="gf_featherlight-next"><span title="next" data-action="next"><svg viewBox="0 0 448 512"><path d="M216.464 36.465l-7.071 7.07c-4.686 4.686-4.686 12.284 0 16.971L387.887 239H12c-6.627 0-12 5.373-12 12v10c0 6.627 5.373 12 12 12h375.887L209.393 451.494c-4.686 4.686-4.686 12.284 0 16.971l7.071 7.07c4.686 4.686 12.284 4.686 16.97 0l211.051-211.05c4.686-4.686 4.686-12.284 0-16.971L233.434 36.465c-4.686-4.687-12.284-4.687-16.97 0z" class=""></path></svg></span></span><div class="sg_featherlight-loading"><div></div><div></div><div></div><div></div></div></div></div>'),
-                        l = f("body").children(".sg_featherlight"),
+                    return 0 == f("body").children(".sg_featherlight").length &&
+                        f("body").append('<div class="sg_featherlight"><div class="sg_featherlight-content"><button class="sg_featherlight-close-icon sg_featherlight-close" aria-label="Close">✕</button><img src="" alt="" class="sg_featherlight-image sg_featherlight-inner"><div id="sg_featherlight-video" class="sg_featherlight-inner" /><span class="sg_featherlight-previous"><span title="previous" data-action="previous"><svg viewBox="0 0 448 512" ><path d="M231.536 475.535l7.071-7.07c4.686-4.686 4.686-12.284 0-16.971L60.113 273H436c6.627 0 12-5.373 12-12v-10c0-6.627-5.373-12-12-12H60.113L238.607 60.506c4.686-4.686 4.686-12.284 0-16.971l-7.071-7.07c-4.686-4.686-12.284-4.686-16.97 0L3.515 247.515c-4.686 4.686-4.686 12.284 0 16.971l211.051 211.05c4.686 4.686 12.284 4.686 16.97-.001z" class=""></path></svg></span></span><span class="sg_featherlight-next"><span title="next" data-action="next"><svg viewBox="0 0 448 512"><path d="M216.464 36.465l-7.071 7.07c-4.686 4.686-4.686 12.284 0 16.971L387.887 239H12c-6.627 0-12 5.373-12 12v10c0 6.627 5.373 12 12 12h375.887L209.393 451.494c-4.686 4.686-4.686 12.284 0 16.971l7.071 7.07c4.686 4.686 12.284 4.686 16.97 0l211.051-211.05c4.686-4.686 4.686-12.284 0-16.971L233.434 36.465c-4.686-4.687-12.284-4.687-16.97 0z" class=""></path></svg></span></span><div class="sg_featherlight-loading"><div></div><div></div><div></div><div></div></div></div></div>'),
+                        modal = f("body").children(".sg_featherlight"),
                         !1
                 }
                 ,
