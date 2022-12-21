@@ -2447,6 +2447,7 @@ function replaceImageToSize(t, e) {
                 return section.find(".sg_product-image-hover-zoom").remove(),
                     r && "1" == r && (context.initLightbox(),
                         section.find(".sg_product-image-thumb").off("click.gallery").on("click.gallery", function () {
+                            console.log(12312313);
                             var current_url = $(this).attr('data-image');
                             modal.children(".sg_featherlight-content").children("div[id^='sg_featherlight-item']").remove();
                             section.find(".sg_product-image-thumb").each(function (index) {
