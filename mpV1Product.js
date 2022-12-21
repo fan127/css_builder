@@ -2527,6 +2527,7 @@ function replaceImageToSize(t, e) {
                             t.css("width", e / n + "px").css("height", a / n + "px")))
                 },
                 this.hideLightbox = function () {
+                    modal.children(".sg_featherlight-content").children("div[id^='sg_featherlight-item']").remove();
                     modal.hide();
                 }
                 ,
