@@ -1257,7 +1257,7 @@ function replaceImageToSize(t, e) {
     }(window.MinQuery || jQuery),
     function (v) {
         v.minV1ProductPrice = function (t, s) {
-            var l, data = {
+            var mode, data = {
                 displayCurrency: !0
             }, section = (this.settings = {},
                 v(t)), context = this,
@@ -1269,7 +1269,7 @@ function replaceImageToSize(t, e) {
                 w = "";
             this.init = function () {
                 this.settings = v.extend({}, data, s),
-                    l = v("#prevew_builder").hasClass("editing") ? "dev" : "production";
+                    mode = v("#prevew_builder").hasClass("editing") ? "dev" : "dev";
                 function setDefaultPrice() {
                     v('[data-label="Product"]').each(function (t, e) {
                         e = v(e);
@@ -1284,61 +1284,62 @@ function replaceImageToSize(t, e) {
                         null != e.data("mpv1product") && (a = e.data("mpv1product").getVariant(),
                             context.initWithVariant(a)),
                         this.subscribeChangeCurrency(),
-                        0)
-                    , i = (window.mpBCCSupportInterval || (window.mpBCCSupportInterval = setInterval(function () {
-                        n++,
-                            0 < v('select.currency-switcher[name="doubly-currencies"]').length && (v('select.currency-switcher[name="doubly-currencies"]').off("change.changeCurrency").on("change.changeCurrency", function () {
-                                window.MINSTORE && window.MINSTORE.checkKeyValid("doublyHotfix") ? setTimeout(function () {
-                                    e.find('.sg_module[data-label="(P) Quantity"]').children(".sg-module").data("mpv1productquantity") ? e.find('.sg_module[data-label="(P) Quantity"]').children(".sg-module").data("mpv1productquantity").updatePrice() : context.setPriceWithQuantity(1)
-                                }, 100) : e.find('.sg_module[data-label="(P) Quantity"]').children(".sg-module").data("mpv1productquantity") ? e.find('.sg_module[data-label="(P) Quantity"]').children(".sg-module").data("mpv1productquantity").updatePrice() : context.setPriceWithQuantity(1)
-                            }),
-                                n = 10),
-                            10 == n && (clearInterval(window.mpBCCSupportInterval),
-                                window.mpBCCSupportInterval = void 0)
-                    }, 1000)),
-                        0)
-                    , r = (window.mpSCASupportInterval || (window.mpSCASupportInterval = setInterval(function () {
-                        i++,
-                            0 < v(".sca-body-currency .cs-options").length && (v(".sca-body-currency .cs-options li").on("click.changeCurrency", function () {
-                                e.find('.sg_module[data-label="(P) Quantity"]').children(".sg-module").data("mpv1productquantity") ? e.find('.sg_module[data-label="(P) Quantity"]').children(".sg-module").data("mpv1productquantity").updatePrice() : context.setPriceWithQuantity(1)
-                            }),
-                                i = 10),
-                            10 == i && (clearInterval(window.mpSCASupportInterval),
-                                window.mpSCASupportInterval = void 0)
-                    }, 1000)),
-                        0)
-                    , o = (window.mpGTSupportInterval || (window.mpGTSupportInterval = setInterval(function () {
-                        r++,
-                            window.MinCurrency && window.store && window.store.get && window.store.change && (window.store.get("dataCurrency") && setDefaultPrice(),
-                                window.store.change("dataCurrency", function () {
-                                    setDefaultPrice()
-                                }),
-                                r = 10),
-                            10 == r && (clearInterval(window.mpGTSupportInterval),
-                                window.mpGTSupportInterval = void 0)
-                    }, 1000)),
-                        0)
-                    , d = (window.mpBearCCSupportInterval || (window.mpBearCCSupportInterval = setInterval(function () {
-                        o++,
-                            window.conversionBearAutoCurrencyConverter && (window.cbCurrencygemPagesOnLoadDelay = 1,
-                                window.conversionBearAutoCurrencyConverter.convertPricesOnPage(),
-                                o = 10),
-                            10 == o && (clearInterval(window.mpBearCCSupportInterval),
-                                window.mpBearCCSupportInterval = void 0)
-                    }, 1000)),
-                        0)
-                    , c = !1;
-                return window.mpDynamicCCSupportInterval || ("object" == typeof pb_currency_converter && pb_currency_converter.getConvertedPrice && (context.dynamicCurrencySetup(),
-                    c = !0),
-                    c || (window.mpDynamicCCSupportInterval = setInterval(function () {
-                        d++,
-                            "object" == typeof pb_currency_converter && pb_currency_converter.getConvertedPrice && (context.dynamicCurrencySetup(),
-                                c = !0,
-                                d = 10),
-                            10 == d && (clearInterval(window.mpDynamicCCSupportInterval),
-                                window.mpDynamicCCSupportInterval = void 0)
-                    }, 1000))),
-                    !1
+                        0);
+                // , i = (window.mpBCCSupportInterval || (window.mpBCCSupportInterval = setInterval(function () {
+                //     n++,
+                //         0 < v('select.currency-switcher[name="doubly-currencies"]').length && (v('select.currency-switcher[name="doubly-currencies"]').off("change.changeCurrency").on("change.changeCurrency", function () {
+                //             window.MINSTORE && window.MINSTORE.checkKeyValid("doublyHotfix") ? setTimeout(function () {
+                //                 e.find('.sg_module[data-label="(P) Quantity"]').children(".sg-module").data("mpv1productquantity") ? e.find('.sg_module[data-label="(P) Quantity"]').children(".sg-module").data("mpv1productquantity").updatePrice() : context.setPriceWithQuantity(1)
+                //             }, 100) : e.find('.sg_module[data-label="(P) Quantity"]').children(".sg-module").data("mpv1productquantity") ? e.find('.sg_module[data-label="(P) Quantity"]').children(".sg-module").data("mpv1productquantity").updatePrice() : context.setPriceWithQuantity(1)
+                //         }),
+                //             n = 10),
+                //         10 == n && (clearInterval(window.mpBCCSupportInterval),
+                //             window.mpBCCSupportInterval = void 0)
+                // }, 1000)),
+                //     0)
+                // , r = (window.mpSCASupportInterval || (window.mpSCASupportInterval = setInterval(function () {
+                //     i++,
+                //         0 < v(".sca-body-currency .cs-options").length && (v(".sca-body-currency .cs-options li").on("click.changeCurrency", function () {
+                //             e.find('.sg_module[data-label="(P) Quantity"]').children(".sg-module").data("mpv1productquantity") ? e.find('.sg_module[data-label="(P) Quantity"]').children(".sg-module").data("mpv1productquantity").updatePrice() : context.setPriceWithQuantity(1)
+                //         }),
+                //             i = 10),
+                //         10 == i && (clearInterval(window.mpSCASupportInterval),
+                //             window.mpSCASupportInterval = void 0)
+                // }, 1000)),
+                //     0)
+                // , o = (window.mpGTSupportInterval || (window.mpGTSupportInterval = setInterval(function () {
+                //     r++,
+                //         window.MinCurrency && window.store && window.store.get && window.store.change && (window.store.get("dataCurrency") && setDefaultPrice(),
+                //             window.store.change("dataCurrency", function () {
+                //                 setDefaultPrice()
+                //             }),
+                //             r = 10),
+                //         10 == r && (clearInterval(window.mpGTSupportInterval),
+                //             window.mpGTSupportInterval = void 0)
+                // }, 1000)),
+                //     0)
+                // , d = (window.mpBearCCSupportInterval || (window.mpBearCCSupportInterval = setInterval(function () {
+                //     o++,
+                //         window.conversionBearAutoCurrencyConverter && (window.cbCurrencygemPagesOnLoadDelay = 1,
+                //             window.conversionBearAutoCurrencyConverter.convertPricesOnPage(),
+                //             o = 10),
+                //         10 == o && (clearInterval(window.mpBearCCSupportInterval),
+                //             window.mpBearCCSupportInterval = void 0)
+                // }, 1000)),
+                //     0)
+                // , c = !1;
+                return false;
+                //  window.mpDynamicCCSupportInterval || ("object" == typeof pb_currency_converter && pb_currency_converter.getConvertedPrice && (context.dynamicCurrencySetup(),
+                //     c = !0),
+                //     c || (window.mpDynamicCCSupportInterval = setInterval(function () {
+                //         d++,
+                //             "object" == typeof pb_currency_converter && pb_currency_converter.getConvertedPrice && (context.dynamicCurrencySetup(),
+                //                 c = !0,
+                //                 d = 10),
+                //             10 == d && (clearInterval(window.mpDynamicCCSupportInterval),
+                //                 window.mpDynamicCCSupportInterval = void 0)
+                //     }, 1000))),
+                //     !1
             }
                 ,
                 t ? (this.initWithVariant = function (t) {
@@ -1351,8 +1352,9 @@ function replaceImageToSize(t, e) {
                                 e.closest(".sg-wrap[data-key='product']"))
                             , o = 3;
                         i = section.find(".sg_product-prices").attr("data-oldformat");
-                        var c = context.convertNumberToPrice(t.price / 100, i),
-                            s = context.convertNumberToPrice(t.compare_at_price / 100, i);
+
+                        var c = context.convertNumberToPrice(t.price / ('dev' == mode ? 1 : 100), i),
+                            s = context.convertNumberToPrice(t.compare_at_price / ('dev' == mode ? 1 : 100), i);
                         n = n.replace(/{{.*}}/g, "{{amount}}");
                         try {
                             window.parent.jQuery("#designEditor").attr("data-money", n)
