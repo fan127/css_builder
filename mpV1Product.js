@@ -2444,15 +2444,18 @@ function replaceImageToSize(t, e) {
                 var r = void 0 !== section.attr("data-gallery") ? section.attr("data-gallery") : "0"
                     , t = void 0 !== section.attr("data-galleryicon") ? section.attr("data-galleryicon") : "0"
                     , o = void 0 !== section.attr("data-spacing") ? section.attr("data-spacing") : "5px";
+                var imagelist = [];
+                section.find(".sg_product-image-thumb").each(function (index) {
+                    var url_image = $(this).attr("data-image");
+                    imagelist.push(url_image);
+                })
                 return section.find(".sg_product-image-hover-zoom").remove(),
                     r && "1" == r && (context.initLightbox(),
                         section.find(".sg_product-image-thumb").off("click.gallery").on("click.gallery", function () {
-                            console.log(12312313);
                             var current_url = $(this).attr('data-image');
                             modal.children(".sg_featherlight-content").children("div[id^='sg_featherlight-item']").remove();
-                            section.find(".sg_product-image-thumb").each(function (index) {
-                                var url_image = $(this).attr("data-image");
-                                var style = current_url == url_image ? "opacity: 1; display: block; overflow:hidden" : "opacity: 1; display: none;overflow:hidden";
+                            imagelist.forEach((element, index) => {
+                                var style = current_url == element ? "opacity: 1; display: block; overflow:hidden" : "opacity: 1; display: none;overflow:hidden";
                                 modal.children(".sg_featherlight-content").append($('<div></div>')
                                     .attr({
                                         "id": "sg_featherlight-item-" + index,
@@ -2463,10 +2466,10 @@ function replaceImageToSize(t, e) {
                                         "data-height": "800"
                                     }).addClass("sg_featherlight-item")
                                     .addClass("sg_featherlight-image").append($('<img/>').attr({
-                                        "src": url_image
+                                        "src": element
                                     }))
                                 );
-                            })
+                            });
                             modal.show();
                         }),
                         modal && 0 < modal.length && (modal.off("click.hide").on("click.hide", function (t) {
