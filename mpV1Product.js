@@ -2449,6 +2449,7 @@ function replaceImageToSize(t, e) {
                     var url_image = $(this).attr("data-image");
                     imagelist.push(url_image);
                 })
+                console.log(imagelist);
                 return section.find(".sg_product-image-hover-zoom").remove(),
                     r && "1" == r && (context.initLightbox(),
                         section.find(".sg_product-image-thumb").off("click.gallery").on("click.gallery", function () {
