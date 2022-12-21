@@ -2257,6 +2257,7 @@ function replaceImageToSize(t, e) {
         f.minV1ProductImageList = function (t, e) {
             var data = {
                 onImageClicked: function (t, e, id) {
+                    console.log(id,'id')
                     var ct, a = context.findParentProduct();
                     var variant = (ct = a.data("mpv1product")) ? ct.getVariantFromMedia(id) : false;
                     variant && (ct ? ct.setVariant(variant, !1) : console.warn("couldn't find parent product module"))
@@ -2407,6 +2408,7 @@ function replaceImageToSize(t, e) {
                                 window.outerWidth), a = a < 768 ? "xs" : 768 <= a && a < 992 ? "sm" : 992 <= a && a < 1200 ? "md" : "lg", i = (1 < (section.attr("data-col" + a) || 1) && 1 < t && (t -= 1),
                                     e = null != n.attr("data-image") ? n.attr("data-image") : n.attr("src"),
                                     n.attr("data-zoom")), r = n.attr("alt") || n.find("img").attr("alt") || "", o = context.findParentProduct();
+
                         return 0 < o.find('[data-label="(P) Image"]').length && o.find('[data-label="(P) Image"]').each(function () {
                             null != f(this).children(".sg-module").data("mpv1productimage") ? f(this).children(".sg-module").data("mpv1productimage").setImage(e, i, r) : o.find("img.sg_product-image").attr("src", e).attr("data-zoom", i).attr("alt", r)
                         }),
