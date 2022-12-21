@@ -210,7 +210,6 @@ function replaceImageToSize(t, e) {
                     !1;
             },
                 this.getVariantFromMedia = function (e) {
-                    console.log(e,'e')
                     var t = context.findProductModule()
                         , a = {};
                     if (0 < t.find(".product-json").length)
@@ -225,7 +224,6 @@ function replaceImageToSize(t, e) {
                         try {
                             var n = section.closest("[data-pid]").attr("data-pid");
                             return (a = null != window.parent.jQuery("#designEditor").contents().find("#prevew_builder").data("mpeditor") ? window.parent.jQuery("#designEditor").contents().find("#prevew_builder").data("mpeditor").searchProductInList(n) : a).variants.find(function (t) {
-                                console.log(t.image_id,'image_id')
                                 return t.image_id == e
                             })
                         } catch (t) {
@@ -2257,7 +2255,6 @@ function replaceImageToSize(t, e) {
         f.minV1ProductImageList = function (t, e) {
             var data = {
                 onImageClicked: function (t, e, id) {
-                    console.log(id,'id')
                     var ct, a = context.findParentProduct();
                     var variant = (ct = a.data("mpv1product")) ? ct.getVariantFromMedia(id) : false;
                     variant && (ct ? ct.setVariant(variant, !1) : console.warn("couldn't find parent product module"))
