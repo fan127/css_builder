@@ -2294,7 +2294,7 @@ function replaceImageToSize(t, e) {
                         for (var t = e.split("?")[0].split("."), e = (t.pop(),
                             t.pop()), a = 0, n = 0; n < section.find(".owl-item:not(.cloned) .sg_product-image-thumb").length; n++)
                             {
-                                console.log(section.find(".owl-item:not(.cloned) .sg_product-image-thumb"));
+                                console.log(section.find(".owl-item:not(.cloned) .sg_product-image-thumb").eq(n));
                                 if (-1 != section.find(".owl-item:not(.cloned) .sg_product-image-thumb").eq(n).attr("src").indexOf(e)) {
                                     a = n;
                                     break
