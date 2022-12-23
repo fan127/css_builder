@@ -2295,6 +2295,7 @@ function replaceImageToSize(t, e) {
                             t.pop()), a = 0, n = 0; n < section.find(".owl-item:not(.cloned) .sg_product-image-thumb").length; n++)
                             {
                                 if (-1 != section.find(".owl-item:not(.cloned) .sg_product-image-thumb").eq(n).find('img').attr("src").indexOf(e)) {
+                                    console.log(a,e,'thumb')
                                     a = n;
                                     break
                                 }
