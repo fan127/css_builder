@@ -11,11 +11,11 @@ function refreshRechargeOptions(t, e, a) {
             console.log(t)
         }
 };
-function hasImageShopify(t) {
-    return !!t && (-1 != t.indexOf("cdn.shopify.com/s/files/") || -1 != t.indexOf("apps.shopifycdn.com/"))
+function hasImageShopify(url) {
+    return !!url && (-1 != url.indexOf("cdn.shopify.com/s/files/") || -1 != url.indexOf("apps.shopifycdn.com/"))
 };
-function hasImageUCare(t) {
-    return !!t && -1 != t.indexOf("ucarecdn.com/")
+function hasImageUCare(url) {
+    return !!url && -1 != url.indexOf("ucarecdn.com/")
 };
 function replaceImageToSize(t, e) {
     if (t && null != e && null != e) {
@@ -1927,7 +1927,7 @@ function replaceImageToSize(t, e) {
                 }
                 ,
                 this.subscribeMediaData = function () {
-                    window.MINSTORE && window.MINSTORE.subscribe("gemActiveMediaData-" + n, function (t) {
+                    window.MINSTORE && window.MINSTORE.subscribe("minActiveMediaData-" + n, function (t) {
                         t.type && "image" != t.type ? "model" == t.type ? section.find('.sg_product-3DImage[src="' + t.url + '"]').length || (u.setImage(t.data.imageUrl, "", ""),
                             context.show3dImage(t.url, t.data.imageUrl)) : context.showVideo(t.url, t.type, t.data) : context.setImage(t.url, t.data.imageZoomUrl, t.data.imageAlt)
                     })
@@ -2293,10 +2293,14 @@ function replaceImageToSize(t, e) {
                     if (null != (e = context.getVariantImage(t)) && "" != e) {
                         for (var t = e.split("?")[0].split("."), e = (t.pop(),
                             t.pop()), a = 0, n = 0; n < section.find(".owl-item:not(.cloned) .sg_product-image-thumb").length; n++)
-                            if (-1 != section.find(".owl-item:not(.cloned) .sg_product-image-thumb").eq(n).attr("src").indexOf(e)) {
-                                a = n;
-                                break
+                            {
+                                console.log(section.find(".owl-item:not(.cloned) .sg_product-image-thumb"));
+                                if (-1 != section.find(".owl-item:not(.cloned) .sg_product-image-thumb").eq(n).attr("src").indexOf(e)) {
+                                    a = n;
+                                    break
+                                }
                             }
+                            
                         section.find(".sg_product-images-list").trigger("to.owl.carousel", [a, 250, !0])
                     }
                     return !1
