@@ -58,6 +58,11 @@
     z-index: 1;
 }
 
+.paper .module.dynamic .module[data-parent="product"]:hover {
+    outline: #9900FF solid 1px;
+    z-index: 1;
+}
+
 .paper .module:hover {
     outline: #e82b71 solid 1px;
     z-index: 1;
