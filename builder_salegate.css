@@ -1297,6 +1297,27 @@ textarea {
     position: absolute;
 }
 
+.row-dropper {
+    background-color: #F2F3F4;
+    position: relative;
+    padding: 20px 0px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.row-dropper:hover {
+    background-color: #e5e6e8;
+    transition: all 0.3s ease;
+}
+.row-dropper span {
+    position: absolute;
+    font-size: 13px;
+    top: 50%;
+    left: 50%;
+    color: #a0a0a0;
+    transform: translate(-50%, -50%);
+}
+
 .drop-element {
     padding: 20px 0;
     background: #E6E8EB;
