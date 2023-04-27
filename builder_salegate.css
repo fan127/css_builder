@@ -1517,6 +1517,9 @@ body .sg-wrap[data-label=Popup] .sg_row {
     display: none !important;
 }
 
+body.production .section-wrapper {
+    display: none;
+}
 
 .production .paper .block:hover {
     outline: none !important;
