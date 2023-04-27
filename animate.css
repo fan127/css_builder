@@ -4,10 +4,10 @@
 
 
 
-.sg-animated-bounce {
-  animation-name: sg-bounce;
+.sg-animated-sbounce {
+  animation-name: sg-sbounce;
 }
-@keyframes sg-bounce {
+@keyframes sg-sbounce {
   0%,20%,53%,to {
       animation-timing-function: cubic-bezier(.215,.61,.355,1);
       transform: translateZ(0)
