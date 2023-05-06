@@ -10,6 +10,8 @@
 
 .preview-paypal-button .paypal-label-text {
     font-size: 15px;
+    margin-top: -2px;
+    line-height: 20px;
 }
 
 .preview-paypal-button .label-pay {
