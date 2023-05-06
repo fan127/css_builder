@@ -4,7 +4,6 @@
     justify-content: center;
     font-family: 'Helvetica Neue';
     font-weight: 500;
-    color: #000;
     gap: 4px;
 }
 
@@ -20,10 +19,12 @@
 
 .preview-paypal-button .color-gold {
     background-color: #ffc439;
+    color: #000;
 }
 
 .preview-paypal-button .color-blue {
     background-color: #0070ba;
+    color: #fff;
 }
 
 .preview-paypal-button .color-blue svg path, .preview-paypal-button .color-black svg path {
@@ -32,15 +33,18 @@
 
 .preview-paypal-button .color-silver {
     background-color: #eee;
+    color: #000;
 }
 
 .preview-paypal-button .color-white {
     background-color: #fff;
     border: 1px solid #000;
+    color: #000;
 }
 
 .preview-paypal-button .color-black {
     background-color: #000;
+    color: #fff;
 }
 
 .preview {
