@@ -5,10 +5,15 @@
     font-family: 'Helvetica Neue';
     font-weight: 500;
     color: #000;
+    gap: 4px;
 }
 
 .preview-paypal-button .paypal-label-text {
     font-size: 15px;
+}
+
+.preview-paypal-button .label-pay {
+    flex-direction: row-reverse;
 }
 
 .preview-paypal-button .color-gold {
