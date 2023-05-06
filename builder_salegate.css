@@ -7,6 +7,10 @@
     color: #000;
 }
 
+.preview-paypal-button .paypal-label-text {
+    font-size: 15px;
+}
+
 .preview-paypal-button .color-gold {
     background-color: #ffc439;
 }
