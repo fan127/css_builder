@@ -3,7 +3,7 @@
 }
 
 .modal-backdrop.show {
-    opacity: .5;
+    opacity: 0.5 !important;
 }
 
 .preview-paypal-button .paypal-btn {
