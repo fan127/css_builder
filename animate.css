@@ -2,7 +2,9 @@
   animation-fill-mode: forwards;
 }
 
-
+.sg-animated-infinite {
+  animation-iteration-count: infinite;
+}
 
 .sg-animated-sbounce {
   animation-name: sg-sbounce;
