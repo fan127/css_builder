@@ -101,6 +101,9 @@
     }
 }
 
+.hidden-element {
+    visibility: hidden;
+}
 
 .paper {
     margin: auto;
