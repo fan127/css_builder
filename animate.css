@@ -2,10 +2,6 @@
   animation-fill-mode: forwards;
 }
 
-.hidden-element.sg-animated {
-  visibility: visible;
-}
-
 .sg-animated-infinite {
   animation-iteration-count: infinite;
 }
