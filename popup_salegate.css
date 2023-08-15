@@ -12,12 +12,12 @@
     z-index: 9999991;
 }
 
-@media (max-width: 767px){
+/* @media (max-width: 767px){
     .sg-wrap[data-label=Popup] {
         max-width: 86%;
         max-height: 80%;
     }
-}
+} */
 
 .sg-wrap[data-label=Popup].showPopup {
     display: block!important;
