@@ -137,20 +137,24 @@
     right: 0;
     top: 50%;
     transform: translateY(-50%);
-    max-height: 95%;
+    max-height: 95vh;
     z-index: 99999991;
+    width: 40px;
+    overflow-y: auto;
+    
 }
 
-.sg-popupAnchorList {
+/* .sg-popupAnchorList {
     display: flex;
     flex-direction: column;
     width: 40px;
     justify-content: center;
-}
+} */
 
 .sg-popupAnchor {
     width: 40px;
-    max-height: 90px;
+    height: fit-content;
+    padding: 8px 0px;
     background: orange;
     cursor: pointer;
     overflow: hidden;
