@@ -144,13 +144,6 @@
     
 }
 
-/* .sg-popupAnchorList {
-    display: flex;
-    flex-direction: column;
-    width: 40px;
-    justify-content: center;
-} */
-
 .sg-popupAnchor {
     width: 40px;
     height: fit-content;
