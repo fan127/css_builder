@@ -9,15 +9,15 @@
     width: 600px;
     height: 400px;
     transform: translate(-50%,-50%);
-    z-index: 9999991;
+    z-index: 9999992;
 }
 
-/* @media (max-width: 767px){
+@media (max-width: 767px){
     .sg-wrap[data-label=Popup] {
         max-width: 86%;
         max-height: 80%;
     }
-} */
+}
 
 .sg-wrap[data-label=Popup].showPopup {
     display: block!important;
@@ -28,10 +28,6 @@
     left: 50%;
     transform: translate(-50%,-50%);
 }
-
-
-
-
 
 .sg-wrap[data-label=Popup][data-postion=center-center][data-effects=fade] {
     -webkit-animation-name: stringdFadegfPopupCenterCenter;
